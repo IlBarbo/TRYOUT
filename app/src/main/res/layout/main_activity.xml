@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#DED3F3"
+    android:orientation="vertical"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp">
+
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="174dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="monospace"
+        android:text="@string/nickname"
+        android:textColor="#0E3C53"
+        android:textSize="20dp" />
+
+    <EditText
+        android:id="@+id/nickname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text=""
+        android:textSize="20sp"
+        tools:visibility="visible" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="40dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <Space
+            android:layout_width="140dp"
+            android:layout_height="match_parent" />
+
+        <Button
+            android:id="@+id/Access"
+            android:layout_width="140dp"
+            android:layout_height="70dp"
+            android:layout_weight="1"
+            android:text="@string/bottone"
+            android:background="@drawable/botton_circle"
+            android:textColor="@color/white"
+            android:layout_margin="5dp"/>
+
+        <Space
+            android:layout_width="170dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+</LinearLayout>
