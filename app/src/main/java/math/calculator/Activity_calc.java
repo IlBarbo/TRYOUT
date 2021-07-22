@@ -78,22 +78,22 @@ public class Activity_calc extends AppCompatActivity {
     }
     public void parentesi(View v){
         int cursorePos=schermo.getSelectionStart();
-        int apertaPat= 0;
+        int apertaPar= 0;
         int chiusaPar=0;
         int lunghezza=schermo.getText().length();
         for(int i=0;i< cursorePos;i++)
         {
             if(schermo.getText().toString().substring(i,i+1).equals("(")){
-                apertaPat+=1;
+                apertaPar+=1;
             }
             if(schermo.getText().toString().substring(i,i+1).equals(")")){
                 chiusaPar+=1;
             }
         }
-        if(apertaPat == chiusaPar || schermo.getText().toString().substring(lunghezza-1,lunghezza).equals("(")){
+        if(apertaPar == chiusaPar || schermo.getText().toString().substring(lunghezza-1,lunghezza).equals("(")){
             upText("(");
         }
-        if(chiusaPar < apertaPat && !schermo.getText().toString().substring(lunghezza-1,lunghezza).equals("(")){
+        if(chiusaPar < apertaPar && !schermo.getText().toString().substring(lunghezza-1,lunghezza).equals("(")){
             upText(")");
         }
         schermo.setSelection(cursorePos+1);
