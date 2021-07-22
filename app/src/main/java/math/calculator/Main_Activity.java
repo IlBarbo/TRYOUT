@@ -20,7 +20,7 @@ public class Main_Activity extends AppCompatActivity {
         final Button accesbutton= findViewById(R.id.Access);
 //oggetto visibile nel blocco inferiore
 
-        accesbutton.setBackgroundColor(Color.TRANSPARENT);
+
         accesbutton.setOnClickListener(new View.OnClickListener() { //utilizzo bottone
             @Override
             public void onClick(View v) {

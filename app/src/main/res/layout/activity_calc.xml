@@ -8,7 +8,7 @@
     android:layout_height="match_parent"
     tools:context=".Activity_calc"
     tools:layout_editor_absoluteY="81dp"
-    android:background="#DED3F3"
+    android:background="@drawable/app_background"
 
    >
 
@@ -34,8 +34,7 @@
                 android:layout_height="60dp"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:background="@drawable/botton_circle"
-                android:backgroundTint="@color/teal_700"
+                android:background="@drawable/button_clear"
                 android:onClick="clear"
                 android:text="@string/clear"
                 android:textColor="@color/white"
@@ -302,8 +301,7 @@
                 android:layout_height="60dp"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:background="@drawable/botton_circle"
-                android:backgroundTint="@color/orange"
+                android:background="@drawable/button_equals"
                 android:onClick="uguale"
                 android:text="@string/uguale"
                 android:textColor="@color/white"
@@ -313,32 +311,50 @@
 
     <EditText
         android:id="@+id/display"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:text="@string/display"
+        android:layout_marginTop="84dp"
+        android:autofillHints="false"
+        android:inputType="textPersonName"
+        android:layout_marginBottom="40dp"
+        android:hint="@string/display"
+        android:textAlignment="textEnd"
+        android:paddingEnd="10dp"
+        android:paddingStart="10dp"
+        android:textSize="36sp"
+        android:importantForAutofill="no"
+        android:textColorHint="@color/greyAccent"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:autofillHints="false"
-        android:inputType="none"
-        android:textSize="36sp"
-        android:textAlignment="textEnd"
-        tools:ignore="LabelFor"/>
+        tools:ignore="LabelFor" />
 
     <ImageButton
         android:id="@+id/button21"
         style="@style/Widget.AppCompat.Button.Borderless"
-        android:layout_width="wrap_content"
+        android:layout_width="80dp"
         android:layout_height="wrap_content"
         android:background="@drawable/botton_circle"
         android:contentDescription="@string/spazio"
         android:onClick="spazio"
         app:layout_constraintBottom_toTopOf="@+id/tableLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.97"
+        app:layout_constraintHorizontal_bias="0.978"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/spazio" />
+
+    <TextView
+        android:id="@+id/risultato"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/display"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
 </android.support.constraint.ConstraintLayout>
 
