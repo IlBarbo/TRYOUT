@@ -16,6 +16,7 @@ public class Grafico extends AppCompatActivity {
     }
     public void ClickMenu(View view)
     {
+        //deve
         //apro drawer
         Activity_calc.openDrawer(drawerLayout);
     }
