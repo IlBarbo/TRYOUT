@@ -63,8 +63,8 @@ public class Activity_calc extends AppCompatActivity {
         recreate();
     }
 
-    public void ClickDashboard(View view){
-        redirectActivity(this, Grafico.class);
+    public void Clickcronologia(View view){
+        redirectActivity(this, Cronologia.class);
     }
 
     public void Clickgrafico(View view){

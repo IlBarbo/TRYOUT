@@ -25,7 +25,7 @@ public class Grafico extends AppCompatActivity {
     public void ClickHome(View view){
         Activity_calc.redirectActivity(this,Activity_calc.class);
     }
-    public void Dashboard(View view){
+    public void Clickgrafico(View view){
         //crea l'activity
         recreate();
     }

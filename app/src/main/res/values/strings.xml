@@ -35,5 +35,6 @@
     <string name="uguale">=</string>
     <string name="spazio"> </string>
     <string name="display">Inserisci un valore</string>
-
+    <string name="grafico"> Grafico</string>
+    <string name="cronologia">Cronologia </string>
 </resources>
