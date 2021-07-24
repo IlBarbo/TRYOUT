@@ -81,20 +81,12 @@ public class Activity_calc extends AppCompatActivity {
         AlertDialog.Builder builder=new AlertDialog.Builder(activity_drawer);
         builder.setTitle("Logout");
         builder.setMessage("sei sicuro di voler fare il logout?");
-        builder.setPositiveButton("SI", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                //finish activity
-                activity_drawer.finishAffinity();
-                System.exit(0);
-            }
+        builder.setPositiveButton("SI", (dialog, which) -> {
+            //finish activity
+            activity_drawer.finishAffinity();
+            System.exit(0);
         });
-        builder.setNegativeButton("N0", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                dialog.dismiss();
-            }
-        });
+        builder.setNegativeButton("N0", (dialog, which) -> dialog.dismiss());
         builder.show();
     }
     protected void onPause(){
