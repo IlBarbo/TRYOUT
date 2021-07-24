@@ -323,7 +323,7 @@
             android:id="@+id/spazio"
             android:layout_width="0dp"
             android:layout_height="45dp"
-            android:background="@drawable/spazio"
+            android:background="@drawable/botton_circle"
             android:contentDescription="@string/spazio"
             android:onClick="spazio"
             android:textColor="@color/tanAccent"
