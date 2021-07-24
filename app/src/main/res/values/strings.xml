@@ -37,4 +37,22 @@
     <string name="display">Inserisci un valore</string>
     <string name="grafico"> Grafico</string>
     <string name="cronologia">Cronologia </string>
+    <string name="percentuale">%</string>
+    <string name="seno">sin</string>
+    <string name="coseno">cos</string>
+    <string name="tangente">tan</string>
+    <string name="arcseno">sin<sup><small>-1</small></sup></string>
+    <string name="arccoseno">cos<sup><small>-1</small></sup></string>
+    <string name="arctangente">tan<sup><small>-1</small></sup></string>
+    <string name="logaritmo_naturale">ln</string>
+    <string name="logaritmo">log</string>
+    <string name="radice">√</string>
+    <string name="modulo">|x|</string>
+    <string name="pigreco">π</string>
+    <string name="nepero">e</string>
+    <string name="xQuadro">x<sup><small>2</small></sup></string>
+    <string name="potenza">x<sup><small>y</small></sup></string>
+    <string name="primo">prime</string>
+
+
 </resources>

@@ -35,6 +35,7 @@ public class Activity_calc extends AppCompatActivity {
         drawerLayout=findViewById(R.id.drawer_layout);
 
     }
+    //navigation drawer
      public void ClickMenu(View view)
      {
          //apro drawer
@@ -108,7 +109,7 @@ public class Activity_calc extends AppCompatActivity {
         activity.startActivity(intent);
 
     }
-
+    //calcolatrice
     private void upText(String strToAdd){
         String oldStr=schermo.getText().toString();
         int cursore=schermo.getSelectionStart();
@@ -120,41 +121,41 @@ public class Activity_calc extends AppCompatActivity {
 
 
     public void zero(View v){
-        upText(getResources().getString(R.string.zero));
+        upText("0");
     }
     public void uno(View v){
-        upText(getResources().getString(R.string.uno));
+        upText("1");
     }
     public void due(View v){
-        upText(getResources().getString(R.string.due));
+        upText("2");
     }
     public void tre(View v){
-        upText(getResources().getString(R.string.tre));
+        upText("3");
     }
     public void quattro(View v){
-        upText(getResources().getString(R.string.quattro));
+        upText("4");
     }
     public void cinque(View v){
-        upText(getResources().getString(R.string.cinque));
+        upText("5");
     }
     public void sei(View v){
-        upText(getResources().getString(R.string.sei));
+        upText("6");
     }
     public void sette(View v){
-        upText(getResources().getString(R.string.sette));
+        upText("7");
     }
     public void otto(View v){
-        upText(getResources().getString(R.string.otto));
+        upText("8");
     }
     public void nove(View v){
-        upText(getResources().getString(R.string.nove));
+        upText("9");
     }
     public void clear(View v){
         schermo.setText("");
         risultato.setText("");
     }
     public void esponente(View v){
-        upText(getResources().getString(R.string.esponente));
+        upText("^(");
     }
     public void parentesi(View v){
         int cursorePos=schermo.getSelectionStart();
@@ -179,29 +180,29 @@ public class Activity_calc extends AppCompatActivity {
         schermo.setSelection(cursorePos+1);
     }
     public void divisione(View v){
-        upText(getResources().getString(R.string.divisione));
+        upText("÷");
     }
     public void moltiplicazione(View v){
-        upText(getResources().getString(R.string.moltiplicazione));
+        upText("×");
     }
     public void add(View v){
-        upText(getResources().getString(R.string.add));
+        upText("+");
     }
     public void sub(View v){
-        upText(getResources().getString(R.string.sub));
+        upText("-");
     }
     public void addsub(View v){
-        upText(getResources().getString(R.string.addsub));
+        upText("+/-");
     }
     public void punto(View v){
-        upText(getResources().getString(R.string.punto));
+        upText(".");
     }
     public void uguale(View v){
        String user=schermo.getText().toString();
         risultato.setText(user);
 
-        user = user.replaceAll(getResources().getString(R.string.divisione), "/");
-        user = user.replaceAll(getResources().getString(R.string.moltiplicazione), "*");
+        user = user.replaceAll("÷", "/");
+        user = user.replaceAll("×", "*");
 
         Expression exp=new Expression(user);
        String result=String.valueOf(exp.calculate()); //usa la libreria mxparser
@@ -220,4 +221,68 @@ public class Activity_calc extends AppCompatActivity {
            schermo.setSelection(cursore-1);
        }
     }
+
+    public void coseno(View view) {
+
+        upText("cos(");
+
+    }
+
+    public void seno(View view) {
+        upText("sin(");
+    }
+
+    public void percentuale(View view) {
+        upText("%");
+    }
+
+    public void tangente(View view) {
+        upText("tan(");
+    }
+
+    public void arcseno(View view) {
+        upText("arcsin(");
+    }
+
+    public void arccoseno(View view) {
+        upText("arccos(");
+    }
+
+    public void arctangente(View view) {
+        upText("arctan(");
+    }
+
+    public void logaritmo_naturale(View view) {
+        upText("ln");
+    }
+
+    public void logaritmo(View view) {
+        upText("log");
+    }
+
+    public void radice(View view) {
+        upText("sqrt(");
+    }
+
+    public void nepero(View view) {
+        upText("e");
+    }
+
+    public void pigreco(View view) {
+        upText("pi(");
+    }
+
+    public void modulo(View view) {
+        upText("abs(");
+    }
+
+    public void primo(View view) {
+        upText("ispr(");
+    }
+
+    public void xQuadro(View view) {
+        upText("^(2)");
+    }
+
+
 }
