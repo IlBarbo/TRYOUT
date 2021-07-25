@@ -32,7 +32,9 @@
 
 
             <include layout="@layout/main_nav_drawer" />
+
         </RelativeLayout>
+
 
     </android.support.v4.widget.DrawerLayout>
 
