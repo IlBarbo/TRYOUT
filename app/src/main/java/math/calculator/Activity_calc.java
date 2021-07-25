@@ -20,7 +20,7 @@ public class Activity_calc extends AppCompatActivity {
     private TextView risultato;
     private EditText schermo;
 
-  //  DrawerLayout drawerLayout;
+   DrawerLayout drawerLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,11 +32,11 @@ public class Activity_calc extends AppCompatActivity {
                                                   TextView viene messo a punto. L'impostazione
                                                   predefinita è true */
         //assegnamento variabile
-       // drawerLayout=findViewById(R.id.drawer_layout);
+        drawerLayout=findViewById(R.id.drawer_layout);
 
     }
 
-       /* //navigation drawer
+        //navigation drawer
         public void ClickMenu (View view)
         {
             //apro drawer
@@ -101,7 +101,7 @@ public class Activity_calc extends AppCompatActivity {
             activity.startActivity(intent);
 
         }
-*/
+
 
     //calcolatrice
     private void upText(String strToAdd){
