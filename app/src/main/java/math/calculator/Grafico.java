@@ -6,15 +6,15 @@ import android.os.Bundle;
 import android.view.View;
 
 public class Grafico extends AppCompatActivity {
-    DrawerLayout drawerLayout;
+   // DrawerLayout drawerLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.grafico);
-        drawerLayout=findViewById(R.id.drawer_layout);
+       // drawerLayout=findViewById(R.id.drawer_layout);
     }
-    public void ClickMenu(View view)
+  /*  public void ClickMenu(View view)
     {
         //deve
         //apro drawer
@@ -40,7 +40,7 @@ public class Grafico extends AppCompatActivity {
         super.onPause();
         Activity_calc.closeDrawer(drawerLayout);
     }
-
+*/
 
 
 }

@@ -20,7 +20,7 @@ public class Activity_calc extends AppCompatActivity {
     private TextView risultato;
     private EditText schermo;
 
-    DrawerLayout drawerLayout;
+  //  DrawerLayout drawerLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,75 +32,77 @@ public class Activity_calc extends AppCompatActivity {
                                                   TextView viene messo a punto. L'impostazione
                                                   predefinita è true */
         //assegnamento variabile
-        drawerLayout=findViewById(R.id.drawer_layout);
+       // drawerLayout=findViewById(R.id.drawer_layout);
 
     }
-    //navigation drawer
-     public void ClickMenu(View view)
-     {
-         //apro drawer
-        openDrawer(drawerLayout);
-     }
 
-    public static void openDrawer(DrawerLayout drawerLayout) {
-        //apro drawer layout
-        drawerLayout.openDrawer(GravityCompat.START);
-    }
-    public void ClickLogo(View view)
-    {
-        closeDrawer(drawerLayout);
-    }
-
-    public static void closeDrawer(DrawerLayout drawerLayout) {
-        if(drawerLayout.isDrawerOpen(GravityCompat.START))
+       /* //navigation drawer
+        public void ClickMenu (View view)
         {
-            //quando il drawer è aperto lo chiudo
-            drawerLayout.closeDrawer(GravityCompat.START);
+            //apro drawer
+            openDrawer(drawerLayout);
+        }
+
+        public static void openDrawer (DrawerLayout drawerLayout){
+            //apro drawer layout
+            drawerLayout.openDrawer(GravityCompat.START);
+        }
+        public void ClickLogo (View view)
+        {
+            closeDrawer(drawerLayout);
+        }
+
+        public static void closeDrawer (DrawerLayout drawerLayout){
+            if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
+                //quando il drawer è aperto lo chiudo
+                drawerLayout.closeDrawer(GravityCompat.START);
+
+            }
+        }
+        public void ClickHome (View view)
+        {
+            recreate();
+        }
+
+        public void Clickcronologia (View view){
+            redirectActivity(this, Cronologia.class);
+        }
+
+        public void Clickgrafico (View view){
+            redirectActivity(this, Grafico.class);
+        }
+
+
+        public void ClickLogout (View view){
+            logout(this);
+        }
+
+        public static void logout (Activity activity_drawer){
+            AlertDialog.Builder builder = new AlertDialog.Builder(activity_drawer);
+            builder.setTitle("Logout");
+            builder.setMessage("sei sicuro di voler fare il logout?");
+            builder.setPositiveButton("SI", (dialog, which) -> {
+                //finish activity
+                activity_drawer.finishAffinity();
+                System.exit(0);
+            });
+            builder.setNegativeButton("N0", (dialog, which) -> dialog.dismiss());
+            builder.show();
+        }
+        protected void onPause () {
+            super.onPause();
+            closeDrawer(drawerLayout);
+        }
+
+        public static void redirectActivity (Activity activity, Class aClass){
+            Intent intent = new Intent(activity, aClass);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            //start activity
+            activity.startActivity(intent);
 
         }
-    }
-    public void ClickHome(View view)
-    {
-        recreate();
-    }
+*/
 
-    public void Clickcronologia(View view){
-        redirectActivity(this, Cronologia.class);
-    }
-
-    public void Clickgrafico(View view){
-        redirectActivity(this,Grafico.class);
-    }
-
-
-    public void ClickLogout(View view){
-        logout(this);
-    }
-
-    public static void logout(Activity activity_drawer) {
-        AlertDialog.Builder builder=new AlertDialog.Builder(activity_drawer);
-        builder.setTitle("Logout");
-        builder.setMessage("sei sicuro di voler fare il logout?");
-        builder.setPositiveButton("SI", (dialog, which) -> {
-            //finish activity
-            activity_drawer.finishAffinity();
-            System.exit(0);
-        });
-        builder.setNegativeButton("N0", (dialog, which) -> dialog.dismiss());
-        builder.show();
-    }
-    protected void onPause(){
-        super.onPause();
-        closeDrawer(drawerLayout);
-    }
-
-    public static void redirectActivity(Activity activity,Class aClass) {
-        Intent intent=new Intent(activity,aClass);
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        //start activity
-        activity.startActivity(intent);
-
-    }
     //calcolatrice
     private void upText(String strToAdd){
         String oldStr=schermo.getText().toString();
