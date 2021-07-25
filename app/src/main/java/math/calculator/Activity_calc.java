@@ -220,6 +220,7 @@ public class Activity_calc extends AppCompatActivity {
 
         upText("cos(");
 
+
     }
 
     public void seno(View view) {

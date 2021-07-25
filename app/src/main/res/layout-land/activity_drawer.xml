@@ -9,8 +9,39 @@
     android:screenOrientation="landscape"
     android:background="@drawable/app_background"
     tools:context=".Activity_calc">
+    <android.support.v4.widget.DrawerLayout
 
-        <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".Activity_calc"
+        android:id="@+id/drawer_layout"
+        tools:ignore="DuplicateIds">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <include layout="@layout/main_toolbar" />
+    </LinearLayout>
+        <RelativeLayout
+            android:layout_width="300dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:background="@android:color/white">
+
+
+            <include layout="@layout/main_nav_drawer" />
+        </RelativeLayout>
+
+    </android.support.v4.widget.DrawerLayout>
+
+
+
+
+
+
+    <TextView
             android:id="@+id/risultato"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -549,4 +580,5 @@
                 app:layout_constraintTop_toBottomOf="@+id/modulo" />
         </android.support.constraint.ConstraintLayout>
 
-    </android.support.constraint.ConstraintLayout>
+
+</android.support.constraint.ConstraintLayout>
