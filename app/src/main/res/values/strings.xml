@@ -53,6 +53,7 @@
     <string name="xQuadro">x<sup><small>2</small></sup></string>
     <string name="potenza">x<sup><small>y</small></sup></string>
     <string name="primo">prime</string>
+    <string name="benvenuto">Benvenuto</string>
 
 
 </resources>

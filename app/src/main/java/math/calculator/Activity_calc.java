@@ -19,7 +19,7 @@ public class Activity_calc extends AppCompatActivity {
 
     private TextView risultato;
     private EditText schermo;
-
+    private TextView title;
    DrawerLayout drawerLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,10 +27,14 @@ public class Activity_calc extends AppCompatActivity {
         setContentView(R.layout.activity_drawer);
         risultato=findViewById(R.id.risultato);
         schermo=findViewById(R.id.display);
+        title=findViewById(R.id.benvenuto);
         schermo.setShowSoftInputOnFocus(false); /*Imposta un valore che indica se il metodo di
                                                  input soft verrà reso visibile quando questo
                                                   TextView viene messo a punto. L'impostazione
                                                   predefinita è true */
+        Intent i=getIntent();
+        String nickname=i.getStringExtra("nickname");
+        title.setText(String.format("%s %s","Ciao",nickname));
         //assegnamento variabile
         drawerLayout=findViewById(R.id.drawer_layout);
 

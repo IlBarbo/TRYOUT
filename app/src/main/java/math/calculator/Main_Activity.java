@@ -28,6 +28,7 @@ public class Main_Activity extends AppCompatActivity {
 
                 if(nickname.getText().toString().length()>=5){
                     Intent apricalc= new Intent(Main_Activity.this,Activity_calc.class);
+                    apricalc.putExtra("nickname", nickname.getText().toString());
                     startActivity(apricalc);
                 }
                 else{ //to do pop up per avvisare l'utente che la lunghezza minima è 5
@@ -37,4 +38,5 @@ public class Main_Activity extends AppCompatActivity {
             }
         });
     }
+
 }
