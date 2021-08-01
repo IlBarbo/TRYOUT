@@ -22,10 +22,13 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
+
             <include layout="@layout/main_toolbar" />
+
             <android.support.constraint.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
+
                 <TextView
                     android:id="@+id/risultato"
                     android:layout_width="wrap_content"
@@ -339,233 +342,286 @@
 
                 </android.support.constraint.ConstraintLayout>
 
-                <android.support.constraint.ConstraintLayout
+                <ScrollView
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
+                    android:layout_height="250dp"
+                    android:layout_weight="1"
+                    android:fillViewport="true"
+                    android:orientation="vertical"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/tableLayout"
-                    app:layout_constraintStart_toStartOf="parent">
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:context=".Activity_calc">
 
-                    <Button
-                        android:id="@+id/seno"
-                        android:layout_width="0dp"
-                        android:layout_height="40dp"
-                        android:background="@drawable/botton_circle"
-                        android:onClick="seno"
-                        android:text="@string/seno"
-                        android:textAllCaps="false"
-                        android:textColor="@color/tanAccent"
-                        android:textSize="15sp"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                    <android.support.constraint.ConstraintLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/tableLayout"
+                        app:layout_constraintStart_toStartOf="parent">
 
-                    <Button
-                        android:id="@+id/coseno"
-                        android:layout_width="0dp"
-                        android:layout_height="40dp"
-                        android:layout_marginStart="10dp"
-                        android:background="@drawable/botton_circle"
-                        android:onClick="coseno"
-                        android:text="@string/coseno"
-                        android:textAllCaps="false"
-                        android:textColor="@color/tanAccent"
-                        android:textSize="15sp"
-                        app:layout_constraintStart_toEndOf="@+id/seno"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        <Button
+                            android:id="@+id/seno"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:background="@drawable/botton_circle"
+                            android:onClick="seno"
+                            android:text="@string/seno"
+                            android:textAllCaps="false"
+                            android:textColor="@color/tanAccent"
+                            android:textSize="15sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
 
-                    <Button
-                        android:id="@+id/tangente"
-                        android:layout_width="0dp"
-                        android:layout_height="40dp"
-                        android:layout_marginStart="10dp"
-                        android:background="@drawable/botton_circle"
-                        android:onClick="tangente"
-                        android:text="@string/tangente"
-                        android:textAllCaps="false"
-                        android:textColor="@color/tanAccent"
-                        android:textSize="15sp"
-                        app:layout_constraintStart_toEndOf="@+id/coseno"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        <Button
+                            android:id="@+id/coseno"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_marginStart="10dp"
+                            android:background="@drawable/botton_circle"
+                            android:onClick="coseno"
+                            android:text="@string/coseno"
+                            android:textAllCaps="false"
+                            android:textColor="@color/tanAccent"
+                            android:textSize="15sp"
+                            app:layout_constraintStart_toEndOf="@+id/seno"
+                            app:layout_constraintTop_toTopOf="parent" />
 
-                    <Button
-                        android:id="@+id/arcseno"
-                        android:layout_width="0dp"
-                        android:layout_height="40dp"
-                        android:layout_marginTop="10dp"
-                        android:background="@drawable/botton_circle"
-                        android:onClick="arcseno"
-                        android:text="@string/arcseno"
-                        android:textAllCaps="false"
-                        android:textColor="@color/tanAccent"
-                        android:textSize="15sp"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/seno" />
+                        <Button
+                            android:id="@+id/tangente"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_marginStart="10dp"
+                            android:background="@drawable/botton_circle"
+                            android:onClick="tangente"
+                            android:text="@string/tangente"
+                            android:textAllCaps="false"
+                            android:textColor="@color/tanAccent"
+                            android:textSize="15sp"
+                            app:layout_constraintStart_toEndOf="@+id/coseno"
+                            app:layout_constraintTop_toTopOf="parent" />
 
-                    <Button
-                        android:id="@+id/arccoseno"
-                        android:layout_width="0dp"
-                        android:layout_height="40dp"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginTop="10dp"
-                        android:background="@drawable/botton_circle"
-                        android:onClick="arccoseno"
-                        android:text="@string/arccoseno"
-                        android:textAllCaps="false"
-                        android:textColor="@color/tanAccent"
-                        android:textSize="15sp"
-                        app:layout_constraintStart_toEndOf="@+id/arcseno"
-                        app:layout_constraintTop_toBottomOf="@+id/coseno" />
+                        <Button
+                            android:id="@+id/arcseno"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/botton_circle"
+                            android:onClick="arcseno"
+                            android:text="@string/arcseno"
+                            android:textAllCaps="false"
+                            android:textColor="@color/tanAccent"
+                            android:textSize="15sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/seno" />
 
-                    <Button
-                        android:id="@+id/arctangente"
-                        android:layout_width="0dp"
-                        android:layout_height="40dp"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginTop="10dp"
-                        android:background="@drawable/botton_circle"
-                        android:onClick="arctangente"
-                        android:text="@string/arctangente"
-                        android:textAllCaps="false"
-                        android:textColor="@color/tanAccent"
-                        android:textSize="15sp"
-                        app:layout_constraintStart_toEndOf="@+id/arccoseno"
-                        app:layout_constraintTop_toBottomOf="@+id/tangente" />
+                        <Button
+                            android:id="@+id/arccoseno"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/botton_circle"
+                            android:onClick="arccoseno"
+                            android:text="@string/arccoseno"
+                            android:textAllCaps="false"
+                            android:textColor="@color/tanAccent"
+                            android:textSize="15sp"
+                            app:layout_constraintStart_toEndOf="@+id/arcseno"
+                            app:layout_constraintTop_toBottomOf="@+id/coseno" />
 
-                    <Button
-                        android:id="@+id/logaritmo_naturale"
-                        android:layout_width="0dp"
-                        android:layout_height="40dp"
-                        android:layout_marginTop="10dp"
-                        android:background="@drawable/botton_circle"
-                        android:onClick="logaritmo_naturale"
-                        android:text="@string/logaritmo_naturale"
-                        android:textAllCaps="false"
-                        android:textColor="@color/tanAccent"
-                        android:textSize="15sp"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/arcseno" />
+                        <Button
+                            android:id="@+id/arctangente"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/botton_circle"
+                            android:onClick="arctangente"
+                            android:text="@string/arctangente"
+                            android:textAllCaps="false"
+                            android:textColor="@color/tanAccent"
+                            android:textSize="15sp"
+                            app:layout_constraintStart_toEndOf="@+id/arccoseno"
+                            app:layout_constraintTop_toBottomOf="@+id/tangente" />
 
-                    <Button
-                        android:id="@+id/logaritmo"
-                        android:layout_width="0dp"
-                        android:layout_height="40dp"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginTop="10dp"
-                        android:background="@drawable/botton_circle"
-                        android:onClick="logaritmo"
-                        android:text="@string/logaritmo"
-                        android:textAllCaps="false"
-                        android:textColor="@color/tanAccent"
-                        android:textSize="15sp"
-                        app:layout_constraintStart_toEndOf="@+id/logaritmo_naturale"
-                        app:layout_constraintTop_toBottomOf="@+id/arccoseno" />
+                        <Button
+                            android:id="@+id/logaritmo_naturale"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/botton_circle"
+                            android:onClick="logaritmo_naturale"
+                            android:text="@string/logaritmo_naturale"
+                            android:textAllCaps="false"
+                            android:textColor="@color/tanAccent"
+                            android:textSize="15sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/arcseno" />
 
-                    <Button
-                        android:id="@+id/radice"
-                        android:layout_width="0dp"
-                        android:layout_height="40dp"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginTop="10dp"
-                        android:background="@drawable/botton_circle"
-                        android:onClick="radice"
-                        android:text="@string/radice"
-                        android:textAllCaps="false"
-                        android:textColor="@color/tanAccent"
-                        android:textSize="15sp"
-                        app:layout_constraintStart_toEndOf="@+id/logaritmo"
-                        app:layout_constraintTop_toBottomOf="@+id/arctangente" />
+                        <Button
+                            android:id="@+id/logaritmo"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/botton_circle"
+                            android:onClick="logaritmo"
+                            android:text="@string/logaritmo"
+                            android:textAllCaps="false"
+                            android:textColor="@color/tanAccent"
+                            android:textSize="15sp"
+                            app:layout_constraintStart_toEndOf="@+id/logaritmo_naturale"
+                            app:layout_constraintTop_toBottomOf="@+id/arccoseno" />
 
-                    <Button
-                        android:id="@+id/nepero"
-                        android:layout_width="0dp"
-                        android:layout_height="40dp"
-                        android:layout_marginTop="10dp"
-                        android:background="@drawable/botton_circle"
-                        android:onClick="nepero"
-                        android:text="@string/nepero"
-                        android:textAllCaps="false"
-                        android:textColor="@color/tanAccent"
-                        android:textSize="15sp"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/logaritmo_naturale" />
+                        <Button
+                            android:id="@+id/radice"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/botton_circle"
+                            android:onClick="radice"
+                            android:text="@string/radice"
+                            android:textAllCaps="false"
+                            android:textColor="@color/tanAccent"
+                            android:textSize="15sp"
+                            app:layout_constraintStart_toEndOf="@+id/logaritmo"
+                            app:layout_constraintTop_toBottomOf="@+id/arctangente" />
 
-                    <Button
-                        android:id="@+id/pigreco"
-                        android:layout_width="0dp"
-                        android:layout_height="40dp"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginTop="10dp"
-                        android:background="@drawable/botton_circle"
-                        android:onClick="pigreco"
-                        android:text="@string/pigreco"
-                        android:textAllCaps="false"
-                        android:textColor="@color/tanAccent"
-                        android:textSize="15sp"
-                        app:layout_constraintStart_toEndOf="@+id/nepero"
-                        app:layout_constraintTop_toBottomOf="@+id/logaritmo" />
+                        <Button
+                            android:id="@+id/nepero"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/botton_circle"
+                            android:onClick="nepero"
+                            android:text="@string/nepero"
+                            android:textAllCaps="false"
+                            android:textColor="@color/tanAccent"
+                            android:textSize="15sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/logaritmo_naturale" />
 
-                    <Button
-                        android:id="@+id/modulo"
-                        android:layout_width="0dp"
-                        android:layout_height="40dp"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginTop="10dp"
-                        android:background="@drawable/botton_circle"
-                        android:onClick="modulo"
-                        android:text="@string/modulo"
-                        android:textAllCaps="false"
-                        android:textColor="@color/tanAccent"
-                        android:textSize="15sp"
-                        app:layout_constraintStart_toEndOf="@+id/pigreco"
-                        app:layout_constraintTop_toBottomOf="@+id/radice" />
+                        <Button
+                            android:id="@+id/pigreco"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/botton_circle"
+                            android:onClick="pigreco"
+                            android:text="@string/pigreco"
+                            android:textAllCaps="false"
+                            android:textColor="@color/tanAccent"
+                            android:textSize="15sp"
+                            app:layout_constraintStart_toEndOf="@+id/nepero"
+                            app:layout_constraintTop_toBottomOf="@+id/logaritmo" />
 
-                    <Button
-                        android:id="@+id/primo"
-                        android:layout_width="0dp"
-                        android:layout_height="40dp"
-                        android:layout_marginTop="10dp"
-                        android:background="@drawable/botton_circle"
-                        android:onClick="primo"
-                        android:text="@string/primo"
-                        android:textAllCaps="false"
-                        android:textColor="@color/tanAccent"
-                        android:textSize="15sp"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/nepero" />
+                        <Button
+                            android:id="@+id/modulo"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/botton_circle"
+                            android:onClick="modulo"
+                            android:text="@string/modulo"
+                            android:textAllCaps="false"
+                            android:textColor="@color/tanAccent"
+                            android:textSize="15sp"
+                            app:layout_constraintStart_toEndOf="@+id/pigreco"
+                            app:layout_constraintTop_toBottomOf="@+id/radice" />
 
-                    <Button
-                        android:id="@+id/xQuadrato"
-                        android:layout_width="0dp"
-                        android:layout_height="40dp"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginTop="10dp"
-                        android:background="@drawable/botton_circle"
-                        android:onClick="xQuadro"
-                        android:text="@string/xQuadro"
-                        android:textAllCaps="false"
-                        android:textColor="@color/tanAccent"
-                        android:textSize="15sp"
-                        app:layout_constraintStart_toEndOf="@+id/primo"
-                        app:layout_constraintTop_toBottomOf="@+id/pigreco" />
+                        <Button
+                            android:id="@+id/primo"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/botton_circle"
+                            android:onClick="primo"
+                            android:text="@string/primo"
+                            android:textAllCaps="false"
+                            android:textColor="@color/tanAccent"
+                            android:textSize="15sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/nepero" />
 
-                    <Button
-                        android:id="@+id/potenza"
-                        android:layout_width="0dp"
-                        android:layout_height="40dp"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginTop="10dp"
-                        android:background="@drawable/botton_circle"
-                        android:onClick="esponente"
-                        android:text="@string/potenza"
-                        android:textAllCaps="false"
-                        android:textColor="@color/tanAccent"
-                        android:textSize="15sp"
-                        app:layout_constraintStart_toEndOf="@+id/xQuadrato"
-                        app:layout_constraintTop_toBottomOf="@+id/modulo" />
-                </android.support.constraint.ConstraintLayout>
+                        <Button
+                            android:id="@+id/xQuadrato"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/botton_circle"
+                            android:onClick="xQuadro"
+                            android:text="@string/xQuadro"
+                            android:textAllCaps="false"
+                            android:textColor="@color/tanAccent"
+                            android:textSize="15sp"
+                            app:layout_constraintStart_toEndOf="@+id/primo"
+                            app:layout_constraintTop_toBottomOf="@+id/pigreco" />
+
+                        <Button
+                            android:id="@+id/potenza"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/botton_circle"
+                            android:onClick="esponente"
+                            android:text="@string/potenza"
+                            android:textAllCaps="false"
+                            android:textColor="@color/tanAccent"
+                            android:textSize="15sp"
+                            app:layout_constraintStart_toEndOf="@+id/xQuadrato"
+                            app:layout_constraintTop_toBottomOf="@+id/modulo" />
+                        <Button
+                            android:id="@+id/ciao"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/botton_circle"
+                            android:text="@string/potenza"
+                            android:textAllCaps="false"
+                            android:textColor="@color/tanAccent"
+                            android:textSize="15sp"
+                            app:layout_constraintStart_toEndOf="@+id/parent"
+                            app:layout_constraintTop_toBottomOf="@+id/primo" />
+                        <Button
+                            android:id="@+id/cia"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/botton_circle"
+                            android:text="@string/potenza"
+                            android:textAllCaps="false"
+                            android:textColor="@color/tanAccent"
+                            android:textSize="15sp"
+                            app:layout_constraintStart_toEndOf="@+id/ciao"
+                            app:layout_constraintTop_toBottomOf="@+id/xQuadrato" />
+                        <Button
+                            android:id="@+id/mia"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/botton_circle"
+                            android:text="@string/potenza"
+                            android:textAllCaps="false"
+                            android:textColor="@color/tanAccent"
+                            android:textSize="15sp"
+                            app:layout_constraintStart_toEndOf="@+id/cia"
+                            app:layout_constraintTop_toBottomOf="@+id/potenza" />
+                    </android.support.constraint.ConstraintLayout>
+                </ScrollView>
             </android.support.constraint.ConstraintLayout>
+
+
         </LinearLayout>
+
         <RelativeLayout
             android:layout_width="300dp"
             android:layout_height="match_parent"
@@ -579,13 +635,6 @@
 
 
     </android.support.v4.widget.DrawerLayout>
-
-
-
-
-
-
-
 
 
 </android.support.constraint.ConstraintLayout>

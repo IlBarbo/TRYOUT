@@ -20,7 +20,7 @@ public class Activity_calc extends AppCompatActivity {
     private TextView risultato;
     private EditText schermo;
     private TextView title;
-   DrawerLayout drawerLayout;
+    DrawerLayout drawerLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
