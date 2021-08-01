@@ -54,6 +54,10 @@
     <string name="potenza">x<sup><small>y</small></sup></string>
     <string name="primo">prime</string>
     <string name="benvenuto">Benvenuto</string>
+    <string name="scrivix">x</string>
+    <string name="scriviy">y</string>
+    <string name="funzione">f(x)</string>
+    <string name="fattoriale">!</string>
 
 
 </resources>

@@ -369,7 +369,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.978"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:srcCompat="@drawable/spazio" />
+                    app:srcCompat="@drawable/ic_spazio" />
 
                 <TextView
                     android:id="@+id/risultato"

@@ -45,9 +45,9 @@ public class Grafico extends AppCompatActivity {
         //crea l'activity
         recreate();
     }
-    public void Clickcronologia(View view){
+    /*public void Clickcronologia(View view){
         redirectActivity(this,Cronologia.class);
-    }
+    }*/
     public void ClickLogout(View view){
         logout(this);
     }

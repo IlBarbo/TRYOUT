@@ -68,10 +68,10 @@ public class Activity_calc extends AppCompatActivity {
             recreate();
         }
 
-        public void Clickcronologia (View view){
+        /*public void Clickcronologia (View view){
             redirectActivity(this, Cronologia.class);
         }
-
+*/
         public void Clickgrafico (View view){
             redirectActivity(this, Grafico.class);
         }
@@ -281,6 +281,15 @@ public class Activity_calc extends AppCompatActivity {
 
     public void xQuadro(View view) {
         upText("^(2)");
+    }
+    public void scriviX(View view) {
+        upText("x");
+    }
+    public void fattoriale(View view) {
+        upText("!");
+    }
+    public void funzione(View view) {
+        upText("f(");
     }
 
 
