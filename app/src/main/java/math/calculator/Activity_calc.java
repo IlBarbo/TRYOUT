@@ -21,6 +21,10 @@ public class Activity_calc extends AppCompatActivity {
     private EditText schermo;
     private TextView title;
     DrawerLayout drawerLayout;
+    //creare la finestra della cronologia
+    private AlertDialog.Builder dialogBuilder;
+    private AlertDialog dialog;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +42,12 @@ public class Activity_calc extends AppCompatActivity {
         //assegnamento variabile
         drawerLayout=findViewById(R.id.drawer_layout);
 
+    }
+
+    //creo una finestra di dialogo
+    public void createNewContactDialog(){
+        dialogBuilder=new AlertDialog.Builder(this);
+        final View contactPopupView=getLayoutInflater().inflate(R.layout.popup,null);
     }
 
         //navigation drawer
@@ -68,10 +78,10 @@ public class Activity_calc extends AppCompatActivity {
             recreate();
         }
 
-        /*public void Clickcronologia (View view){
-            redirectActivity(this, Cronologia.class);
+        public void clickConvertitore (View view){
+            redirectActivity(this, Convertitore.class);
         }
-*/
+
         public void Clickgrafico (View view){
             redirectActivity(this, Grafico.class);
         }
@@ -293,4 +303,7 @@ public class Activity_calc extends AppCompatActivity {
     }
 
 
+    public void newCalc(View view) {
+        redirectActivity(this, Activity_calc.class);
+    }
 }
