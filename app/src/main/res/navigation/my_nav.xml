@@ -3,18 +3,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/my_nav"
-    app:startDestination="@id/secondFragment">
+    app:startDestination="@id/firstFragment">
+    <fragment
+        android:id="@+id/firstFragment"
+        android:name="math.calculator.FirstFragment"
+        android:label="Lunghezza"
+        tools:layout="@layout/fragment_first" />
 
     <fragment
         android:id="@+id/secondFragment"
         android:name="math.calculator.SecondFragment"
         android:label="Massa"
         tools:layout="@layout/fragment_second" />
-    <fragment
-        android:id="@+id/firstFragment"
-        android:name="math.calculator.FirstFragment"
-        android:label="Lunghezza"
-        tools:layout="@layout/fragment_first" />
+
     <fragment
         android:id="@+id/thirdFragment"
         android:name="math.calculator.ThirdFragment"
