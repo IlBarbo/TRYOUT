@@ -13,4 +13,8 @@
         android:id="@+id/thirdFragment"
         android:title="Tempo"
         android:icon="@drawable/ic_timer"/>
+    <item
+        android:id="@+id/fourthFragment"
+        android:title="Angolo"
+        android:icon="@drawable/ic_angolo"/>
 </menu>

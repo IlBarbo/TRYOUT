@@ -73,7 +73,7 @@ public class Activity_calc extends AppCompatActivity {
 
             }
         }
-        public void ClickHome (View view)
+        public void clickHome(View view)
         {
             recreate();
         }
@@ -82,12 +82,12 @@ public class Activity_calc extends AppCompatActivity {
             redirectActivity(this, Convertitore.class);
         }
 
-        public void Clickgrafico (View view){
+        public void clickGrafico(View view){
             redirectActivity(this, Grafico.class);
         }
 
 
-        public void ClickLogout (View view){
+        public void clickLogout(View view){
             logout(this);
         }
 
@@ -200,7 +200,15 @@ public class Activity_calc extends AppCompatActivity {
         upText("-");
     }
     public void addsub(View v){
-        upText("+/-");
+        String user=schermo.getText().toString();
+        String a=user.substring(0,1);
+        if(a.equals("-")) {
+            clear(v);
+            upText(user.substring(1));
+        }else{
+            clear(v);
+            upText("-"+user);
+        }
     }
     public void punto(View v){
         upText(".");

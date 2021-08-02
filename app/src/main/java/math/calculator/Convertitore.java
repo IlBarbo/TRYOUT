@@ -57,7 +57,7 @@ public class Convertitore extends AppCompatActivity {
 
         }
     }
-    public void ClickHome (View view)
+    public void clickHome (View view)
     {
         redirectActivity(this, Activity_calc.class);
     }
@@ -66,12 +66,12 @@ public class Convertitore extends AppCompatActivity {
         recreate();
     }
 
-    public void Clickgrafico (View view){
+    public void clickGrafico (View view){
         redirectActivity(this, Grafico.class);
     }
 
 
-    public void ClickLogout (View view){
+    public void clickLogout (View view){
         logout(this);
     }
 

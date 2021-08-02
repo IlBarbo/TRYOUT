@@ -10,27 +10,31 @@ import android.os.Bundle;
 import android.view.View;
 
 public class Grafico extends AppCompatActivity {
-    DrawerLayout drawerLayout;
+   DrawerLayout drawerLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.grafico);
-       drawerLayout=findViewById(R.id.drawer_layout);
+      drawerLayout=findViewById(R.id.drawer_layout);
     }
-    public void ClickMenu(View view)
+
+    //navigation drawer
+    public void ClickMenu (View view)
     {
-        //deve
         //apro drawer
         openDrawer(drawerLayout);
     }
+
     public static void openDrawer (DrawerLayout drawerLayout){
         //apro drawer layout
         drawerLayout.openDrawer(GravityCompat.START);
     }
-    public void ClickLogo(View view){
+    public void ClickLogo (View view)
+    {
         closeDrawer(drawerLayout);
     }
+
     public static void closeDrawer (DrawerLayout drawerLayout){
         if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
             //quando il drawer è aperto lo chiudo
@@ -38,19 +42,24 @@ public class Grafico extends AppCompatActivity {
 
         }
     }
-    public void ClickHome(View view){
+    public void clickHome(View view)
+    {
         redirectActivity(this,Activity_calc.class);
     }
-    public void Clickgrafico(View view){
-        //crea l'activity
-        recreate();
+
+    public void clickConvertitore (View view){
+        redirectActivity(this, Convertitore.class);
     }
-    /*public void Clickcronologia(View view){
-        redirectActivity(this,Cronologia.class);
-    }*/
-    public void ClickLogout(View view){
+
+    public void clickGrafico(View view){
+     recreate();
+    }
+
+
+    public void clickLogout(View view){
         logout(this);
     }
+
     public static void logout (Activity activity_drawer){
         AlertDialog.Builder builder = new AlertDialog.Builder(activity_drawer);
         builder.setTitle("Logout");
@@ -63,10 +72,11 @@ public class Grafico extends AppCompatActivity {
         builder.setNegativeButton("N0", (dialog, which) -> dialog.dismiss());
         builder.show();
     }
-    public void onPause(){
+    protected void onPause () {
         super.onPause();
-        Activity_calc.closeDrawer(drawerLayout);
+        closeDrawer(drawerLayout);
     }
+
     public static void redirectActivity (Activity activity, Class aClass){
         Intent intent = new Intent(activity, aClass);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -74,7 +84,5 @@ public class Grafico extends AppCompatActivity {
         activity.startActivity(intent);
 
     }
-
-
 
 }

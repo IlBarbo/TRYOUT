@@ -9,7 +9,7 @@
         android:id="@+id/secondFragment"
         android:name="math.calculator.SecondFragment"
         android:label="Massa"
-        tools:layout="@layout/fragment_2" />
+        tools:layout="@layout/fragment_second" />
     <fragment
         android:id="@+id/firstFragment"
         android:name="math.calculator.FirstFragment"
@@ -20,4 +20,9 @@
         android:name="math.calculator.ThirdFragment"
         android:label="Tempo"
         tools:layout="@layout/fragment_third" />
+    <fragment
+        android:id="@+id/fourthFragment"
+        android:name="math.calculator.FourthFragment"
+        android:label="Angolo"
+        tools:layout="@layout/fragment_fourth" />
 </navigation>

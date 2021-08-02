@@ -58,7 +58,17 @@
     <string name="scriviy">y</string>
     <string name="funzione">f(x)</string>
     <string name="fattoriale">!</string>
+    <string name="from">From</string>
+    <string name="to">To</string>
+    <string-array name="lunghezza">
+        <item>metri</item>
+        <item>centimetri</item>
+        <item>millimetri</item>
+        <item>miglio</item>
+        <item>feet</item>
+        <item>inches</item>
 
+    </string-array>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
