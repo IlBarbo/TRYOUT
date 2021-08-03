@@ -48,7 +48,7 @@
                     android:ems="10"
                     android:hint="@string/display"
                     android:importantForAutofill="no"
-                    android:inputType="textPersonName"
+                    android:inputType="number"
                     android:paddingStart="20dp"
                     android:paddingEnd="20dp"
                     android:textAlignment="textEnd"

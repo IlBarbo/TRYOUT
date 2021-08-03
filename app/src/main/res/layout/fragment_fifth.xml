@@ -8,11 +8,11 @@
 
 
     <TextView
-        android:id="@+id/tempo"
+        android:id="@+id/temperatura"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="88dp"
-        android:text="@string/tempo"
+        android:text="@string/temperatura"
         android:layout_gravity="center"
         android:textColor="@color/tanAccent"
         android:textSize="27sp"
@@ -24,7 +24,6 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:layout_margin="16dp">
-
         <Space
             android:layout_width="match_parent"
             android:layout_height="50dp" />
@@ -42,7 +41,7 @@
             />
 
         <Spinner
-            android:id="@+id/spinner5"
+            android:id="@+id/spinner9"
             android:layout_width="148dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -64,7 +63,7 @@
             />
 
         <Spinner
-            android:id="@+id/spinner6"
+            android:id="@+id/spinner10"
             android:layout_width="148dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -84,7 +83,7 @@
             android:inputType="number" />
 
         <Button
-            android:id="@+id/converti1"
+            android:id="@+id/converti5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/botton_circle"

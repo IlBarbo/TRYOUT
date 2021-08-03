@@ -26,4 +26,9 @@
         android:name="math.calculator.FourthFragment"
         android:label="Angolo"
         tools:layout="@layout/fragment_fourth" />
+    <fragment
+        android:id="@+id/fifthFragment"
+        android:name="math.calculator.FifthFragment"
+        android:label="fragment_fifth"
+        tools:layout="@layout/fragment_fifth" />
 </navigation>

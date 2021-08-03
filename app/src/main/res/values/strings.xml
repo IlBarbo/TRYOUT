@@ -60,6 +60,13 @@
     <string name="fattoriale">!</string>
     <string name="from">From</string>
     <string name="to">To</string>
+    <string name="lunghezza">LUNGHEZZA</string>
+    <string name="massa">MASSA</string>
+    <string name="tempo">TEMPO</string>
+    <string name="angolo">ANGOLO</string>
+    <string name="temperatura">TEMPERATURA</string>
+    <string name="converti">CONVERTI</string>
+
     <string-array name="lunghezza">
         <item>metri</item>
         <item>centimetri</item>
@@ -67,10 +74,48 @@
         <item>miglio</item>
         <item>feet</item>
         <item>inches</item>
+    </string-array>
+    <string-array name="massa">
+        <item>chilogrammi</item>
+        <item>grammi</item>
+        <item>decagrammo</item>
+        <item>ettogrammo</item>
+        <item>quintale</item>
+        <item>tonnellata</item>
+        <item>decigrammo</item>
+        <item>centigrammo</item>
+        <item>milligrammo</item>
+        <item>microgrammo</item>
+        <item>nanogrammo</item>
+        <item>picogrammo</item>
+
+    </string-array>
+    <string-array name="tempo">
+        <item>millisecondi</item>
+        <item>secondi</item>
+        <item>minuti</item>
+        <item>ore</item>
+        <item>giorni</item>
+        <item>anni</item>
+
+    </string-array>
+    <string-array name="angolo">
+        <item>gradi</item>
+        <item>radianti</item>
+        <item>sessagesimale</item>
+        <item>decimale</item>
+        <item>centesimale</item>
+        <item>millesimale</item>
+
+    </string-array>
+    <string-array name="temperatura">
+        <item>Celsius</item>
+        <item>grado Fahrenheit</item>
+        <item>Kelvin</item>
+
 
     </string-array>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-
 
 </resources>

@@ -17,4 +17,8 @@
         android:id="@+id/fourthFragment"
         android:title="Angolo"
         android:icon="@drawable/ic_angolo"/>
+    <item
+        android:id="@+id/fifthFragment"
+        android:title="Temperatura"
+        android:icon="@drawable/ic_temperatura"/>
 </menu>
