@@ -12,7 +12,7 @@ public class SecondFragment extends Fragment {
 
 
     Spinner spinnerMassFrom,spinnerMassTo;
-//Button convertiLun;
+    //Button convertiLun;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

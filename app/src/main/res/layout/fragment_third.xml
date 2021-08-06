@@ -97,7 +97,7 @@
             />
 
         <EditText
-            android:id="@+id/editTextNumber"
+            android:id="@+id/risultatoconv"
             android:layout_width="190dp"
             android:layout_height="wrap_content"
             android:ems="10"
