@@ -102,10 +102,9 @@
     <string-array name="angolo">
         <item>gradi</item>
         <item>radianti</item>
-        <item>sessagesimale</item>
-        <item>decimale</item>
-        <item>centesimale</item>
-        <item>millesimale</item>
+        <item>sestante</item>
+        <item>giro</item>
+        <item>mils</item>
 
     </string-array>
     <string-array name="temperatura">

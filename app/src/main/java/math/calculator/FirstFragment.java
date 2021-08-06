@@ -14,8 +14,6 @@ import android.widget.TextView;
 
 import com.digidemic.unitof.UnitOf;
 
-import org.w3c.dom.Text;
-
 
 public class FirstFragment extends Fragment {
 
@@ -31,9 +29,9 @@ Spinner spinnerLunFrom,spinnerLunTo;
 
             View v = inflater.inflate(R.layout.fragment_first, container, false);
 
-            final Button convertiLun= v.findViewById(R.id.converti1);
+            final Button convertiLun= v.findViewById(R.id.converti);
 
-            number=v.findViewById(R.id.TextNumber2);
+            number=v.findViewById(R.id.TextNumber1);
             messaggioerrore= v.findViewById(R.id.messaggioerrore);
             risultato=v.findViewById(R.id.risultatoconv);
 

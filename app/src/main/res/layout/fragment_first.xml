@@ -75,7 +75,7 @@
             android:layout_marginBottom="30dp" />
 
         <EditText
-            android:id="@+id/TextNumber2"
+            android:id="@+id/TextNumber1"
             android:layout_width="190dp"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -93,10 +93,10 @@
            android:layout_gravity="center"
            android:textColor="@color/red"
            android:visibility="invisible"
-           android:layout_marginBottom="40dp"/>
+           android:layout_marginBottom="20dp"/>
 
         <Button
-            android:id="@+id/converti1"
+            android:id="@+id/converti"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/botton_circle"
@@ -113,6 +113,8 @@
             android:layout_width="190dp"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:textSize="18sp"
+            android:textColor="@color/black"
             android:layout_gravity="center"
             android:layout_marginStart="130dp"
             android:layout_marginEnd="130dp"

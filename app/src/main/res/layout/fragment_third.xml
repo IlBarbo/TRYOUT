@@ -73,18 +73,31 @@
             android:layout_marginBottom="30dp" />
 
         <EditText
-            android:id="@+id/TextNumber2"
+            android:id="@+id/TextNumber3"
             android:layout_width="190dp"
             android:layout_height="wrap_content"
             android:ems="10"
             android:layout_gravity="center"
-            android:layout_marginBottom="30dp"
+            android:layout_marginBottom="10dp"
+            android:inputType="numberDecimal"
             android:layout_marginStart="130dp"
             android:layout_marginEnd="130dp"
-            android:inputType="number" />
+           />
+        <TextView
+            android:id="@+id/messaggioerrore3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="valore non valido"
+            android:layout_gravity="center"
+            android:layout_marginBottom="20dp"
+            android:textColor="@color/red"
+            android:visibility="invisible"
+
+            />
+
 
         <Button
-            android:id="@+id/converti1"
+            android:id="@+id/converti3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/botton_circle"
@@ -96,14 +109,16 @@
 
             />
 
-        <EditText
-            android:id="@+id/risultatoconv"
+        <TextView
+            android:id="@+id/risultatoconv3"
             android:layout_width="190dp"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:textSize="18sp"
+            android:textColor="@color/black"
             android:layout_gravity="center"
             android:layout_marginStart="130dp"
             android:layout_marginEnd="130dp"
-            android:inputType="number" />
+           />
     </LinearLayout>
 </LinearLayout>
