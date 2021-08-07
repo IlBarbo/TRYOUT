@@ -1,0 +1,72 @@
+package math.calculator;
+
+import android.content.ContentValues;
+import android.content.Context;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
+import android.widget.Toast;
+
+public class DBHelper extends SQLiteOpenHelper {
+    private  Context context;
+
+    private static final String DATABASE_NAME="cronologia.db";
+    private static final String TABLE_NAME="history";
+    private static final String ESPRESSIONE ="espressione";
+    private static final String RISULTATO ="risultato";
+    private  static final int VERSION_NUMBER=1;
+    final String CREATE_TABLE =" CREATE TABLE " + TABLE_NAME +" ( " + ESPRESSIONE + "  TEXT primary key, " + RISULTATO + " TEXT); ";
+
+
+    public DBHelper( Context context) {
+        super(context, DATABASE_NAME, null, VERSION_NUMBER);
+        this.context=context;
+    }
+
+    @Override
+    public void onCreate(SQLiteDatabase db) {
+
+            db.execSQL(CREATE_TABLE);
+
+    }
+
+    @Override
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
+        onCreate(db);
+    }
+
+
+    public Boolean insertData(String espressione,String risultato){
+            SQLiteDatabase db = this.getWritableDatabase();
+            ContentValues contentValues = new ContentValues();
+            contentValues.put("espressione", espressione);
+            contentValues.put("risultato", risultato);
+            long ris = db.insert(TABLE_NAME, "null", contentValues);
+            if (ris == -1) {
+                //crea una finestra di dialogo
+                Toast.makeText(context,"Failed",Toast.LENGTH_SHORT).show();
+                return false;
+            } else {
+                return true;
+            }
+        }
+
+        Cursor readData(){
+        String query="SELECT * FROM "+TABLE_NAME;
+        SQLiteDatabase db= this.getReadableDatabase();
+
+        Cursor cursor=null;
+        if(db != null){
+           cursor= db.rawQuery(query,null);
+        }
+        return cursor;
+        }
+
+
+
+
+
+
+    }
+

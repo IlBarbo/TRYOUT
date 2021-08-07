@@ -9,7 +9,10 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.SpannableStringBuilder;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.view.View;
 
@@ -19,11 +22,13 @@ public class Activity_calc extends AppCompatActivity {
 
     private TextView risultato;
     private EditText schermo;
+    Button uguale;
     private TextView title;
     DrawerLayout drawerLayout;
     //creare la finestra della cronologia
     private AlertDialog.Builder dialogBuilder;
     private AlertDialog dialog;
+    ImageView cronologiaButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,10 +37,30 @@ public class Activity_calc extends AppCompatActivity {
         risultato=findViewById(R.id.risultato);
         schermo=findViewById(R.id.display);
         title=findViewById(R.id.benvenuto);
+        uguale=findViewById(R.id.uguale);
         schermo.setShowSoftInputOnFocus(false); /*Imposta un valore che indica se il metodo di
                                                  input soft verrà reso visibile quando questo
                                                   TextView viene messo a punto. L'impostazione
                                                   predefinita è true */
+        uguale.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                uguale(v);
+               DBHelper dbHelper= new DBHelper(Activity_calc.this);
+               dbHelper.insertData(risultato.getText().toString().trim(),schermo.getText().toString().trim());
+            }
+
+        });
+
+        cronologiaButton=findViewById(R.id.cronologia);
+        cronologiaButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(Activity_calc.this,Cronologia.class);
+                startActivity(intent);
+            }
+
+        });
         Intent i=getIntent();
         String nickname=i.getStringExtra("nickname");
         title.setText(String.format("%s %s","Ciao",nickname));
