@@ -33,15 +33,14 @@
 
         <TextView
             android:id="@+id/textFrom1"
-            android:layout_width="match_parent"
+            android:layout_width="98dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="155dp"
             android:layout_marginEnd="155dp"
             android:layout_marginBottom="10dp"
-            android:textColor="@color/tanAccent"
             android:text="@string/from"
-            android:textSize="23sp"
-             />
+            android:textColor="@color/tanAccent"
+            android:textSize="23sp" />
 
         <Spinner
             android:id="@+id/spinner1"
