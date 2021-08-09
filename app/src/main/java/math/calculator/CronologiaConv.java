@@ -34,14 +34,14 @@ public class CronologiaConv extends AppCompatActivity
         tonum=new ArrayList<>();
         deleteAllData=findViewById(R.id.deleteAll);
         addData=findViewById(R.id.addData);
-        insertData();
-        displayData();
+        insertDataConve();
+        displayDataConve();
         customAdapter=new CustomAdapter(CronologiaConv.this,fromnum,tonum);
         recyclerView.setAdapter(customAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(CronologiaConv.this));
 
     }
-    void displayData(){
+    void displayDataConve(){
         Cursor cursor=dbHelperConv.readData();
         if(cursor.getCount() == 0){
             Toast.makeText(this,"NO DATA",Toast.LENGTH_SHORT).show();
@@ -53,7 +53,7 @@ public class CronologiaConv extends AppCompatActivity
         }
     }
 
-    public void insertData(){
+    public void insertDataConve(){
 
         addData.setOnClickListener(new View.OnClickListener() {
             @Override

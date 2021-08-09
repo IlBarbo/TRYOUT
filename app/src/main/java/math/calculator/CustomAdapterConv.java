@@ -10,14 +10,14 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class CustomAdapterConv {
+public class CustomAdapterConv extends RecyclerView.Adapter<CustomAdapterConv.MyViewHolder>{
 
 
-    public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHolder> {
+
         private Context context;
         private ArrayList fromnum, tonum;
 
-        CustomAdapter(Context context, ArrayList fromnum, ArrayList tonum) {
+    CustomAdapterConv(Context context, ArrayList fromnum, ArrayList tonum) {
             this.context = context;
             this.fromnum = fromnum;
             this.tonum = tonum;
@@ -31,12 +31,13 @@ public class CustomAdapterConv {
             return new MyViewHolder(view);
         }
 
-        @Override
-        public void onBindViewHolder(@NonNull MyViewHolder holder, int i) {
-            holder.from_txt.setText(String.valueOf(fromnum.get(i)));
-            holder.to_txt.setText(String.valueOf(tonum.get(i)));
+    @Override
+    public void onBindViewHolder(MyViewHolder holder, int i) {
+        holder.from_txt.setText(String.valueOf(fromnum.get(i)));
+        holder.to_txt.setText(String.valueOf(tonum.get(i)));
+    }
 
-        }
+
 
         @Override
         public int getItemCount() {
@@ -54,4 +55,4 @@ public class CustomAdapterConv {
             }
         }
     }
-}
+

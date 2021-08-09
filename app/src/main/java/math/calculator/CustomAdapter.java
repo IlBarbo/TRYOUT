@@ -18,6 +18,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
         this.espressione=espressione;
         this.risultato=risultato;
     }
+    //rappresenta un nuovo elemento
    @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup holder, int i) {
@@ -25,7 +26,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
        View view=inflater.inflate(R.layout.row_cronologia,holder,false);
        return new MyViewHolder(view);
     }
-
+    //visualizza i dati nella posizione specifica
     @Override
     public void onBindViewHolder(@NonNull  MyViewHolder holder, int i) {
     holder.espressione_txt.setText(String.valueOf(espressione.get(i)));

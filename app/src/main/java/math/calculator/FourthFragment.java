@@ -59,7 +59,7 @@ public class FourthFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 DBHelperConv dbHelperConv= new DBHelperConv(getActivity());
-                dbHelperConv.insertData(number.getText().toString().trim(),risultato.getText().toString().trim());
+                dbHelperConv.insertDataConv(number.getText().toString().trim(),risultato.getText().toString().trim());
 
                 double c = 0;
                 try{

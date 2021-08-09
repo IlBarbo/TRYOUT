@@ -34,7 +34,7 @@ public class DBHelperConv extends SQLiteOpenHelper {
     }
 
 
-    public Boolean insertData(String fromnum,String tonum){
+    public Boolean insertDataConv(String fromnum, String tonum){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put("fromnum", fromnum);

@@ -1,6 +1,5 @@
 package math.calculator;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -70,7 +69,7 @@ Spinner spinnerLunFrom,spinnerLunTo;
 
 
                             DBHelperConv dbHelperConv= new DBHelperConv(getActivity());
-                           dbHelperConv.insertData(number.getText().toString().trim(),risultato.getText().toString().trim());
+                           dbHelperConv.insertDataConv(number.getText().toString().trim(),risultato.getText().toString().trim());
 
 
                     double c = 0;
