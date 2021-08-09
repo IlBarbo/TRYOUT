@@ -83,6 +83,7 @@
                             android:layout_width="0dp"
                             android:layout_height="60dp"
                             android:layout_margin="5dp"
+                            android:onClick="esponente"
                             android:layout_weight="1"
                             android:background="@drawable/botton_circle"
                             android:text="@string/esponente"

@@ -58,6 +58,8 @@ public class ThirdFragment extends Fragment {
         convertiTemp.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
+                DBHelperConv dbHelperConv= new DBHelperConv(getActivity());
+                dbHelperConv.insertData(number.getText().toString().trim(),risultato.getText().toString().trim());
 
                 double c = 0;
                 try{

@@ -9,6 +9,10 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -20,6 +24,9 @@ public class Convertitore extends AppCompatActivity {
 
 
     DrawerLayout drawerLayout;
+    ImageView cronologiaButton;
+
+
     @Override
     protected  void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,10 +34,23 @@ public class Convertitore extends AppCompatActivity {
         //menu
         drawerLayout=findViewById(R.id.drawer_layout);
 
+
         //BottomNavigationView
        BottomNavigationView bottomNavigationView= findViewById(R.id.bottomNavigationView);
         NavController navController= Navigation.findNavController(this,R.id.fragment);
         NavigationUI.setupWithNavController(bottomNavigationView,navController);
+        //cronologia
+        cronologiaButton=findViewById(R.id.cronologia);
+        cronologiaButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(Convertitore.this, CronologiaConv.class);
+                startActivity(intent);
+            }
+
+        });
+
+
 
     }
 

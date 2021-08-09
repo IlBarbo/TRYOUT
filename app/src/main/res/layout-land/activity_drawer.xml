@@ -23,7 +23,9 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <include layout="@layout/main_toolbar" />
+            <include
+                layout="@layout/main_toolbar"
+                 />
 
             <android.support.constraint.ConstraintLayout
                 android:layout_width="match_parent"
@@ -44,7 +46,6 @@
                     android:id="@+id/display"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
                     android:ems="10"
                     android:hint="@string/display"
                     android:importantForAutofill="no"

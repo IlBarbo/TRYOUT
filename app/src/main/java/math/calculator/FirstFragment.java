@@ -1,5 +1,6 @@
 package math.calculator;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -9,13 +10,14 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.digidemic.unitof.UnitOf;
 
 
-public class FirstFragment extends Fragment {
+public class FirstFragment extends Fragment  {
 
 
 Spinner spinnerLunFrom,spinnerLunTo;
@@ -23,6 +25,8 @@ Spinner spinnerLunFrom,spinnerLunTo;
     protected EditText number;
     protected TextView risultato;
     TextView messaggioerrore;
+
+
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
@@ -35,7 +39,7 @@ Spinner spinnerLunFrom,spinnerLunTo;
             messaggioerrore= v.findViewById(R.id.messaggioerrore);
             risultato=v.findViewById(R.id.risultatoconv);
 
-
+            ImageView cronologia;
 
             //creo il primo spinner
              spinnerLunFrom = (Spinner) v.findViewById(R.id.spinner1);
@@ -63,6 +67,11 @@ Spinner spinnerLunFrom,spinnerLunTo;
             convertiLun.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View v) {
+
+
+                            DBHelperConv dbHelperConv= new DBHelperConv(getActivity());
+                           dbHelperConv.insertData(number.getText().toString().trim(),risultato.getText().toString().trim());
+
 
                     double c = 0;
                     try{

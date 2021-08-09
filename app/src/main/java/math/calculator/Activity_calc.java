@@ -2,7 +2,6 @@ package math.calculator;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -11,7 +10,6 @@ import android.os.Bundle;
 import android.text.SpannableStringBuilder;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.view.View;
@@ -56,7 +54,7 @@ public class Activity_calc extends AppCompatActivity {
         cronologiaButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(Activity_calc.this,Cronologia.class);
+                Intent intent=new Intent(Activity_calc.this, CronologiaCalc.class);
                 startActivity(intent);
             }
 
@@ -335,8 +333,10 @@ public class Activity_calc extends AppCompatActivity {
         upText("f(");
     }
 
-
+/*
     public void newCalc(View view) {
         redirectActivity(this, Activity_calc.class);
     }
+    */
+
 }
