@@ -13,7 +13,6 @@ import java.util.ArrayList;
 public class CustomAdapterConv extends RecyclerView.Adapter<CustomAdapterConv.MyViewHolder>{
 
 
-
         private Context context;
         private ArrayList fromnum, tonum;
 

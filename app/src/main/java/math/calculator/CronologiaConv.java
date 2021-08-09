@@ -20,7 +20,7 @@ public class CronologiaConv extends AppCompatActivity
     private ImageButton deleteAllData,addData;
     RecyclerView recyclerView;
     ArrayList<String> fromnum,tonum;
-    CustomAdapter customAdapter;
+    CustomAdapterConv customAdapterConv;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,8 +36,8 @@ public class CronologiaConv extends AppCompatActivity
         addData=findViewById(R.id.addData);
         insertDataConve();
         displayDataConve();
-        customAdapter=new CustomAdapter(CronologiaConv.this,fromnum,tonum);
-        recyclerView.setAdapter(customAdapter);
+        customAdapterConv=new CustomAdapterConv(CronologiaConv.this,fromnum,tonum);
+        recyclerView.setAdapter(customAdapterConv);
         recyclerView.setLayoutManager(new LinearLayoutManager(CronologiaConv.this));
 
     }
