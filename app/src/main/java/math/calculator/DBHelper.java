@@ -15,6 +15,7 @@ public class DBHelper extends SQLiteOpenHelper {
     private static final String ESPRESSIONE ="espressione";
     private static final String RISULTATO ="risultato";
     private  static final int VERSION_NUMBER=1;
+
     final String CREATE_TABLE =" CREATE TABLE " + TABLE_NAME +" ( " + ESPRESSIONE + "  TEXT primary key, " + RISULTATO + " TEXT); ";
 
 

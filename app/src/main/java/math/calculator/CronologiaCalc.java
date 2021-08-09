@@ -89,12 +89,16 @@ public class CronologiaCalc extends AppCompatActivity {
 					/*
                     con finish(); chiudo direttamente R.layout.popup
                      dopo aver eliminato la cronologia
-                    finish();
-					*/
-                        //Toast.makeText(Cronologia.this,"Cronologia eliminata", Toast.LENGTH_SHORT).show();
+
+					 */
+                   // finish();
+
+                        //  Toast.makeText(getBaseContext(),"Cronologia eliminata", Toast.LENGTH_SHORT).show();
                     });
                     cronologia.setNegativeButton("N0", (dialog, which) -> dialog.dismiss());
                     cronologia.show();
+
+
                 } else {
 
                             Toast.makeText(getBaseContext(), "CRONOLOGIA VUOTA", Toast.LENGTH_SHORT).show();

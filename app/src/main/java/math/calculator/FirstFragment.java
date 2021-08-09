@@ -68,8 +68,7 @@ Spinner spinnerLunFrom,spinnerLunTo;
                 public void onClick(View v) {
 
 
-                            DBHelperConv dbHelperConv= new DBHelperConv(getActivity());
-                           dbHelperConv.insertDataConv(number.getText().toString().trim(),risultato.getText().toString().trim());
+
 
 
                     double c = 0;
@@ -246,6 +245,8 @@ Spinner spinnerLunFrom,spinnerLunTo;
                                 break;
                         }
                         risultato.setText(String.valueOf(c));
+                        DBHelperConv dbHelperConv= new DBHelperConv(getActivity());
+                        dbHelperConv.insertDataConv(number.getText().toString().trim(),risultato.getText().toString().trim());
 
                     }catch (NumberFormatException e){
 

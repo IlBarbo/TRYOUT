@@ -23,8 +23,6 @@ public class DBHelperConv extends SQLiteOpenHelper {
         this.context=context;
     }
 
-
-
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
@@ -56,6 +54,10 @@ public class DBHelperConv extends SQLiteOpenHelper {
             cursor= db.rawQuery(query,null);
         }
         return cursor;
+    }
+    public void deleteData() {
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+        sqLiteDatabase.execSQL("delete from " + TABLE_NAME);
     }
 
 

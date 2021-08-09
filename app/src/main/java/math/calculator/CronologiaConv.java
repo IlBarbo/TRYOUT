@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -34,8 +35,10 @@ public class CronologiaConv extends AppCompatActivity
         tonum=new ArrayList<>();
         deleteAllData=findViewById(R.id.deleteAll);
         addData=findViewById(R.id.addData);
+
         insertDataConve();
         displayDataConve();
+        deleteAllData();
         customAdapterConv=new CustomAdapterConv(CronologiaConv.this,fromnum,tonum);
         recyclerView.setAdapter(customAdapterConv);
         recyclerView.setLayoutManager(new LinearLayoutManager(CronologiaConv.this));
@@ -65,5 +68,41 @@ public class CronologiaConv extends AppCompatActivity
         });
 
 
+    }
+    public void deleteAllData(){
+        deleteAllData.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder cronologia = new AlertDialog.Builder(CronologiaConv.this);
+                Cursor cursor = dbHelperConv.readData();
+                if (cursor.getCount() != 0) {
+                    cronologia.setTitle("Elimina Cronologia");
+                    cronologia.setMessage("Sei sicuro di voler eliminare tutta la cronologia?");
+                    cronologia.setPositiveButton("SI", (dialog, which) -> {
+                        //elimino la cronologia
+
+                        dbHelperConv.deleteData();
+                        //mantengo R.layout.popup aperto eliminando la cronologia
+                        setContentView(R.layout.cronologia_conv);
+					/*
+                    con finish(); chiudo direttamente R.layout.popup
+                     dopo aver eliminato la cronologia
+
+					 */
+                        //finish();
+
+                        //  Toast.makeText(getBaseContext(),"Cronologia eliminata", Toast.LENGTH_SHORT).show();
+                    });
+                    cronologia.setNegativeButton("N0", (dialog, which) -> dialog.dismiss());
+                    cronologia.show();
+
+
+                } else {
+
+                    Toast.makeText(getBaseContext(), "CRONOLOGIA VUOTA", Toast.LENGTH_SHORT).show();
+
+                }
+            }
+        });
     }
 }

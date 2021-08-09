@@ -60,8 +60,7 @@ public class SecondFragment extends Fragment {
         convertiMass.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                DBHelperConv dbHelperConv= new DBHelperConv(getActivity());
-                dbHelperConv.insertDataConv(number.getText().toString().trim(),risultato.getText().toString().trim());
+
 
                 double c = 0;
                 try{
@@ -603,6 +602,8 @@ public class SecondFragment extends Fragment {
                             break;
                     }
                     risultato.setText(String.valueOf(c));
+                    DBHelperConv dbHelperConv= new DBHelperConv(getActivity());
+                    dbHelperConv.insertDataConv(number.getText().toString().trim(),risultato.getText().toString().trim());
 
                 }catch (NumberFormatException e){
 
