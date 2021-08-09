@@ -3,14 +3,12 @@ package math.calculator;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
-
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.view.View;
 import android.widget.Toast;
 
 public class DBHelperConv extends SQLiteOpenHelper {
-    private Context context;
+    private final Context context;
 
     private static final String DATABASE_NAME="convertitore.db";
     private static final String TABLE_NAME="historyconv";

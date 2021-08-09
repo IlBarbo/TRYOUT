@@ -3,6 +3,7 @@ package math.calculator;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -13,6 +14,8 @@ import android.widget.ImageButton;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+
+import static math.calculator.Convertitore.redirectActivity;
 
 public class CronologiaCalc extends AppCompatActivity {
     private DBHelper dbHelper;
@@ -67,30 +70,41 @@ public class CronologiaCalc extends AppCompatActivity {
 
 
     }
+
     public void deleteAllData(){
         deleteAllData.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialog.Builder cronologia=new AlertDialog.Builder(CronologiaCalc.this);
-                cronologia.setTitle("Elimina Cronologia");
-                cronologia.setMessage("Sei sicuro di voler eliminare tutta la cronologia?");
-                cronologia.setPositiveButton("SI", (dialog, which) -> {
-                    //elimino la cronologia
-                  //  dbHelper.deleteData();
-                    //mantengo R.layout.popup aperto eliminando la cronologia
-                   // setContentView(popup);
+                AlertDialog.Builder cronologia = new AlertDialog.Builder(CronologiaCalc.this);
+                Cursor cursor = dbHelper.readData();
+                if (cursor.getCount() != 0) {
+                    cronologia.setTitle("Elimina Cronologia");
+                    cronologia.setMessage("Sei sicuro di voler eliminare tutta la cronologia?");
+                    cronologia.setPositiveButton("SI", (dialog, which) -> {
+                        //elimino la cronologia
+
+                        dbHelper.deleteData();
+                        //mantengo R.layout.popup aperto eliminando la cronologia
+                        setContentView(R.layout.popup);
 					/*
                     con finish(); chiudo direttamente R.layout.popup
                      dopo aver eliminato la cronologia
                     finish();
 					*/
-                    //Toast.makeText(Cronologia.this,"Cronologia eliminata", Toast.LENGTH_SHORT).show();
-                });
-                cronologia.setNegativeButton("N0", (dialog, which) -> dialog.dismiss());
-                cronologia.show();
+                        //Toast.makeText(Cronologia.this,"Cronologia eliminata", Toast.LENGTH_SHORT).show();
+                    });
+                    cronologia.setNegativeButton("N0", (dialog, which) -> dialog.dismiss());
+                    cronologia.show();
+                } else {
+
+                            Toast.makeText(getBaseContext(), "CRONOLOGIA VUOTA", Toast.LENGTH_SHORT).show();
+
+                }
             }
         });
     }
-
+    public void newCalc(View view) {
+        redirectActivity(CronologiaCalc.this, Activity_calc.class);
+    }
 
 }

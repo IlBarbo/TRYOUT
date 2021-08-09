@@ -62,11 +62,10 @@ public class DBHelper extends SQLiteOpenHelper {
         }
         return cursor;
         }
-
-
-
-
-
+    public void deleteData() {
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+        sqLiteDatabase.execSQL("delete from " + TABLE_NAME);
+    }
 
     }
 

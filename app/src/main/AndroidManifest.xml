@@ -13,7 +13,8 @@
         <activity android:name=".Convertitore" />
         <activity android:name=".CronologiaCalc"
             android:parentActivityName=".Activity_calc"/>
-        <activity android:name=".CronologiaConv" />
+        <activity android:name=".CronologiaConv"
+           />
 
         <activity android:name=".Grafico" />
         <activity android:name=".Activity_calc" />
