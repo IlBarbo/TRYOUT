@@ -22,6 +22,7 @@ public class CronologiaConv extends AppCompatActivity
     RecyclerView recyclerView;
     ArrayList<String> fromnum,tonum;
     CustomAdapterConv customAdapterConv;
+    CustomAdapter custom;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -83,12 +84,17 @@ public class CronologiaConv extends AppCompatActivity
 
                         dbHelperConv.deleteData();
                         //mantengo R.layout.popup aperto eliminando la cronologia
-                        setContentView(R.layout.cronologia_conv);
+                        //setContentView(R.layout.cronologia_conv);
 					/*
                     con finish(); chiudo direttamente R.layout.popup
                      dopo aver eliminato la cronologia
 
 					 */
+                        fromnum.clear();
+                        tonum.clear();
+                        custom=new CustomAdapter(CronologiaConv.this,fromnum,tonum);
+                        recyclerView.setAdapter(custom);
+                        recyclerView.setLayoutManager(new LinearLayoutManager(CronologiaConv.this));
                         //finish();
 
                         //  Toast.makeText(getBaseContext(),"Cronologia eliminata", Toast.LENGTH_SHORT).show();

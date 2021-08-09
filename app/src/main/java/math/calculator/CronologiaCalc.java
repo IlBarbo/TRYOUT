@@ -3,7 +3,6 @@ package math.calculator;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -23,7 +22,7 @@ public class CronologiaCalc extends AppCompatActivity {
     private ImageButton deleteAllData,addData;
     RecyclerView recyclerView;
     ArrayList<String> espressione,risultato;
-    CustomAdapter customAdapter;
+    CustomAdapter customAdapter,custom;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,7 +38,7 @@ public class CronologiaCalc extends AppCompatActivity {
         addData=findViewById(R.id.addData);
         insertData();
         displayData();
-        deleteAllData();
+        setDeleteButtonListener();
         customAdapter=new CustomAdapter(CronologiaCalc.this,espressione,risultato);
         recyclerView.setAdapter(customAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(CronologiaCalc.this));
@@ -71,7 +70,7 @@ public class CronologiaCalc extends AppCompatActivity {
 
     }
 
-    public void deleteAllData(){
+    public void setDeleteButtonListener(){
         deleteAllData.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -85,7 +84,11 @@ public class CronologiaCalc extends AppCompatActivity {
 
                         dbHelper.deleteData();
                         //mantengo R.layout.popup aperto eliminando la cronologia
-                        setContentView(R.layout.popup);
+                        espressione.clear();
+                        risultato.clear();
+                        custom=new CustomAdapter(CronologiaCalc.this,espressione,risultato);
+                        recyclerView.setAdapter(custom);
+                        recyclerView.setLayoutManager(new LinearLayoutManager(CronologiaCalc.this));
 					/*
                     con finish(); chiudo direttamente R.layout.popup
                      dopo aver eliminato la cronologia
