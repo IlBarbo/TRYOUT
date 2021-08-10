@@ -23,13 +23,14 @@ public class CronologiaCalc extends AppCompatActivity {
     RecyclerView recyclerView;
     ArrayList<String> espressione,risultato;
     CustomAdapter customAdapter,custom;
+    ImageButton deletesingledata;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.popup);
         recyclerView=findViewById(R.id.recyclerview);
         dbHelper= new DBHelper(this);
-
+        deletesingledata=findViewById(R.id.deletesingledata);
         SQLiteDatabase sqLiteDatabase=dbHelper.getWritableDatabase();
 
         espressione=new ArrayList<>();
@@ -69,6 +70,7 @@ public class CronologiaCalc extends AppCompatActivity {
 
 
     }
+
 
     public void setDeleteButtonListener(){
         deleteAllData.setOnClickListener(new View.OnClickListener() {
@@ -110,8 +112,30 @@ public class CronologiaCalc extends AppCompatActivity {
             }
         });
     }
-    public void newCalc(View view) {
-        redirectActivity(CronologiaCalc.this, Activity_calc.class);
-    }
+    /*public void setdeletesingledata() {
+        deletesingledata.setOnClickListener(new View.OnClickListener() {
+        @Override
+            public void onClick(View v) {
+                Cursor cursor = dbHelper.readData();
+                if (cursor.getCount() != 0) {
+                    //dbHelper.deleteSingleData(cursor);
+
+                } else {
+
+              //  Toast.makeText(getBaseContext(), "CRONOLOGIA VUOTA", Toast.LENGTH_SHORT).show();
+
+            }
+
+
+        }
+        });
+    }*/
+
+
+            public void newCalc(View view) {
+                redirectActivity(CronologiaCalc.this, Activity_calc.class);
+            }
+
+
 
 }

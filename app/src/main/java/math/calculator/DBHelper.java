@@ -67,6 +67,11 @@ public class DBHelper extends SQLiteOpenHelper {
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
         sqLiteDatabase.execSQL("delete from " + TABLE_NAME);
     }
+    public void deleteSingleData(Cursor cursor){
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+        int position=cursor.getPosition();
+        sqLiteDatabase.execSQL("delete from " + TABLE_NAME + "where ");
 
+    }
     }
 
