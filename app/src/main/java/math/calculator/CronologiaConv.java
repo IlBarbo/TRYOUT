@@ -20,9 +20,9 @@ public class CronologiaConv extends AppCompatActivity
 
     private ImageButton deleteAllData,addData;
     RecyclerView recyclerView;
-    ArrayList<String> fromnum,tonum;
+    ArrayList<String> fromnum,tonum,spinnerfrom,spinnerto;
     CustomAdapterConv customAdapterConv;
-    CustomAdapter custom;
+    CustomAdapterConv custom;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,15 +32,17 @@ public class CronologiaConv extends AppCompatActivity
 
         SQLiteDatabase sqLiteDatabase=dbHelperConv.getWritableDatabase();
 
-        fromnum=new ArrayList<>();
+        fromnum= new ArrayList<>();
         tonum=new ArrayList<>();
+        spinnerfrom=new ArrayList<>();
+        spinnerto=new ArrayList<>();
         deleteAllData=findViewById(R.id.deleteAll);
         addData=findViewById(R.id.addData);
 
         insertDataConve();
         displayDataConve();
         deleteAllData();
-        customAdapterConv=new CustomAdapterConv(CronologiaConv.this,fromnum,tonum);
+        customAdapterConv=new CustomAdapterConv(CronologiaConv.this,fromnum,tonum,spinnerfrom,spinnerto);
         recyclerView.setAdapter(customAdapterConv);
         recyclerView.setLayoutManager(new LinearLayoutManager(CronologiaConv.this));
 
@@ -53,6 +55,8 @@ public class CronologiaConv extends AppCompatActivity
             while(cursor.moveToNext()){
                 fromnum.add(cursor.getString(0));
                 tonum.add(cursor.getString(1));
+                spinnerfrom.add(cursor.getString(2));
+                spinnerto.add(cursor.getString(3));
             }
         }
     }
@@ -92,7 +96,9 @@ public class CronologiaConv extends AppCompatActivity
 					 */
                         fromnum.clear();
                         tonum.clear();
-                        custom=new CustomAdapter(CronologiaConv.this,fromnum,tonum);
+                        spinnerfrom.clear();
+                        spinnerto.clear();
+                        custom=new CustomAdapterConv(CronologiaConv.this,fromnum,tonum,spinnerfrom,spinnerto);
                         recyclerView.setAdapter(custom);
                         recyclerView.setLayoutManager(new LinearLayoutManager(CronologiaConv.this));
                         //finish();

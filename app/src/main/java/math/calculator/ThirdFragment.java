@@ -235,7 +235,7 @@ public class ThirdFragment extends Fragment {
                     }
                     risultato.setText(String.valueOf(c));
                     DBHelperConv dbHelperConv= new DBHelperConv(getActivity());
-                    dbHelperConv.insertDataConv(number.getText().toString().trim(),risultato.getText().toString().trim());
+                    dbHelperConv.insertDataConv(number.getText().toString().trim(),risultato.getText().toString().trim(),stringFrom,stringTo);
 
                 }catch (NumberFormatException e){
 

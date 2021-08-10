@@ -14,12 +14,14 @@ public class CustomAdapterConv extends RecyclerView.Adapter<CustomAdapterConv.My
 
 
         private Context context;
-        private ArrayList fromnum, tonum;
+        private ArrayList fromnum, tonum,spinnerfrom,spinnerto;
 
-    CustomAdapterConv(Context context, ArrayList fromnum, ArrayList tonum) {
+    CustomAdapterConv(Context context, ArrayList fromnum, ArrayList tonum,ArrayList spinnerfrom,ArrayList spinnerto) {
             this.context = context;
             this.fromnum = fromnum;
             this.tonum = tonum;
+            this.spinnerfrom = spinnerfrom;
+            this.spinnerto = spinnerto;
         }
 
         @NonNull
@@ -34,6 +36,8 @@ public class CustomAdapterConv extends RecyclerView.Adapter<CustomAdapterConv.My
     public void onBindViewHolder(MyViewHolder holder, int i) {
         holder.from_txt.setText(String.valueOf(fromnum.get(i)));
         holder.to_txt.setText(String.valueOf(tonum.get(i)));
+        holder.spinnerfrom_txt.setText(String.valueOf(spinnerfrom.get(i)));
+        holder.spinnerto_txt.setText(String.valueOf(spinnerto.get(i)));
     }
 
 
@@ -45,12 +49,14 @@ public class CustomAdapterConv extends RecyclerView.Adapter<CustomAdapterConv.My
 
 
         public class MyViewHolder extends RecyclerView.ViewHolder {
-            TextView from_txt, to_txt;
+            TextView from_txt, to_txt,spinnerfrom_txt,spinnerto_txt;
 
             public MyViewHolder(@NonNull View itemView) {
                 super(itemView);
                 from_txt = itemView.findViewById(R.id.from_txt);
-              to_txt = itemView.findViewById(R.id.to_txt);
+                to_txt = itemView.findViewById(R.id.to_txt);
+                spinnerfrom_txt = itemView.findViewById(R.id.spinnerfrom_txt);
+                spinnerto_txt = itemView.findViewById(R.id.spinnerto_txt);
             }
         }
     }

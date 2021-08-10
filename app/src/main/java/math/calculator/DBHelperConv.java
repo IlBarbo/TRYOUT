@@ -10,12 +10,14 @@ import android.widget.Toast;
 public class DBHelperConv extends SQLiteOpenHelper {
     private final Context context;
 
-    private static final String DATABASE_NAME="convertitore.db";
+    private static final String DATABASE_NAME="cronologia_conv.db";
     private static final String TABLE_NAME="historyconv";
     private static final String FROMNUM ="fromnum";
     private static final String TONUM ="tonum";
+    private static final String SPINNERFROM ="spinnerfrom";
+    private static final String SPINNERTO ="spinnerto";
     private  static final int VERSION_NUMBER=1;
-    final String CREATE_TABLE= " CREATE TABLE " + TABLE_NAME + " ( " + FROMNUM + " TEXT primary key, " + TONUM + " TEXT ); ";
+    final String CREATE_TABLE= " CREATE TABLE " + TABLE_NAME + " ( " + FROMNUM + " TEXT primary key, " + TONUM + " TEXT , " + SPINNERFROM + " TEXT, " + SPINNERTO + " TEXT ); ";
 
 
     public DBHelperConv(Context context) {
@@ -30,11 +32,13 @@ public class DBHelperConv extends SQLiteOpenHelper {
     }
 
 
-    public Boolean insertDataConv(String fromnum, String tonum){
+    public Boolean insertDataConv(String fromnum, String tonum,String spinnerfrom,String spinnerto){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put("fromnum", fromnum);
         contentValues.put("tonum", tonum);
+        contentValues.put("spinnerfrom", spinnerfrom);
+        contentValues.put("spinnerto", spinnerto);
         long ris = db.insert(TABLE_NAME, "null", contentValues);
         if (ris == -1) {
             //crea una finestra di dialogo
