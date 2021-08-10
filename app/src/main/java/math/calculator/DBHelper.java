@@ -10,13 +10,14 @@ import android.widget.Toast;
 public class DBHelper extends SQLiteOpenHelper {
     private  Context context;
 
-    private static final String DATABASE_NAME="cronologia.db";
+    private static final String DATABASE_NAME="cronologiacalc.db";
     private static final String TABLE_NAME="history";
     private static final String ESPRESSIONE ="espressione";
     private static final String RISULTATO ="risultato";
+    private static final String ID ="id";
     private  static final int VERSION_NUMBER=1;
 
-    final String CREATE_TABLE =" CREATE TABLE " + TABLE_NAME +" ( " + ESPRESSIONE + "  TEXT primary key, " + RISULTATO + " TEXT); ";
+    final String CREATE_TABLE =" CREATE TABLE " + TABLE_NAME +" ( " + ESPRESSIONE + "  TEXT , " + RISULTATO + " TEXT, " + ID + " INTEGER primary key AUTOINCREMENT); ";
 
 
     public DBHelper( Context context) {
@@ -43,6 +44,7 @@ public class DBHelper extends SQLiteOpenHelper {
             ContentValues contentValues = new ContentValues();
             contentValues.put("espressione", espressione);
             contentValues.put("risultato", risultato);
+
             long ris = db.insert(TABLE_NAME, "null", contentValues);
             if (ris == -1) {
                 //crea una finestra di dialogo
@@ -67,10 +69,17 @@ public class DBHelper extends SQLiteOpenHelper {
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
         sqLiteDatabase.execSQL("delete from " + TABLE_NAME);
     }
-    public void deleteSingleData(Cursor cursor){
-        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+    public void deleteSingleData(String row_id){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = readData();
         int position=cursor.getPosition();
-        sqLiteDatabase.execSQL("delete from " + TABLE_NAME + "where ");
+        db.execSQL("delete from "+ TABLE_NAME + " where " + ID + " =? " + position) ;
+        //long result = db.delete(TABLE_NAME, "id=?", new String[]{row_id});
+        /*if(result == -1){
+            Toast.makeText(context, "Failed to Delete.", Toast.LENGTH_SHORT).show();
+        }else{
+            Toast.makeText(context, "Successfully Deleted.", Toast.LENGTH_SHORT).show();
+        }*/
 
     }
     }

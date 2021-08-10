@@ -20,6 +20,7 @@ public class Activity_calc extends AppCompatActivity {
 
     private TextView risultato;
     private EditText schermo;
+    private int id;
     Button uguale;
     private TextView title;
     DrawerLayout drawerLayout;
@@ -32,6 +33,7 @@ public class Activity_calc extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_drawer);
+
         risultato=findViewById(R.id.risultato);
         schermo=findViewById(R.id.display);
         title=findViewById(R.id.benvenuto);
@@ -333,10 +335,5 @@ public class Activity_calc extends AppCompatActivity {
         upText("f(");
     }
 
-/*
-    public void newCalc(View view) {
-        redirectActivity(this, Activity_calc.class);
-    }
-    */
 
 }

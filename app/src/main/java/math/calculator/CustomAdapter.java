@@ -12,11 +12,12 @@ import java.util.ArrayList;
 
 public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHolder>{
     private Context context;
-   private ArrayList espressione,risultato;
-    CustomAdapter(Context context,ArrayList espressione,ArrayList risultato){
+   private ArrayList espressione,risultato,id;
+    CustomAdapter(Context context,ArrayList espressione,ArrayList risultato,ArrayList id){
         this.context=context;
         this.espressione=espressione;
         this.risultato=risultato;
+        this.id=id;
     }
     //rappresenta un nuovo elemento
    @NonNull
@@ -31,6 +32,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
     public void onBindViewHolder(@NonNull  MyViewHolder holder, int i) {
     holder.espressione_txt.setText(String.valueOf(espressione.get(i)));
         holder.risultato_txt.setText(String.valueOf(risultato.get(i)));
+        holder.id_txt.setText(String.valueOf(id.get(i)));
 
     }
 
@@ -41,11 +43,12 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
 
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        TextView espressione_txt,risultato_txt;
+        TextView espressione_txt,risultato_txt,id_txt;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             espressione_txt=itemView.findViewById(R.id.espressione_txt);
             risultato_txt=itemView.findViewById(R.id.risultato_txt);
+            id_txt=itemView.findViewById(R.id.id_txt);
         }
     }
 }
