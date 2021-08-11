@@ -20,7 +20,7 @@ public class DBHelper extends SQLiteOpenHelper {
     final String CREATE_TABLE =" CREATE TABLE " + TABLE_NAME +" ( " + ESPRESSIONE + "  TEXT , " + RISULTATO + " TEXT, " + ID + " INTEGER primary key AUTOINCREMENT); ";
 
 
-    public DBHelper( Context context) {
+    public DBHelper(Context context) {
         super(context, DATABASE_NAME, null, VERSION_NUMBER);
         this.context=context;
     }
@@ -65,22 +65,26 @@ public class DBHelper extends SQLiteOpenHelper {
         }
         return cursor;
         }
+
     public void deleteData() {
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
         sqLiteDatabase.execSQL("delete from " + TABLE_NAME);
     }
-    public void deleteSingleData(String row_id){
+    public void deleteSingleData(){
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = readData();
-        int position=cursor.getPosition();
-        db.execSQL("delete from "+ TABLE_NAME + " where " + ID + " =? " + position) ;
-        //long result = db.delete(TABLE_NAME, "id=?", new String[]{row_id});
-        /*if(result == -1){
+        int  position=cursor.getPosition();
+        int id_intero = Integer.parseInt(ID);
+
+        db.execSQL(" delete from " + TABLE_NAME + " where  position = id_intero ");
+
+      /* long result = db.delete(TABLE_NAME, "id=?", new String[]{row_id});
+
+       if(result == -1){
             Toast.makeText(context, "Failed to Delete.", Toast.LENGTH_SHORT).show();
         }else{
             Toast.makeText(context, "Successfully Deleted.", Toast.LENGTH_SHORT).show();
         }*/
-
     }
-    }
+  }
 

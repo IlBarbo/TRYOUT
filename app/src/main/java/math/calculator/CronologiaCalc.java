@@ -1,5 +1,6 @@
 package math.calculator;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -10,6 +11,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -24,26 +26,38 @@ public class CronologiaCalc extends AppCompatActivity {
     ArrayList<String> espressione,risultato,id;
     String row_id;
     CustomAdapter customAdapter,custom;
-    private ImageButton deletesingledata;
+    ImageButton deletesingledata;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.popup);
         recyclerView=findViewById(R.id.recyclerview);
         dbHelper= new DBHelper(this);
-        deletesingledata=findViewById(R.id.deletesingledata);
+
+
         SQLiteDatabase sqLiteDatabase=dbHelper.getWritableDatabase();
         id=new ArrayList<>();
         espressione=new ArrayList<>();
         risultato=new ArrayList<>();
         deleteAllData=findViewById(R.id.deleteAll);
         addData=findViewById(R.id.addData);
+
         insertData();
         displayData();
         setDeleteButtonListener();
+        deletesingledata = (ImageButton) findViewById(R.id.deletesingledata);
+        setDeleteSingleButtonListener();
+
         customAdapter=new CustomAdapter(CronologiaCalc.this,espressione,risultato,id);
         recyclerView.setAdapter(customAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(CronologiaCalc.this));
+        insertData();
+        displayData();
+        setDeleteButtonListener();
+
+
+
 
     }
     void displayData(){
@@ -95,45 +109,34 @@ public class CronologiaCalc extends AppCompatActivity {
                         custom=new CustomAdapter(CronologiaCalc.this,espressione,risultato,id);
                         recyclerView.setAdapter(custom);
                         recyclerView.setLayoutManager(new LinearLayoutManager(CronologiaCalc.this));
-					/*
-                    con finish(); chiudo direttamente R.layout.popup
-                     dopo aver eliminato la cronologia
 
-					 */
-                   // finish();
-
-                        //  Toast.makeText(getBaseContext(),"Cronologia eliminata", Toast.LENGTH_SHORT).show();
                     });
                     cronologia.setNegativeButton("N0", (dialog, which) -> dialog.dismiss());
                     cronologia.show();
 
 
                 } else {
-
-                            Toast.makeText(getBaseContext(), "CRONOLOGIA VUOTA", Toast.LENGTH_SHORT).show();
-
+                    Toast.makeText(getBaseContext(), "CRONOLOGIA VUOTA", Toast.LENGTH_SHORT).show();
                 }
             }
         });
     }
-
-
-            public void newCalc(View view) {
-                redirectActivity(CronologiaCalc.this, Activity_calc.class);
+    public void setDeleteSingleButtonListener() {
+        deletesingledata.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dbHelper.deleteSingleData();
+                espressione.clear();
+                risultato.clear();
+                id.clear();
             }
-
-
-    public void setdeletesingledata(View view) {
-
-                Cursor cursor = dbHelper.readData();
-                if (cursor.getCount() != 0) {
-
-                    dbHelper.deleteSingleData(row_id);
-                    espressione.clear();
-                    risultato.clear();
-                    id.clear();
-
-                }
-
+        });
     }
+
+    public void newCalc(View view) {
+        redirectActivity(CronologiaCalc.this, Activity_calc.class);
+    }
+
+
+
 }

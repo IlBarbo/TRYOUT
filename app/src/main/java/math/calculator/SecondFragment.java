@@ -80,7 +80,7 @@ public class SecondFragment extends Fragment {
                                 case "grammi":
                                     c = new UnitOf.Mass().fromKilograms(d).toGrams();
                                     break;
-                                case "decagrammi":
+                                case "decagrammo":
                                     c = new UnitOf.Mass().fromKilograms(d).toDekagrams();
 
                                     break;
@@ -124,7 +124,7 @@ public class SecondFragment extends Fragment {
                                 case "grammi":
                                     c = new UnitOf.Mass().fromGrams(d).toGrams();
                                     break;
-                                case "decagrammi":
+                                case "decagrammo":
                                     c = new UnitOf.Mass().fromGrams(d).toDekagrams();
 
                                     break;
@@ -160,7 +160,7 @@ public class SecondFragment extends Fragment {
                                     throw new IllegalStateException("Unexpected value: " + spinnerMassFrom);
                             }
                             break;
-                        case "decagrammi":
+                        case "decagrammo":
                             switch (stringTo) {
                                 case "chilogrammi":
                                     c = new UnitOf.Mass().fromDekagrams(d).toKilograms();
@@ -168,7 +168,7 @@ public class SecondFragment extends Fragment {
                                 case "grammi":
                                     c = new UnitOf.Mass().fromDekagrams(d).toGrams();
                                     break;
-                                case "decagrammi":
+                                case "decagrammo":
                                     c = new UnitOf.Mass().fromDekagrams(d).toDekagrams();
 
                                     break;
@@ -204,7 +204,7 @@ public class SecondFragment extends Fragment {
                                     throw new IllegalStateException("Unexpected value: " + spinnerMassFrom);
                             }
                             break;
-                        case "ETTOGRAMMO":
+                        case "ettogrammo":
                             switch (stringTo) {
                                 case "chilogrammi":
                                     c = new UnitOf.Mass().fromHectograms(d).toKilograms();
@@ -212,7 +212,7 @@ public class SecondFragment extends Fragment {
                                 case "grammi":
                                     c = new UnitOf.Mass().fromHectograms(d).toGrams();
                                     break;
-                                case "decagrammi":
+                                case "decagrammo":
                                     c = new UnitOf.Mass().fromHectograms(d).toDekagrams();
 
                                     break;
@@ -256,7 +256,7 @@ public class SecondFragment extends Fragment {
                                 case "grammi":
                                     c = new UnitOf.Mass().fromQuintals(d).toGrams();
                                     break;
-                                case "decagrammi":
+                                case "decagrammo":
                                     c = new UnitOf.Mass().fromQuintals(d).toDekagrams();
 
                                     break;
@@ -300,7 +300,7 @@ public class SecondFragment extends Fragment {
                                 case "grammi":
                                     c = new UnitOf.Mass().fromTonsUS(d).toGrams();
                                     break;
-                                case "decagrammi":
+                                case "decagrammo":
                                     c = new UnitOf.Mass().fromTonsUS(d).toDekagrams();
 
                                     break;
@@ -344,7 +344,7 @@ public class SecondFragment extends Fragment {
                                 case "grammi":
                                     c = new UnitOf.Mass().fromDecigrams(d).toGrams();
                                     break;
-                                case "decagrammi":
+                                case "decagrammo":
                                     c = new UnitOf.Mass().fromDecigrams(d).toDekagrams();
 
                                     break;
@@ -388,7 +388,7 @@ public class SecondFragment extends Fragment {
                                 case "grammi":
                                     c = new UnitOf.Mass().fromCentigrams(d).toGrams();
                                     break;
-                                case "decagrammi":
+                                case "decagrammo":
                                     c = new UnitOf.Mass().fromCentigrams(d).toDekagrams();
 
                                     break;
@@ -432,7 +432,7 @@ public class SecondFragment extends Fragment {
                                 case "grammi":
                                     c = new UnitOf.Mass().fromMilligrams(d).toGrams();
                                     break;
-                                case "decagrammi":
+                                case "decagrammo":
                                     c = new UnitOf.Mass().fromMilligrams(d).toDekagrams();
 
                                     break;
@@ -476,7 +476,7 @@ public class SecondFragment extends Fragment {
                                 case "grammi":
                                     c = new UnitOf.Mass().fromMicrograms(d).toGrams();
                                     break;
-                                case "decagrammi":
+                                case "decagrammo":
                                     c = new UnitOf.Mass().fromMicrograms(d).toDekagrams();
 
                                     break;
@@ -520,7 +520,7 @@ public class SecondFragment extends Fragment {
                                 case "grammi":
                                     c = new UnitOf.Mass().fromNanograms(d).toGrams();
                                     break;
-                                case "decagrammi":
+                                case "decagrammo":
                                     c = new UnitOf.Mass().fromNanograms(d).toDekagrams();
 
                                     break;
@@ -564,7 +564,7 @@ public class SecondFragment extends Fragment {
                                 case "grammi":
                                     c = new UnitOf.Mass().fromPicograms(d).toGrams();
                                     break;
-                                case "decagrammi":
+                                case "decagrammo":
                                     c = new UnitOf.Mass().fromPicograms(d).toDekagrams();
 
                                     break;
@@ -603,7 +603,7 @@ public class SecondFragment extends Fragment {
                     }
                     risultato.setText(String.valueOf(c));
                     DBHelperConv dbHelperConv= new DBHelperConv(getActivity());
-                    dbHelperConv.insertDataConv(number.getText().toString().trim(),risultato.getText().toString().trim(),stringFrom.trim(),stringTo.getBytes().toString().trim());
+                    dbHelperConv.insertDataConv(number.getText().toString().trim(),risultato.getText().toString().trim(),stringFrom,stringTo);
 
                 }catch (NumberFormatException e){
 

@@ -19,15 +19,30 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-        <include
-            layout="@layout/main_toolbar"/>
 
-        <TextView
-            android:id="@+id/textView2"
+
+        <android.support.v7.widget.Toolbar
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="CIAO"
-            android:layout_gravity="center_vertical"/>
+            android:minHeight="?actionBarSize">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="GRAFICO"
+            android:textColor="@color/tanAccent"
+            android:textSize="24sp" />
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="ClickMenu"
+                android:src="@drawable/ic_menu"/>
+
+        </android.support.v7.widget.Toolbar>
+
 
 
     </LinearLayout>
