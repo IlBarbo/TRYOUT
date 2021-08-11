@@ -28,7 +28,7 @@ public class DBHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
 
-            db.execSQL(CREATE_TABLE);
+        db.execSQL(CREATE_TABLE);
 
     }
 
@@ -40,51 +40,46 @@ public class DBHelper extends SQLiteOpenHelper {
 
 
     public Boolean insertData(String espressione,String risultato){
-            SQLiteDatabase db = this.getWritableDatabase();
-            ContentValues contentValues = new ContentValues();
-            contentValues.put("espressione", espressione);
-            contentValues.put("risultato", risultato);
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("espressione", espressione);
+        contentValues.put("risultato", risultato);
 
-            long ris = db.insert(TABLE_NAME, "null", contentValues);
-            if (ris == -1) {
-                //crea una finestra di dialogo
-                Toast.makeText(context,"Failed",Toast.LENGTH_SHORT).show();
-                return false;
-            } else {
-                return true;
-            }
+        long ris = db.insert(TABLE_NAME, "null", contentValues);
+        if (ris == -1) {
+            //crea una finestra di dialogo
+            Toast.makeText(context,"Failed",Toast.LENGTH_SHORT).show();
+            return false;
+        } else {
+            return true;
         }
+    }
 
-        Cursor readData(){
+    Cursor readData(){
         String query="SELECT * FROM "+TABLE_NAME;
         SQLiteDatabase db= this.getReadableDatabase();
 
         Cursor cursor=null;
         if(db != null){
-           cursor= db.rawQuery(query,null);
+            cursor= db.rawQuery(query,null);
         }
         return cursor;
-        }
+    }
 
     public void deleteData() {
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
         sqLiteDatabase.execSQL("delete from " + TABLE_NAME);
     }
-    public void deleteSingleData(){
+    public void deleteSingleData(int id){
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor cursor = readData();
-        int  position=cursor.getPosition();
-        int id_intero = Integer.parseInt(ID);
 
-        db.execSQL(" delete from " + TABLE_NAME + " where  position = id_intero ");
+        db.execSQL(" delete from " + TABLE_NAME + " where  id = " + id);
 
       /* long result = db.delete(TABLE_NAME, "id=?", new String[]{row_id});
-
        if(result == -1){
             Toast.makeText(context, "Failed to Delete.", Toast.LENGTH_SHORT).show();
         }else{
             Toast.makeText(context, "Successfully Deleted.", Toast.LENGTH_SHORT).show();
         }*/
     }
-  }
-
+}

@@ -18,7 +18,8 @@ import java.util.ArrayList;
 
 import static math.calculator.Convertitore.redirectActivity;
 
-public class CronologiaCalc extends AppCompatActivity {
+public class CronologiaCalc extends AppCompatActivity implements RowDeletionListener {
+
     private DBHelper dbHelper;
 
     private ImageButton deleteAllData,addData;
@@ -46,15 +47,10 @@ public class CronologiaCalc extends AppCompatActivity {
         insertData();
         displayData();
         setDeleteButtonListener();
-        deletesingledata = (ImageButton) findViewById(R.id.deletesingledata);
-        setDeleteSingleButtonListener();
-
-        customAdapter=new CustomAdapter(CronologiaCalc.this,espressione,risultato,id);
+        customAdapter=new CustomAdapter(CronologiaCalc.this,espressione,risultato,id, CronologiaCalc.this);
         recyclerView.setAdapter(customAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(CronologiaCalc.this));
-        insertData();
-        displayData();
-        setDeleteButtonListener();
+
 
 
 
@@ -78,8 +74,8 @@ public class CronologiaCalc extends AppCompatActivity {
         addData.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-            Intent intent=new Intent(CronologiaCalc.this,Activity_calc.class);
-            startActivity(intent);
+                Intent intent=new Intent(CronologiaCalc.this,Activity_calc.class);
+                startActivity(intent);
             }
 
         });
@@ -106,7 +102,7 @@ public class CronologiaCalc extends AppCompatActivity {
                         espressione.clear();
                         risultato.clear();
                         id.clear();
-                        custom=new CustomAdapter(CronologiaCalc.this,espressione,risultato,id);
+                        custom=new CustomAdapter(CronologiaCalc.this,espressione,risultato,id, CronologiaCalc.this);
                         recyclerView.setAdapter(custom);
                         recyclerView.setLayoutManager(new LinearLayoutManager(CronologiaCalc.this));
 
@@ -121,22 +117,21 @@ public class CronologiaCalc extends AppCompatActivity {
             }
         });
     }
-    public void setDeleteSingleButtonListener() {
-        deletesingledata.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dbHelper.deleteSingleData();
-                espressione.clear();
-                risultato.clear();
-                id.clear();
-            }
-        });
-    }
 
     public void newCalc(View view) {
         redirectActivity(CronologiaCalc.this, Activity_calc.class);
     }
 
+    @Override
+    public void onRowDeleted(String deletedId) {
+        int deletedIndex = id.indexOf(deletedId);
+        id.remove(deletedIndex);
+        espressione.remove(deletedIndex);
+        risultato.remove(deletedIndex);
+        custom=new CustomAdapter(CronologiaCalc.this,espressione,risultato,id, CronologiaCalc.this);
+        recyclerView.setAdapter(custom);
+        recyclerView.setLayoutManager(new LinearLayoutManager(CronologiaCalc.this));
 
+    }
 
 }
