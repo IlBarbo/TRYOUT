@@ -15,6 +15,7 @@ import android.widget.TextView;
 import android.view.View;
 
 import org.mariuszgromada.math.mxparser.*;
+import org.mariuszgromada.math.mxparser.mathcollection.Evaluate;
 
 public class Activity_calc extends AppCompatActivity {
 
@@ -28,6 +29,7 @@ public class Activity_calc extends AppCompatActivity {
     private AlertDialog.Builder dialogBuilder;
     private AlertDialog dialog;
     ImageView cronologiaButton;
+    Button buttonpunto;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,7 +53,15 @@ public class Activity_calc extends AppCompatActivity {
             }
 
         });
+        uguale.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                upText("=");
 
+                return true;
+            }
+        });
+        buttonpunto=findViewById(R.id.punto);
         cronologiaButton=findViewById(R.id.cronologia);
         cronologiaButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -237,6 +247,13 @@ public class Activity_calc extends AppCompatActivity {
     }
     public void punto(View v){
         upText(".");
+        buttonpunto.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                upText(",");
+                return true;
+            }
+        });
     }
     public void uguale(View v){
        String user=schermo.getText().toString();
@@ -246,6 +263,7 @@ public class Activity_calc extends AppCompatActivity {
         user = user.replaceAll("×", "*");
 
         Expression exp=new Expression(user);
+
        String result=String.valueOf(exp.calculate()); //usa la libreria mxparser
         schermo.setText(result);
         schermo.setSelection(result.length());
@@ -311,7 +329,7 @@ public class Activity_calc extends AppCompatActivity {
     }
 
     public void pigreco(View view) {
-        upText("pi(");
+        upText("pi");
     }
 
     public void modulo(View view) {
@@ -334,6 +352,8 @@ public class Activity_calc extends AppCompatActivity {
     public void funzione(View view) {
         upText("f(");
     }
+
+    Evaluate espressione=  new Evaluate();
 
 
 }

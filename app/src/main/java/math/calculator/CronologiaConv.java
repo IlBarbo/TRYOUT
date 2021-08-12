@@ -14,13 +14,13 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class CronologiaConv extends AppCompatActivity
+public class CronologiaConv extends AppCompatActivity implements RowDeletionListener
 {
     private DBHelperConv dbHelperConv;
 
     private ImageButton deleteAllData,addData;
     RecyclerView recyclerView;
-    ArrayList<String> fromnum,tonum,spinnerfrom,spinnerto;
+    ArrayList<String> fromnum,tonum,spinnerfrom,spinnerto,id;
     CustomAdapterConv customAdapterConv;
     CustomAdapterConv custom;
     @Override
@@ -36,13 +36,14 @@ public class CronologiaConv extends AppCompatActivity
         tonum=new ArrayList<>();
         spinnerfrom=new ArrayList<>();
         spinnerto=new ArrayList<>();
+        id=new ArrayList<>();
         deleteAllData=findViewById(R.id.deleteAll);
         addData=findViewById(R.id.addData);
 
         insertDataConve();
         displayDataConve();
         deleteAllData();
-        customAdapterConv=new CustomAdapterConv(CronologiaConv.this,fromnum,tonum,spinnerfrom,spinnerto);
+        customAdapterConv=new CustomAdapterConv(CronologiaConv.this,fromnum,tonum,spinnerfrom,spinnerto,id,CronologiaConv.this);
         recyclerView.setAdapter(customAdapterConv);
         recyclerView.setLayoutManager(new LinearLayoutManager(CronologiaConv.this));
 
@@ -57,6 +58,7 @@ public class CronologiaConv extends AppCompatActivity
                 tonum.add(cursor.getString(1));
                 spinnerfrom.add(cursor.getString(2));
                 spinnerto.add(cursor.getString(3));
+                id.add(cursor.getString(4));
             }
         }
     }
@@ -86,23 +88,16 @@ public class CronologiaConv extends AppCompatActivity
                         //elimino la cronologia
 
                         dbHelperConv.deleteData();
-                        //mantengo R.layout.popup aperto eliminando la cronologia
-                        //setContentView(R.layout.cronologia_conv);
-					/*
-                    con finish(); chiudo direttamente R.layout.popup
-                     dopo aver eliminato la cronologia
 
-					 */
                         fromnum.clear();
                         tonum.clear();
                         spinnerfrom.clear();
                         spinnerto.clear();
-                        custom=new CustomAdapterConv(CronologiaConv.this,fromnum,tonum,spinnerfrom,spinnerto);
+                        id.clear();
+                        custom=new CustomAdapterConv(CronologiaConv.this,fromnum,tonum,spinnerfrom,spinnerto,id,CronologiaConv.this);
                         recyclerView.setAdapter(custom);
                         recyclerView.setLayoutManager(new LinearLayoutManager(CronologiaConv.this));
-                        //finish();
 
-                        //  Toast.makeText(getBaseContext(),"Cronologia eliminata", Toast.LENGTH_SHORT).show();
                     });
                     cronologia.setNegativeButton("N0", (dialog, which) -> dialog.dismiss());
                     cronologia.show();
@@ -116,4 +111,19 @@ public class CronologiaConv extends AppCompatActivity
             }
         });
     }
+    @Override
+    public void onRowDeleted(String deletedId) {
+        int deletedIndex = id.indexOf(deletedId);
+        id.remove(deletedIndex);
+        fromnum.remove(deletedIndex);
+        tonum.remove(deletedIndex);
+        spinnerfrom.remove(deletedIndex);
+        spinnerto.remove(deletedIndex);
+        custom=new CustomAdapterConv(CronologiaConv.this,fromnum,tonum,spinnerfrom,spinnerto,id, CronologiaConv.this);
+        recyclerView.setAdapter(custom);
+        recyclerView.setLayoutManager(new LinearLayoutManager(CronologiaConv.this));
+
+    }
+
+
 }

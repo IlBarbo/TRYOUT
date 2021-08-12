@@ -69,6 +69,16 @@
                 android:src="@drawable/ic_closesingole"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/idtext_txt"
+                android:layout_width="6dp"
+                android:layout_height="0dp"
+                android:text="1"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
         </android.support.constraint.ConstraintLayout>
     </android.support.v7.widget.CardView>
 

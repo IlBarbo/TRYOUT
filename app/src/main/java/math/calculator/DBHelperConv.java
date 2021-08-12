@@ -10,14 +10,16 @@ import android.widget.Toast;
 public class DBHelperConv extends SQLiteOpenHelper {
     private final Context context;
 
-    private static final String DATABASE_NAME="cronologia_conv.db";
-    private static final String TABLE_NAME="historyconv";
+    private static final String DATABASE_NAME="convertitorecron.db";
+    private static final String TABLE_NAME="convhistory";
     private static final String FROMNUM ="fromnum";
     private static final String TONUM ="tonum";
     private static final String SPINNERFROM ="spinnerfrom";
     private static final String SPINNERTO ="spinnerto";
+    private static final String ID ="id";
+
     private  static final int VERSION_NUMBER=1;
-    final String CREATE_TABLE= " CREATE TABLE " + TABLE_NAME + " ( " + FROMNUM + " TEXT primary key, " + TONUM + " TEXT , " + SPINNERFROM + " TEXT, " + SPINNERTO + " TEXT ); ";
+    final String CREATE_TABLE= " CREATE TABLE " + TABLE_NAME + " ( " + FROMNUM + " TEXT , " + TONUM + " TEXT , " + SPINNERFROM + " TEXT, " + SPINNERTO + " TEXT, " + ID + " INTEGER primary key AUTOINCREMENT); ";
 
 
     public DBHelperConv(Context context) {
@@ -63,7 +65,12 @@ public class DBHelperConv extends SQLiteOpenHelper {
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
         sqLiteDatabase.execSQL("delete from " + TABLE_NAME);
     }
+    public void deleteSingleData(int id){
+        SQLiteDatabase db = this.getWritableDatabase();
 
+        db.execSQL(" delete from " + TABLE_NAME + " where  id = " + id);
+
+    }
 
     @Override
     public void onCreate(SQLiteDatabase db) {

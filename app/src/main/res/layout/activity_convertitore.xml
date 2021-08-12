@@ -18,8 +18,8 @@
 
 
                 <include
-                    android:id="@+id/toolbar"
-                    layout="@layout/main_toolbar"
+                    android:id="@+id/toolbarconv"
+                    layout="@layout/main_toolbarconv"
 
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"/>
@@ -37,7 +37,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/toolbar"
+                    app:layout_constraintTop_toBottomOf="@+id/toolbarconv"
                     app:navGraph="@navigation/my_nav" />
 
                 <android.support.design.widget.BottomNavigationView
