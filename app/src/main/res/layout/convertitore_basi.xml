@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+    <android.support.v4.widget.DrawerLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/drawer_layout"
+        tools:ignore="DuplicateIds">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="420dp"
+        android:layout_height="653dp"
+        tools:layout_editor_absoluteX="-9dp">
+
+
+        <include
+            android:id="@+id/toolbarconv"
+            layout="@layout/main_toolbarconv"
+
+
+            app:layout_constraintBottom_toTopOf="@+id/basenumber"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/basenumber"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="132dp"
+            android:layout_marginTop="30dp"
+            android:text="@string/base"
+
+            android:textColor="@color/tanAccent"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbarconv" />
+
+        <RadioButton
+            android:id="@+id/radio10"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="15dp"
+            android:checked="true"
+            android:text="10"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/basenumber" />
+
+        <RadioButton
+            android:id="@+id/radio2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="15dp"
+            android:text="2"
+            app:layout_constraintStart_toEndOf="@+id/radio10"
+            app:layout_constraintTop_toBottomOf="@+id/basenumber" />
+
+        <RadioButton
+            android:id="@+id/radio8"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="15dp"
+            android:text="8"
+            app:layout_constraintStart_toEndOf="@+id/radio2"
+            app:layout_constraintTop_toBottomOf="@+id/basenumber" />
+
+        <RadioButton
+            android:id="@+id/radio16"
+            android:layout_width="0dp"
+            android:layout_height="29dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="15dp"
+            android:text="16"
+            app:layout_constraintStart_toEndOf="@+id/radio8"
+            app:layout_constraintTop_toBottomOf="@id/basenumber" />
+
+        <TextView
+            android:id="@+id/tConta"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="16dp"
+            android:gravity="center"
+            android:text="0/10"
+            android:textColor="@color/tanAccent"
+            android:textSize="20sp"
+            android:textStyle="normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/radio16"
+            app:layout_constraintTop_toBottomOf="@+id/basenumber" />
+
+        <TextView
+            android:id="@+id/radionumero"
+            android:layout_width="0dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="120dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="120dp"
+            android:text="Numero da convertire"
+            android:textColor="@color/tanAccent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/radio10" />
+
+        <EditText
+            android:id="@+id/numero"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:ems="10"
+            android:inputType="text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/radionumero" />
+
+        <Button
+            android:id="@+id/baseConverti"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/botton_circle"
+            android:text=" Converti "
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            android:textColor="@color/tanAccent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/numero" />
+
+        <ImageButton
+            android:id="@+id/bClear"
+            android:layout_width="44dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/botton_circle"
+            android:src="@drawable/ic_delete"
+
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            app:layout_constraintStart_toEndOf="@+id/baseConverti"
+            app:layout_constraintTop_toBottomOf="@+id/numero" />
+
+
+        <TextView
+            android:id="@+id/tBase2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="177dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="177dp"
+            android:text="Binario"
+            android:textColor="@color/tanAccent"
+            android:textSize="18sp"
+            android:textStyle="normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/baseConverti" />
+
+        <TextView
+            android:id="@+id/tBinario"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:background="@color/tanAccent"
+            android:gravity="center"
+            android:text=""
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tBase2" />
+
+        <TextView
+            android:id="@+id/tBase8"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="177dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="177dp"
+            android:text="Ottale"
+            android:textColor="@color/tanAccent"
+            android:textSize="18sp"
+            android:textStyle="normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tBinario" />
+
+        <TextView
+            android:id="@+id/tOttale"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:background="@color/tanAccent"
+            android:gravity="center"
+            android:text=""
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tBase8" />
+
+
+        <TextView
+            android:id="@+id/tBase10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="177dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="177dp"
+            android:text="Decimale"
+            android:textColor="@color/tanAccent"
+            android:textSize="18sp"
+            android:textStyle="normal"
+            app:layout_constraintBottom_toTopOf="@+id/tDecimale"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tOttale" />
+
+        <TextView
+            android:id="@+id/tDecimale"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:background="@color/tanAccent"
+            android:gravity="center"
+            android:text=""
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tBase10" />
+
+
+        <TextView
+            android:id="@+id/tBase16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="177dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="177dp"
+            android:text="Esadecimale"
+            android:textColor="@color/tanAccent"
+            android:textSize="18sp"
+            android:textStyle="normal"
+            app:layout_constraintBottom_toTopOf="@+id/tEsadecimale"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tDecimale" />
+
+        <TextView
+            android:id="@+id/tEsadecimale"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@color/tanAccent"
+            android:gravity="center"
+            android:text=""
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tBase16" />
+    </android.support.constraint.ConstraintLayout>
+    <RelativeLayout
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@android:color/white">
+
+
+        <include layout="@layout/main_nav_drawer" />
+    </RelativeLayout>
+
+</android.support.v4.widget.DrawerLayout>
+</android.support.constraint.ConstraintLayout>

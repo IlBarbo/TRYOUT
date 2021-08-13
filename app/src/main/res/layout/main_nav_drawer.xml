@@ -77,7 +77,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_weight="1"
                 android:padding="12dp"
-                android:text="Convertitore" />
+                android:text="Convertitore di misura" />
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -86,8 +86,30 @@
                 android:src="@drawable/ic_convertitore" />
 
         </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:onClick="clickConvertitorebase"
+        android:orientation="horizontal">
 
-        <LinearLayout
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_weight="1"
+            android:padding="12dp"
+            android:text="Convertitore di base" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="48dp"
+            android:src="@drawable/ic_swap" />
+    </LinearLayout>
+
+
+    <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
@@ -109,6 +131,7 @@
                 android:src="@drawable/ic_graphic" />
 
         </LinearLayout>
+
 
         <LinearLayout
             android:layout_width="match_parent"

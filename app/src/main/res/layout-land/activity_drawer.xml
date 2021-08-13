@@ -347,18 +347,23 @@
                 <ScrollView
                     android:layout_width="wrap_content"
                     android:layout_height="250dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="10dp"
                     android:layout_weight="1"
                     android:fillViewport="true"
                     android:orientation="vertical"
                     app:layout_constraintBottom_toBottomOf="parent"
+
                     app:layout_constraintEnd_toStartOf="@+id/tableLayout"
                     app:layout_constraintStart_toStartOf="parent"
-                    tools:context=".Activity_calc"
-                    >
+                    app:layout_constraintTop_toBottomOf="@+id/display"
+                    tools:context=".Activity_calc">
 
                     <android.support.constraint.ConstraintLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
 
 
                         >
@@ -587,8 +592,8 @@
                             android:layout_marginStart="10dp"
                             android:layout_marginTop="10dp"
                             android:background="@drawable/botton_circle"
-                            android:text="@string/scrivix"
                             android:onClick="scriviX"
+                            android:text="@string/scrivix"
                             android:textAllCaps="false"
                             android:textColor="@color/tanAccent"
                             android:textSize="15sp"
@@ -617,13 +622,108 @@
                             android:layout_marginStart="10dp"
                             android:layout_marginTop="10dp"
                             android:background="@drawable/botton_circle"
-                            android:text="@string/funzione"
                             android:onClick="funzione"
+                            android:text="@string/funzione"
                             android:textAllCaps="false"
                             android:textColor="@color/tanAccent"
                             android:textSize="15sp"
                             app:layout_constraintStart_toEndOf="@+id/fattoriale"
                             app:layout_constraintTop_toBottomOf="@+id/potenza" />
+
+                        <Button
+                            android:id="@+id/integrale"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/botton_circle"
+                            android:onClick="integrale"
+                            android:text="@string/integrale"
+                            android:textAllCaps="false"
+                            android:textColor="@color/tanAccent"
+                            android:textSize="15sp"
+                            app:layout_constraintStart_toEndOf="@+id/derivata"
+                            app:layout_constraintTop_toBottomOf="@+id/funzione" />
+
+                        <Button
+                            android:id="@+id/derivata"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/botton_circle"
+                            android:onClick="derivata"
+                            android:text="@string/derivata"
+                            android:textAllCaps="false"
+                            android:textColor="@color/tanAccent"
+                            android:textSize="15sp"
+                            app:layout_constraintStart_toEndOf="@+id/maggiore"
+                            app:layout_constraintTop_toBottomOf="@+id/fattoriale" />
+
+
+                        <Button
+                            android:id="@+id/maggiore"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/botton_circle"
+                            android:onClick="maggiore"
+                            android:text="@string/maggiore"
+                            android:textAllCaps="false"
+                            android:textColor="@color/tanAccent"
+                            android:textSize="15sp"
+                            app:layout_constraintStart_toEndOf="@+id/parent"
+                            app:layout_constraintTop_toBottomOf="@+id/scriviX" />
+
+                        <Button
+                            android:id="@+id/and"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/botton_circle"
+                            android:onClick="and"
+                            android:text="@string/and"
+                            android:textAllCaps="false"
+                            android:textColor="@color/tanAccent"
+                            android:textSize="15sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/parent"
+                            app:layout_constraintTop_toBottomOf="@+id/maggiore" />
+
+                        <Button
+                            android:id="@+id/or"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/botton_circle"
+                            android:onClick="or"
+                            android:text="@string/or"
+                            android:textAllCaps="false"
+                            android:textColor="@color/tanAccent"
+                            android:textSize="15sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/and"
+                            app:layout_constraintTop_toBottomOf="@+id/derivata" />
+
+                        <Button
+                            android:id="@+id/andand"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/botton_circle"
+                            android:onClick="andand"
+                            android:text="&amp;&amp;"
+                            android:textAllCaps="false"
+                            android:textColor="@color/tanAccent"
+                            android:textSize="15sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/or"
+                            app:layout_constraintTop_toBottomOf="@+id/integrale" />
                     </android.support.constraint.ConstraintLayout>
                 </ScrollView>
             </android.support.constraint.ConstraintLayout>

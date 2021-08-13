@@ -14,6 +14,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.view.View;
 
+import com.digidemic.unitof.F;
+
 import org.mariuszgromada.math.mxparser.*;
 import org.mariuszgromada.math.mxparser.mathcollection.Evaluate;
 
@@ -29,7 +31,7 @@ public class Activity_calc extends AppCompatActivity {
     private AlertDialog.Builder dialogBuilder;
     private AlertDialog dialog;
     ImageView cronologiaButton;
-    Button buttonpunto;
+    Button buttonpunto,maggiore,seno,coseno,tangente,arcseno,arccoseno,arctangente;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +42,13 @@ public class Activity_calc extends AppCompatActivity {
         schermo=findViewById(R.id.display);
         title=findViewById(R.id.benvenuto);
         uguale=findViewById(R.id.uguale);
+        maggiore=findViewById(R.id.maggiore);
+        seno=findViewById(R.id.seno);
+        coseno=findViewById(R.id.coseno);
+        tangente=findViewById(R.id.tangente);
+        arcseno=findViewById(R.id.arcseno);
+        arccoseno=findViewById(R.id.arccoseno);
+        arctangente=findViewById(R.id.arctangente);
         schermo.setShowSoftInputOnFocus(false); /*Imposta un valore che indica se il metodo di
                                                  input soft verrà reso visibile quando questo
                                                   TextView viene messo a punto. L'impostazione
@@ -48,8 +57,8 @@ public class Activity_calc extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 uguale(v);
-               DBHelper dbHelper= new DBHelper(Activity_calc.this);
-               dbHelper.insertData(risultato.getText().toString().trim(),schermo.getText().toString().trim());
+                DBHelper dbHelper= new DBHelper(Activity_calc.this);
+                dbHelper.insertData(risultato.getText().toString().trim(),schermo.getText().toString().trim());
             }
 
         });
@@ -85,71 +94,74 @@ public class Activity_calc extends AppCompatActivity {
         final View contactPopupView=getLayoutInflater().inflate(R.layout.popup,null);
     }
 
-        //navigation drawer
-        public void ClickMenu (View view)
-        {
-            //apro drawer
-            openDrawer(drawerLayout);
-        }
+    //navigation drawer
+    public void ClickMenu (View view)
+    {
+        //apro drawer
+        openDrawer(drawerLayout);
+    }
 
-        public static void openDrawer (DrawerLayout drawerLayout){
-            //apro drawer layout
-            drawerLayout.openDrawer(GravityCompat.START);
-        }
-        public void ClickLogo (View view)
-        {
-            closeDrawer(drawerLayout);
-        }
+    public static void openDrawer (DrawerLayout drawerLayout){
+        //apro drawer layout
+        drawerLayout.openDrawer(GravityCompat.START);
+    }
+    public void ClickLogo (View view)
+    {
+        closeDrawer(drawerLayout);
+    }
 
-        public static void closeDrawer (DrawerLayout drawerLayout){
-            if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
-                //quando il drawer è aperto lo chiudo
-                drawerLayout.closeDrawer(GravityCompat.START);
-
-            }
-        }
-        public void clickHome(View view)
-        {
-            recreate();
-        }
-
-        public void clickConvertitore (View view){
-            redirectActivity(this, Convertitore.class);
-        }
-
-        public void clickGrafico(View view){
-            redirectActivity(this, Grafico.class);
-        }
-
-
-        public void clickLogout(View view){
-            logout(this);
-        }
-
-        public static void logout (Activity activity_drawer){
-            AlertDialog.Builder builder = new AlertDialog.Builder(activity_drawer);
-            builder.setTitle("Logout");
-            builder.setMessage("sei sicuro di voler fare il logout?");
-            builder.setPositiveButton("SI", (dialog, which) -> {
-                //finish activity
-                activity_drawer.finishAffinity();
-                System.exit(0);
-            });
-            builder.setNegativeButton("N0", (dialog, which) -> dialog.dismiss());
-            builder.show();
-        }
-        protected void onPause () {
-            super.onPause();
-            closeDrawer(drawerLayout);
-        }
-
-        public static void redirectActivity (Activity activity, Class aClass){
-            Intent intent = new Intent(activity, aClass);
-            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            //start activity
-            activity.startActivity(intent);
+    public static void closeDrawer (DrawerLayout drawerLayout){
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
+            //quando il drawer è aperto lo chiudo
+            drawerLayout.closeDrawer(GravityCompat.START);
 
         }
+    }
+    public void clickHome(View view)
+    {
+        recreate();
+    }
+
+    public void clickConvertitore (View view){
+        redirectActivity(this, Convertitore.class);
+    }
+    public void clickConvertitorebase (View view){
+        redirectActivity(this, ConvertitoreBase.class);
+    }
+
+    public void clickGrafico(View view){
+        redirectActivity(this, Grafico.class);
+    }
+
+
+    public void clickLogout(View view){
+        logout(this);
+    }
+
+    public static void logout (Activity activity_drawer){
+        AlertDialog.Builder builder = new AlertDialog.Builder(activity_drawer);
+        builder.setTitle("Logout");
+        builder.setMessage("sei sicuro di voler fare il logout?");
+        builder.setPositiveButton("SI", (dialog, which) -> {
+            //finish activity
+            activity_drawer.finishAffinity();
+            System.exit(0);
+        });
+        builder.setNegativeButton("N0", (dialog, which) -> dialog.dismiss());
+        builder.show();
+    }
+    protected void onPause () {
+        super.onPause();
+        closeDrawer(drawerLayout);
+    }
+
+    public static void redirectActivity (Activity activity, Class aClass){
+        Intent intent = new Intent(activity, aClass);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        //start activity
+        activity.startActivity(intent);
+
+    }
 
 
     //calcolatrice
@@ -256,40 +268,56 @@ public class Activity_calc extends AppCompatActivity {
         });
     }
     public void uguale(View v){
-       String user=schermo.getText().toString();
+
+        String user=schermo.getText().toString();
         risultato.setText(user);
 
         user = user.replaceAll("÷", "/");
         user = user.replaceAll("×", "*");
 
         Expression exp=new Expression(user);
-
-       String result=String.valueOf(exp.calculate()); //usa la libreria mxparser
+        String result=String.valueOf(exp.calculate()); //usa la libreria mxparser
         schermo.setText(result);
         schermo.setSelection(result.length());
     }
     public void spazio(View v){
-       int cursore= schermo.getSelectionStart();
-       int textLen=schermo.getText().length();
-       if(cursore != 0 && textLen != 0)
-       {
-           SpannableStringBuilder sel=(SpannableStringBuilder) schermo.getText();
-           //replace sostituisce il testo compreso tra start e end con la stringa che vogliamo
-           sel.replace(cursore-1,cursore,"");
-           schermo.setText(sel);
-           schermo.setSelection(cursore-1);
-       }
+        int cursore= schermo.getSelectionStart();
+        int textLen=schermo.getText().length();
+        if(cursore != 0 && textLen != 0)
+        {
+            SpannableStringBuilder sel=(SpannableStringBuilder) schermo.getText();
+            //replace sostituisce il testo compreso tra start e end con la stringa che vogliamo
+            sel.replace(cursore-1,cursore,"");
+            schermo.setText(sel);
+            schermo.setSelection(cursore-1);
+        }
     }
 
     public void coseno(View view) {
 
         upText("cos(");
+        coseno.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                upText("cosh(");
+
+                return true;
+            }
+        });
 
 
     }
 
     public void seno(View view) {
         upText("sin(");
+        seno.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                upText("sinh(");
+
+                return true;
+            }
+        });
     }
 
     public void percentuale(View view) {
@@ -298,26 +326,58 @@ public class Activity_calc extends AppCompatActivity {
 
     public void tangente(View view) {
         upText("tan(");
+        tangente.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                upText("<");
+
+                return true;
+            }
+        });
     }
 
     public void arcseno(View view) {
         upText("arcsin(");
+        arcseno.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                upText("arcsinh(");
+
+                return true;
+            }
+        });
     }
 
     public void arccoseno(View view) {
         upText("arccos(");
+        arccoseno.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                upText("arccosh(");
+
+                return true;
+            }
+        });
     }
 
     public void arctangente(View view) {
         upText("arctan(");
+        maggiore.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                upText("arctanh(");
+
+                return true;
+            }
+        });
     }
 
     public void logaritmo_naturale(View view) {
-        upText("ln");
+        upText("ln(");
     }
 
     public void logaritmo(View view) {
-        upText("log");
+        upText("log(");
     }
 
     public void radice(View view) {
@@ -350,10 +410,35 @@ public class Activity_calc extends AppCompatActivity {
         upText("!");
     }
     public void funzione(View view) {
-        upText("f(");
+        upText("f(x)=");
     }
 
-    Evaluate espressione=  new Evaluate();
+    public void integrale(View view) {
+        upText("int(");
+    }
+    public void derivata(View view) {
+        upText("der(");
+    }
+    public void maggiore(View view) {
+        upText(">");
+        maggiore.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                upText("<");
+
+                return true;
+            }
+        });
+    }
+    public void and(View view) {
+        upText("&");
+    }
+    public void or(View view) {
+        upText("|");
+    }
 
 
+    public void andand(View view) {
+        upText("&&");
+    }
 }

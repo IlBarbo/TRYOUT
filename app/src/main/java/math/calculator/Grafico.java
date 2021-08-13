@@ -50,6 +50,9 @@ public class Grafico extends AppCompatActivity {
     public void clickConvertitore (View view){
         redirectActivity(this, Convertitore.class);
     }
+    public void clickConvertitorebase (View view){
+        redirectActivity(this, ConvertitoreBase.class);
+    }
 
     public void clickGrafico(View view){
      recreate();

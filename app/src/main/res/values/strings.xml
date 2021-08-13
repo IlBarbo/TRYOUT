@@ -67,6 +67,14 @@
     <string name="angolo">ANGOLO</string>
     <string name="temperatura">TEMPERATURA</string>
     <string name="converti">CONVERTI</string>
+    <string name="integrale">∫</string>
+    <string name="derivata">fʼ(x)</string>
+    <string name="maggiore">></string>
+    <string name="and">&amp;</string>
+    <string name="or">|</string>
+    <string name="base">BASI DI NUMERI</string>
+
+
 
     <string-array name="lunghezza">
         <item>metri</item>

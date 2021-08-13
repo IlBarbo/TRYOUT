@@ -15,7 +15,7 @@
             android:parentActivityName=".Activity_calc"/>
         <activity android:name=".CronologiaConv"
            />
-
+        <activity android:name=".ConvertitoreBase" />
         <activity android:name=".Grafico" />
         <activity android:name=".Activity_calc" />
         <activity
