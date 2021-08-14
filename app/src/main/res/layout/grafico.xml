@@ -13,7 +13,8 @@
 
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:id="@+id/drawer_layout"
+
+    android:id="@+id/drawer_layout"
     >
     <LinearLayout
         android:layout_width="match_parent"
@@ -21,28 +22,9 @@
         android:orientation="vertical">
 
 
-        <android.support.v7.widget.Toolbar
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:minHeight="?actionBarSize">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="GRAFICO"
-            android:textColor="@color/tanAccent"
-            android:textSize="24sp" />
-
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:onClick="ClickMenu"
-                android:src="@drawable/ic_menu"/>
-
-        </android.support.v7.widget.Toolbar>
-
+        <include
+            android:id="@+id/toolbargraf"
+            layout="@layout/main_toolbargrafico" />
 
 
     </LinearLayout>
