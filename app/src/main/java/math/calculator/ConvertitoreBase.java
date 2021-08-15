@@ -17,6 +17,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
@@ -31,7 +32,7 @@ public class ConvertitoreBase extends AppCompatActivity {
     private TextView ris2,ris8,ris10,ris16,eticnumero;
     private RadioButton radio2,radio8,radio10,radio16;
     private double BaseFrom;
-    String vp;
+    ImageView cronologiaBaseButton;
     DrawerLayout drawerLayout;
     private int maxcifre,MAXNUMERO;
     final Context context = this;
@@ -44,6 +45,15 @@ public class ConvertitoreBase extends AppCompatActivity {
         MAXNUMERO = 2147483647;
         /*numero max che può essere convertito dall'app*/
         drawerLayout=findViewById(R.id.drawer_layout);
+        cronologiaBaseButton=findViewById(R.id.cronologia);
+        cronologiaBaseButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ConvertitoreBase.this, CronologiaBase.class);
+                startActivity(intent);
+            }
+        });
+        converti = (Button) findViewById(R.id.baseConverti);
 
         numero = (EditText) findViewById(R.id.numero);
         numero.addTextChangedListener(new MyTextWatcher(numero));
@@ -52,7 +62,7 @@ public class ConvertitoreBase extends AppCompatActivity {
         maxcifre = 10;
         eticnumero = (TextView) findViewById(R.id.radionumero);
         eticnumero.setText("Numero in base 10 da convertire");
-        converti = (Button) findViewById(R.id.baseConverti);
+
         clear = (ImageButton) findViewById(R.id.bClear);
         //risultati delle conversioni
         ris2 = (TextView) findViewById(R.id.tBase2);
@@ -71,7 +81,6 @@ public class ConvertitoreBase extends AppCompatActivity {
         radio10 = (RadioButton) findViewById(R.id.radio10);
         radio16 = (RadioButton) findViewById(R.id.radio16);
         conta.setText("0/10");
-
 
 
 
@@ -148,7 +157,16 @@ public class ConvertitoreBase extends AppCompatActivity {
         converti.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+            if(!numero.getText().toString().trim().isEmpty()) {
+
                 convertfrombase();
+                DBHelperBase dbHelperbase = new DBHelperBase(ConvertitoreBase.this);
+                dbHelperbase.insertData(bin.getText().toString().trim(), oct.getText().toString().trim(), dec.getText().toString().trim(), esa.getText().toString().trim());
+            }else{
+                    numero.setError("nessun numero inserito");
+                    numero.requestFocus();
+
+            }
             }
         });
     }
@@ -246,11 +264,7 @@ public class ConvertitoreBase extends AppCompatActivity {
 
     private void convertfrombase()
     {
-        if (numero.getText().toString().trim().isEmpty()) {
-            numero.setError("nessun numero inserito");
-            numero.requestFocus();
-            return;
-        }
+
 
         String v = numero.getText().toString();
 
