@@ -8,7 +8,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Activity_calc"
-    android:background="@drawable/app_background"
     tools:ignore="DuplicateIds">
     <android.support.v4.widget.DrawerLayout
 
@@ -61,7 +60,7 @@
                             android:background="@drawable/button_clear"
                             android:onClick="clear"
                             android:text="@string/clear"
-                            android:textColor="@color/tanAccent"
+                            android:textColor="@color/white"
                             android:textSize="24sp" />
 
                         <Button
@@ -74,7 +73,7 @@
                             android:background="@drawable/botton_circle"
                             android:onClick="parentesi"
                             android:text="@string/parentesi"
-                            android:textColor="@color/tanAccent"
+                            android:textColor="@color/white"
                             android:textSize="24sp" />
 
                         <Button
@@ -87,7 +86,7 @@
                             android:layout_weight="1"
                             android:background="@drawable/botton_circle"
                             android:text="@string/esponente"
-                            android:textColor="@color/tanAccent"
+                            android:textColor="@color/white"
                             android:textSize="24sp" />
 
                         <Button
@@ -100,7 +99,7 @@
                             android:background="@drawable/botton_circle"
                             android:onClick="divisione"
                             android:text="@string/divisione"
-                            android:textColor="@color/tanAccent"
+                            android:textColor="@color/white"
                             android:textSize="24sp" />
                     </TableRow>
 
@@ -118,7 +117,7 @@
                             android:background="@drawable/botton_circle"
                             android:onClick="sette"
                             android:text="@string/sette"
-                            android:textColor="@color/tanAccent"
+                            android:textColor="@color/white"
                             android:textSize="24sp" />
 
                         <Button
@@ -131,7 +130,7 @@
                             android:background="@drawable/botton_circle"
                             android:onClick="otto"
                             android:text="@string/otto"
-                            android:textColor="@color/tanAccent"
+                            android:textColor="@color/white"
                             android:textSize="24sp" />
 
                         <Button
@@ -144,7 +143,7 @@
                             android:background="@drawable/botton_circle"
                             android:onClick="nove"
                             android:text="@string/nove"
-                            android:textColor="@color/tanAccent"
+                            android:textColor="@color/white"
                             android:textSize="24sp" />
 
                         <Button
@@ -157,7 +156,7 @@
                             android:background="@drawable/botton_circle"
                             android:onClick="moltiplicazione"
                             android:text="@string/moltiplicazione"
-                            android:textColor="@color/tanAccent"
+                            android:textColor="@color/white"
                             android:textSize="24sp" />
 
 
@@ -177,7 +176,7 @@
                             android:background="@drawable/botton_circle"
                             android:onClick="quattro"
                             android:text="@string/quattro"
-                            android:textColor="@color/tanAccent"
+                            android:textColor="@color/white"
                             android:textSize="24sp" />
 
                         <Button
@@ -190,7 +189,7 @@
                             android:background="@drawable/botton_circle"
                             android:onClick="cinque"
                             android:text="@string/cinque"
-                            android:textColor="@color/tanAccent"
+                            android:textColor="@color/white"
                             android:textSize="24sp" />
 
                         <Button
@@ -203,7 +202,7 @@
                             android:background="@drawable/botton_circle"
                             android:onClick="sei"
                             android:text="@string/sei"
-                            android:textColor="@color/tanAccent"
+                            android:textColor="@color/white"
                             android:textSize="24sp" />
 
                         <Button
@@ -216,7 +215,7 @@
                             android:background="@drawable/botton_circle"
                             android:onClick="sub"
                             android:text="@string/sub"
-                            android:textColor="@color/tanAccent"
+                            android:textColor="@color/white"
                             android:textSize="24sp" />
                     </TableRow>
 
@@ -234,7 +233,7 @@
                             android:background="@drawable/botton_circle"
                             android:onClick="uno"
                             android:text="@string/uno"
-                            android:textColor="@color/tanAccent"
+                            android:textColor="@color/white"
                             android:textSize="24sp" />
 
                         <Button
@@ -247,7 +246,7 @@
                             android:background="@drawable/botton_circle"
                             android:onClick="due"
                             android:text="@string/due"
-                            android:textColor="@color/tanAccent"
+                            android:textColor="@color/white"
                             android:textSize="24sp" />
 
                         <Button
@@ -260,7 +259,7 @@
                             android:background="@drawable/botton_circle"
                             android:onClick="tre"
                             android:text="@string/tre"
-                            android:textColor="@color/tanAccent"
+                            android:textColor="@color/white"
                             android:textSize="24sp" />
 
                         <Button
@@ -273,7 +272,7 @@
                             android:background="@drawable/botton_circle"
                             android:onClick="add"
                             android:text="@string/add"
-                            android:textColor="@color/tanAccent"
+                            android:textColor="@color/white"
                             android:textSize="24sp" />
 
                     </TableRow>
@@ -292,7 +291,7 @@
                             android:background="@drawable/botton_circle"
                             android:onClick="addsub"
                             android:text="@string/addsub"
-                            android:textColor="@color/tanAccent"
+                            android:textColor="@color/white"
                             android:textSize="24sp" />
 
                         <Button
@@ -305,7 +304,7 @@
                             android:background="@drawable/botton_circle"
                             android:onClick="zero"
                             android:text="@string/zero"
-                            android:textColor="@color/tanAccent"
+                            android:textColor="@color/white"
                             android:textSize="24sp" />
 
                         <Button
@@ -318,7 +317,7 @@
                             android:background="@drawable/botton_circle"
                             android:onClick="punto"
                             android:text="@string/punto"
-                            android:textColor="@color/tanAccent"
+                            android:textColor="@color/white"
                             android:textSize="24sp" />
 
                         <Button
@@ -331,7 +330,7 @@
                             android:background="@drawable/button_equals"
                             android:onClick="uguale"
                             android:text="@string/uguale"
-                            android:textColor="@color/tanAccent"
+                            android:textColor="@color/white"
                             android:textSize="24sp" />
                     </TableRow>
                 </TableLayout>
@@ -348,10 +347,10 @@
                     android:paddingEnd="10dp"
                     android:paddingStart="10dp"
                     android:textSize="36sp"
+                    android:textColor="@color/greyEnd"
                     android:inputType="number"
                     android:importantForAutofill="no"
-                    android:textColorHint="@color/greyAccent"
-                    android:textColor="@color/tanAccent"
+                    android:textColorHint="@color/tanAccent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintStart_toStartOf="parent"
@@ -376,7 +375,7 @@
                     android:id="@+id/risultato"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/tanAccent"
+
                     android:textSize="24sp"
                     app:layout_constraintBottom_toTopOf="@+id/display"
                     app:layout_constraintEnd_toEndOf="parent"

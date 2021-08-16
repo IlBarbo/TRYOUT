@@ -10,19 +10,31 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Calcolatrice">
 
-        <activity android:name=".Convertitore" />
+        <activity android:name=".Convertitore"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"/>
         <activity android:name=".CronologiaCalc"
-            android:parentActivityName=".Activity_calc"/>
+            android:parentActivityName=".Activity_calc"
+            />
         <activity android:name=".CronologiaConv"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
            />
         <activity android:name=".CronologiaBase"
-            />
-        <activity android:name=".ConvertitoreBase" />
-        <activity android:name=".Grafico" />
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ConvertitoreBase"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Grafico"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"/>
         <activity android:name=".Activity_calc" />
         <activity
             android:name=".Main_Activity"
-            android:label="Calcolatrice">
+            android:label="Calcolatrice"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

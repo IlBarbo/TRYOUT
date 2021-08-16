@@ -25,6 +25,7 @@ public class Convertitore extends AppCompatActivity {
 
     DrawerLayout drawerLayout;
     ImageView cronologiaButton;
+    private TextView title;
 
 
     @Override
@@ -34,7 +35,7 @@ public class Convertitore extends AppCompatActivity {
         //menu
         drawerLayout=findViewById(R.id.drawer_layout);
 
-
+        title=findViewById(R.id.benvenuto);
         //BottomNavigationView
        BottomNavigationView bottomNavigationView= findViewById(R.id.bottomNavigationView);
         NavController navController= Navigation.findNavController(this,R.id.fragment);
@@ -49,7 +50,6 @@ public class Convertitore extends AppCompatActivity {
             }
 
         });
-
 
 
     }

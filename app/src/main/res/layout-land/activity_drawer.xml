@@ -7,7 +7,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:screenOrientation="landscape"
-    android:background="@drawable/app_background"
     tools:context=".Activity_calc">
     <android.support.v4.widget.DrawerLayout
 
@@ -36,7 +35,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="10dp"
-                    android:textColor="@color/white"
+                    android:textColor="@color/greyEnd"
                     android:textSize="24sp"
                     app:layout_constraintBottom_toTopOf="@+id/display"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -53,8 +52,8 @@
                     android:paddingStart="20dp"
                     android:paddingEnd="20dp"
                     android:textAlignment="textEnd"
-                    android:textColor="@color/white"
-                    android:textColorHint="@color/greyAccent"
+                    android:textColor="@color/greyEnd"
+                    android:textColorHint="@color/tanAccent"
                     android:textSize="24sp"
                     app:layout_constraintBottom_toTopOf="@+id/tableLayout"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -77,7 +76,7 @@
                         android:background="@drawable/button_clear"
                         android:onClick="clear"
                         android:text="@string/clear"
-                        android:textColor="@color/tanAccent"
+                        android:textColor="@color/white"
                         android:textSize="28sp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -90,7 +89,7 @@
                         android:background="@drawable/botton_circle"
                         android:onClick="parentesi"
                         android:text="@string/parentesi"
-                        android:textColor="@color/tanAccent"
+                        android:textColor="@color/white"
                         android:textSize="28sp"
                         app:layout_constraintStart_toEndOf="@+id/clear"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -103,7 +102,7 @@
                         android:background="@drawable/botton_circle"
                         android:onClick="percentuale"
                         android:text="@string/percentuale"
-                        android:textColor="@color/tanAccent"
+                        android:textColor="@color/white"
                         android:textSize="28sp"
                         app:layout_constraintStart_toEndOf="@+id/parentesi"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -117,7 +116,7 @@
                         android:background="@drawable/botton_circle"
                         android:onClick="divisione"
                         android:text="@string/divisione"
-                        android:textColor="@color/tanAccent"
+                        android:textColor="@color/white"
                         android:textSize="28sp"
                         app:layout_constraintStart_toEndOf="@+id/nove"
                         app:layout_constraintTop_toBottomOf="@+id/spazio" />
@@ -130,7 +129,7 @@
                         android:background="@drawable/botton_circle"
                         android:onClick="sette"
                         android:text="@string/sette"
-                        android:textColor="@color/tanAccent"
+                        android:textColor="@color/white"
                         android:textSize="28sp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/clear" />
@@ -144,7 +143,7 @@
                         android:background="@drawable/botton_circle"
                         android:onClick="otto"
                         android:text="@string/otto"
-                        android:textColor="@color/tanAccent"
+                        android:textColor="@color/white"
                         android:textSize="28sp"
                         app:layout_constraintStart_toEndOf="@+id/sette"
                         app:layout_constraintTop_toBottomOf="@+id/parentesi" />
@@ -158,7 +157,7 @@
                         android:background="@drawable/botton_circle"
                         android:onClick="nove"
                         android:text="@string/nove"
-                        android:textColor="@color/tanAccent"
+                        android:textColor="@color/white"
                         android:textSize="28sp"
                         app:layout_constraintStart_toEndOf="@+id/otto"
                         app:layout_constraintTop_toBottomOf="@+id/percentuale" />
@@ -172,7 +171,7 @@
                         android:background="@drawable/botton_circle"
                         android:onClick="moltiplicazione"
                         android:text="@string/moltiplicazione"
-                        android:textColor="@color/tanAccent"
+                        android:textColor="@color/white"
                         android:textSize="28sp"
                         app:layout_constraintStart_toEndOf="@+id/sei"
                         app:layout_constraintTop_toBottomOf="@+id/divisione" />
@@ -185,7 +184,7 @@
                         android:background="@drawable/botton_circle"
                         android:onClick="quattro"
                         android:text="@string/quattro"
-                        android:textColor="@color/tanAccent"
+                        android:textColor="@color/white"
                         android:textSize="28sp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/sette" />
@@ -199,7 +198,7 @@
                         android:background="@drawable/botton_circle"
                         android:onClick="cinque"
                         android:text="@string/cinque"
-                        android:textColor="@color/tanAccent"
+                        android:textColor="@color/white"
                         android:textSize="28sp"
                         app:layout_constraintStart_toEndOf="@+id/quattro"
                         app:layout_constraintTop_toBottomOf="@+id/otto" />
@@ -213,7 +212,7 @@
                         android:background="@drawable/botton_circle"
                         android:onClick="sei"
                         android:text="@string/sei"
-                        android:textColor="@color/tanAccent"
+                        android:textColor="@color/white"
                         android:textSize="28sp"
                         app:layout_constraintStart_toEndOf="@+id/cinque"
                         app:layout_constraintTop_toBottomOf="@+id/nove" />
@@ -227,7 +226,7 @@
                         android:background="@drawable/botton_circle"
                         android:onClick="sub"
                         android:text="@string/sub"
-                        android:textColor="@color/tanAccent"
+                        android:textColor="@color/white"
                         android:textSize="28sp"
                         app:layout_constraintStart_toEndOf="@+id/tre"
                         app:layout_constraintTop_toBottomOf="@+id/moltiplicazione" />
@@ -240,7 +239,7 @@
                         android:background="@drawable/botton_circle"
                         android:onClick="uno"
                         android:text="@string/uno"
-                        android:textColor="@color/tanAccent"
+                        android:textColor="@color/white"
                         android:textSize="28sp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/quattro" />
@@ -254,7 +253,7 @@
                         android:background="@drawable/botton_circle"
                         android:onClick="due"
                         android:text="@string/due"
-                        android:textColor="@color/tanAccent"
+                        android:textColor="@color/white"
                         android:textSize="28sp"
                         app:layout_constraintStart_toEndOf="@+id/uno"
                         app:layout_constraintTop_toBottomOf="@+id/cinque" />
@@ -268,7 +267,7 @@
                         android:background="@drawable/botton_circle"
                         android:onClick="tre"
                         android:text="@string/tre"
-                        android:textColor="@color/tanAccent"
+                        android:textColor="@color/white"
                         android:textSize="28sp"
                         app:layout_constraintStart_toEndOf="@+id/due"
                         app:layout_constraintTop_toBottomOf="@+id/sei" />
@@ -282,7 +281,7 @@
                         android:background="@drawable/botton_circle"
                         android:onClick="add"
                         android:text="@string/add"
-                        android:textColor="@color/tanAccent"
+                        android:textColor="@color/white"
                         android:textSize="28sp"
                         app:layout_constraintStart_toEndOf="@+id/uguale"
                         app:layout_constraintTop_toBottomOf="@+id/sub" />
@@ -295,7 +294,7 @@
                         android:background="@drawable/botton_circle"
                         android:onClick="zero"
                         android:text="@string/zero"
-                        android:textColor="@color/tanAccent"
+                        android:textColor="@color/white"
                         android:textSize="28sp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/uno" />
@@ -309,7 +308,7 @@
                         android:background="@drawable/botton_circle"
                         android:onClick="punto"
                         android:text="@string/punto"
-                        android:textColor="@color/tanAccent"
+                        android:textColor="@color/white"
                         android:textSize="28sp"
                         app:layout_constraintStart_toEndOf="@+id/zero"
                         app:layout_constraintTop_toBottomOf="@+id/due" />
@@ -323,7 +322,7 @@
                         android:background="@drawable/button_equals"
                         android:onClick="uguale"
                         android:text="@string/uguale"
-                        android:textColor="@color/tanAccent"
+                        android:textColor="@color/white"
                         android:textSize="28sp"
                         app:layout_constraintStart_toEndOf="@+id/punto"
                         app:layout_constraintTop_toBottomOf="@+id/tre" />
@@ -336,7 +335,7 @@
                         android:background="@drawable/botton_circle"
                         android:contentDescription="@string/spazio"
                         android:onClick="spazio"
-                        android:textColor="@color/tanAccent"
+                        android:textColor="@color/white"
                         app:layout_constraintEnd_toEndOf="@+id/divisione"
                         app:layout_constraintStart_toEndOf="@+id/percentuale"
                         app:layout_constraintTop_toTopOf="parent"
@@ -376,7 +375,7 @@
                             android:onClick="seno"
                             android:text="@string/seno"
                             android:textAllCaps="false"
-                            android:textColor="@color/tanAccent"
+                            android:textColor="@color/white"
                             android:textSize="15sp"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
@@ -390,7 +389,7 @@
                             android:onClick="coseno"
                             android:text="@string/coseno"
                             android:textAllCaps="false"
-                            android:textColor="@color/tanAccent"
+                            android:textColor="@color/white"
                             android:textSize="15sp"
                             app:layout_constraintStart_toEndOf="@+id/seno"
                             app:layout_constraintTop_toTopOf="parent" />
@@ -404,7 +403,7 @@
                             android:onClick="tangente"
                             android:text="@string/tangente"
                             android:textAllCaps="false"
-                            android:textColor="@color/tanAccent"
+                            android:textColor="@color/white"
                             android:textSize="15sp"
                             app:layout_constraintStart_toEndOf="@+id/coseno"
                             app:layout_constraintTop_toTopOf="parent" />
@@ -418,7 +417,7 @@
                             android:onClick="arcseno"
                             android:text="@string/arcseno"
                             android:textAllCaps="false"
-                            android:textColor="@color/tanAccent"
+                            android:textColor="@color/white"
                             android:textSize="15sp"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/seno" />
@@ -433,7 +432,7 @@
                             android:onClick="arccoseno"
                             android:text="@string/arccoseno"
                             android:textAllCaps="false"
-                            android:textColor="@color/tanAccent"
+                            android:textColor="@color/white"
                             android:textSize="15sp"
                             app:layout_constraintStart_toEndOf="@+id/arcseno"
                             app:layout_constraintTop_toBottomOf="@+id/coseno" />
@@ -448,7 +447,7 @@
                             android:onClick="arctangente"
                             android:text="@string/arctangente"
                             android:textAllCaps="false"
-                            android:textColor="@color/tanAccent"
+                            android:textColor="@color/white"
                             android:textSize="15sp"
                             app:layout_constraintStart_toEndOf="@+id/arccoseno"
                             app:layout_constraintTop_toBottomOf="@+id/tangente" />
@@ -462,7 +461,7 @@
                             android:onClick="logaritmo_naturale"
                             android:text="@string/logaritmo_naturale"
                             android:textAllCaps="false"
-                            android:textColor="@color/tanAccent"
+                            android:textColor="@color/white"
                             android:textSize="15sp"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/arcseno" />
@@ -477,7 +476,7 @@
                             android:onClick="logaritmo"
                             android:text="@string/logaritmo"
                             android:textAllCaps="false"
-                            android:textColor="@color/tanAccent"
+                            android:textColor="@color/white"
                             android:textSize="15sp"
                             app:layout_constraintStart_toEndOf="@+id/logaritmo_naturale"
                             app:layout_constraintTop_toBottomOf="@+id/arccoseno" />
@@ -492,7 +491,7 @@
                             android:onClick="radice"
                             android:text="@string/radice"
                             android:textAllCaps="false"
-                            android:textColor="@color/tanAccent"
+                            android:textColor="@color/white"
                             android:textSize="15sp"
                             app:layout_constraintStart_toEndOf="@+id/logaritmo"
                             app:layout_constraintTop_toBottomOf="@+id/arctangente" />
@@ -506,7 +505,7 @@
                             android:onClick="nepero"
                             android:text="@string/nepero"
                             android:textAllCaps="false"
-                            android:textColor="@color/tanAccent"
+                            android:textColor="@color/white"
                             android:textSize="15sp"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/logaritmo_naturale" />
@@ -521,7 +520,7 @@
                             android:onClick="pigreco"
                             android:text="@string/pigreco"
                             android:textAllCaps="false"
-                            android:textColor="@color/tanAccent"
+                            android:textColor="@color/white"
                             android:textSize="15sp"
                             app:layout_constraintStart_toEndOf="@+id/nepero"
                             app:layout_constraintTop_toBottomOf="@+id/logaritmo" />
@@ -536,7 +535,7 @@
                             android:onClick="modulo"
                             android:text="@string/modulo"
                             android:textAllCaps="false"
-                            android:textColor="@color/tanAccent"
+                            android:textColor="@color/white"
                             android:textSize="15sp"
                             app:layout_constraintStart_toEndOf="@+id/pigreco"
                             app:layout_constraintTop_toBottomOf="@+id/radice" />
@@ -550,7 +549,7 @@
                             android:onClick="primo"
                             android:text="@string/primo"
                             android:textAllCaps="false"
-                            android:textColor="@color/tanAccent"
+                            android:textColor="@color/white"
                             android:textSize="15sp"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/nepero" />
@@ -565,7 +564,7 @@
                             android:onClick="xQuadro"
                             android:text="@string/xQuadro"
                             android:textAllCaps="false"
-                            android:textColor="@color/tanAccent"
+                            android:textColor="@color/white"
                             android:textSize="15sp"
                             app:layout_constraintStart_toEndOf="@+id/primo"
                             app:layout_constraintTop_toBottomOf="@+id/pigreco" />
@@ -580,7 +579,7 @@
                             android:onClick="esponente"
                             android:text="@string/potenza"
                             android:textAllCaps="false"
-                            android:textColor="@color/tanAccent"
+                            android:textColor="@color/white"
                             android:textSize="15sp"
                             app:layout_constraintStart_toEndOf="@+id/xQuadrato"
                             app:layout_constraintTop_toBottomOf="@+id/modulo" />
@@ -595,7 +594,7 @@
                             android:onClick="scriviX"
                             android:text="@string/scrivix"
                             android:textAllCaps="false"
-                            android:textColor="@color/tanAccent"
+                            android:textColor="@color/white"
                             android:textSize="15sp"
                             app:layout_constraintStart_toEndOf="@+id/parent"
                             app:layout_constraintTop_toBottomOf="@+id/primo" />
@@ -610,7 +609,7 @@
                             android:onClick="fattoriale"
                             android:text="@string/fattoriale"
                             android:textAllCaps="false"
-                            android:textColor="@color/tanAccent"
+                            android:textColor="@color/white"
                             android:textSize="15sp"
                             app:layout_constraintStart_toEndOf="@+id/scriviX"
                             app:layout_constraintTop_toBottomOf="@+id/xQuadrato" />
@@ -625,7 +624,7 @@
                             android:onClick="funzione"
                             android:text="@string/funzione"
                             android:textAllCaps="false"
-                            android:textColor="@color/tanAccent"
+                            android:textColor="@color/white"
                             android:textSize="15sp"
                             app:layout_constraintStart_toEndOf="@+id/fattoriale"
                             app:layout_constraintTop_toBottomOf="@+id/potenza" />
@@ -640,7 +639,7 @@
                             android:onClick="integrale"
                             android:text="@string/integrale"
                             android:textAllCaps="false"
-                            android:textColor="@color/tanAccent"
+                            android:textColor="@color/white"
                             android:textSize="15sp"
                             app:layout_constraintStart_toEndOf="@+id/derivata"
                             app:layout_constraintTop_toBottomOf="@+id/funzione" />
@@ -655,7 +654,7 @@
                             android:onClick="derivata"
                             android:text="@string/derivata"
                             android:textAllCaps="false"
-                            android:textColor="@color/tanAccent"
+                            android:textColor="@color/white"
                             android:textSize="15sp"
                             app:layout_constraintStart_toEndOf="@+id/maggiore"
                             app:layout_constraintTop_toBottomOf="@+id/fattoriale" />
@@ -670,59 +669,59 @@
                             android:onClick="maggiore"
                             android:text="@string/maggiore"
                             android:textAllCaps="false"
-                            android:textColor="@color/tanAccent"
+                            android:textColor="@color/white"
                             android:textSize="15sp"
                             app:layout_constraintStart_toEndOf="@+id/parent"
                             app:layout_constraintTop_toBottomOf="@+id/scriviX" />
 
                         <Button
-                            android:id="@+id/and"
+                            android:id="@+id/coefficiente_binomiale"
                             android:layout_width="0dp"
                             android:layout_height="40dp"
                             android:layout_marginTop="10dp"
                             android:layout_marginBottom="10dp"
                             android:background="@drawable/botton_circle"
-                            android:onClick="and"
-                            android:text="@string/and"
+                            android:onClick="coefficientebinomiale"
+                            android:text="C"
                             android:textAllCaps="false"
-                            android:textColor="@color/tanAccent"
+                            android:textColor="@color/white"
                             android:textSize="15sp"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintStart_toEndOf="@+id/parent"
                             app:layout_constraintTop_toBottomOf="@+id/maggiore" />
 
                         <Button
-                            android:id="@+id/or"
+                            android:id="@+id/fib"
                             android:layout_width="0dp"
                             android:layout_height="40dp"
                             android:layout_marginStart="10dp"
                             android:layout_marginTop="10dp"
                             android:layout_marginBottom="10dp"
                             android:background="@drawable/botton_circle"
-                            android:onClick="or"
-                            android:text="@string/or"
+                            android:onClick="Fibonacci"
+                            android:text="fib"
                             android:textAllCaps="false"
-                            android:textColor="@color/tanAccent"
+                            android:textColor="@color/white"
                             android:textSize="15sp"
                             app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintStart_toEndOf="@+id/and"
+                            app:layout_constraintStart_toEndOf="@+id/coefficiente_binomiale"
                             app:layout_constraintTop_toBottomOf="@+id/derivata" />
 
                         <Button
-                            android:id="@+id/andand"
+                            android:id="@+id/fratto"
                             android:layout_width="0dp"
                             android:layout_height="40dp"
                             android:layout_marginStart="10dp"
                             android:layout_marginTop="10dp"
                             android:layout_marginBottom="10dp"
                             android:background="@drawable/botton_circle"
-                            android:onClick="andand"
-                            android:text="&amp;&amp;"
+                            android:onClick="fratto"
+                            android:text="1/x"
                             android:textAllCaps="false"
-                            android:textColor="@color/tanAccent"
+                            android:textColor="@color/white"
                             android:textSize="15sp"
                             app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintStart_toEndOf="@+id/or"
+                            app:layout_constraintStart_toEndOf="@+id/fib"
                             app:layout_constraintTop_toBottomOf="@+id/integrale" />
                     </android.support.constraint.ConstraintLayout>
                 </ScrollView>

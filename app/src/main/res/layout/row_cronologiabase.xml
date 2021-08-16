@@ -103,8 +103,14 @@
                 app:layout_constraintStart_toEndOf="@+id/esa_txt"
                 app:layout_constraintTop_toBottomOf="@+id/tdecimale_txt" />
 
-
-
+            <TextView
+                android:id="@+id/id_txt"
+                android:layout_width="20dp"
+                android:layout_height="9dp"
+                android:text="1"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
 
         </android.support.constraint.ConstraintLayout>

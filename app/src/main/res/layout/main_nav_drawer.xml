@@ -15,7 +15,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:background="@color/tanAccent"
+    android:background="@color/white"
     >
 
 
@@ -31,7 +31,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:id="@+id/benvenuto"
-            android:textColor="#636363"
+            android:textColor="@color/blueBlack"
             android:textSize="20sp"
             android:textStyle="bold" />
 
@@ -40,7 +40,7 @@
             android:layout_height="1dp"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
-            android:background="#636363" />
+            android:background="@color/tanAccent" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -55,13 +55,15 @@
                 android:layout_marginStart="16dp"
                 android:layout_weight="1"
                 android:padding="12dp"
-                android:text="Home" />
+                android:text="Calcolatrice"
+                android:textSize="16dp"
+                android:textColor="@color/tanAccent"/>
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="48dp"
-                android:src="@drawable/ic_home" />
+                android:src="@drawable/ic_calc" />
         </LinearLayout>
 
         <LinearLayout
@@ -77,7 +79,9 @@
                 android:layout_marginStart="16dp"
                 android:layout_weight="1"
                 android:padding="12dp"
-                android:text="Convertitore di misura" />
+                android:text="Convertitore di misura"
+                android:textSize="16dp"
+                android:textColor="@color/tanAccent"/>
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -99,13 +103,15 @@
             android:layout_marginStart="16dp"
             android:layout_weight="1"
             android:padding="12dp"
-            android:text="Convertitore di base" />
+            android:text="Convertitore di basi"
+            android:textSize="16dp"
+            android:textColor="@color/tanAccent"/>
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="48dp"
-            android:src="@drawable/ic_swap" />
+            android:src="@drawable/ic_base" />
     </LinearLayout>
 
 
@@ -122,13 +128,16 @@
                 android:layout_marginStart="16dp"
                 android:layout_weight="1"
                 android:padding="12dp"
-                android:text="@string/grafico" />
+                android:text="@string/grafico"
+                android:textSize="16dp"
+                android:textColor="@color/tanAccent"/>
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="48dp"
-                android:src="@drawable/ic_graphic" />
+                android:src="@drawable/ic_graphic"
+                />
 
         </LinearLayout>
 
@@ -146,7 +155,9 @@
                 android:layout_marginStart="16dp"
                 android:layout_weight="1"
                 android:padding="12dp"
-                android:text="Logout" />
+                android:text="Logout"
+                android:textSize="16dp"
+                android:textColor="@color/tanAccent"/>
 
             <ImageView
                 android:layout_width="wrap_content"

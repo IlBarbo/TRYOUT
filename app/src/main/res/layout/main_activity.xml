@@ -4,13 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#232D33"
-    android:startColor="@color/blackStart"
-    android:centerColor="@color/blueBlack"
-    android:endColor="@color/greyEnd"
+
     android:orientation="vertical"
     android:paddingLeft="16dp"
     android:paddingRight="16dp">
+    <!--
+     android:background="#232D33"
+     android:startColor="@color/blackStart"
+    android:centerColor="@color/blueBlack"
+    android:endColor="@color/greyEnd" -->
+
 
 
     <Space
@@ -50,8 +53,8 @@
         android:layout_height="wrap_content"
         android:fontFamily="monospace"
         android:text="@string/nickname"
-        android:textColor="@color/white"
-        android:textSize="20dp" />
+        android:textColor="@color/tanAccent"
+        android:textSize="24dp" />
 
     <EditText
         android:id="@+id/nickname"
@@ -60,7 +63,7 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:text=""
-        android:textColor="@color/white"
+        android:textColor="@color/blueBlack"
         android:textSize="20sp"
         tools:visibility="visible" />
 

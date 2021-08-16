@@ -35,6 +35,7 @@ public class ConvertitoreBase extends AppCompatActivity {
     ImageView cronologiaBaseButton;
     DrawerLayout drawerLayout;
     private int maxcifre,MAXNUMERO;
+    private TextView title;
     final Context context = this;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +44,7 @@ public class ConvertitoreBase extends AppCompatActivity {
         setContentView(R.layout.convertitore_basi);
         BaseFrom = 10.0;
         MAXNUMERO = 2147483647;
+        title=findViewById(R.id.benvenuto);
         /*numero max che può essere convertito dall'app*/
         drawerLayout=findViewById(R.id.drawer_layout);
         cronologiaBaseButton=findViewById(R.id.cronologia);

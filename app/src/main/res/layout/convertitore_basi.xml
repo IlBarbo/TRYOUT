@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
+
     <android.support.v4.widget.DrawerLayout
 
         android:layout_width="match_parent"
@@ -134,7 +135,7 @@
             android:background="@drawable/botton_circle"
             android:text=" Converti "
             android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-            android:textColor="@color/tanAccent"
+            android:textColor="@color/white"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/numero" />
 
@@ -145,7 +146,7 @@
             android:layout_marginStart="50dp"
             android:layout_marginTop="25dp"
             android:background="@drawable/botton_circle"
-            android:src="@drawable/ic_delete"
+            android:src="@drawable/ic_deletewhite"
 
             android:textAppearance="@style/TextAppearance.AppCompat.Headline"
             app:layout_constraintStart_toEndOf="@+id/baseConverti"
@@ -291,4 +292,5 @@
     </RelativeLayout>
 
 </android.support.v4.widget.DrawerLayout>
+
 </android.support.constraint.ConstraintLayout>

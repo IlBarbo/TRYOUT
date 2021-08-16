@@ -31,24 +31,24 @@ public class Activity_calc extends AppCompatActivity {
     private AlertDialog.Builder dialogBuilder;
     private AlertDialog dialog;
     ImageView cronologiaButton;
-    Button buttonpunto,maggiore,seno,coseno,tangente,arcseno,arccoseno,arctangente;
+    Button buttonpunto, maggiore, seno, coseno, tangente, arcseno, arccoseno, arctangente;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_drawer);
 
-        risultato=findViewById(R.id.risultato);
-        schermo=findViewById(R.id.display);
-        title=findViewById(R.id.benvenuto);
-        uguale=findViewById(R.id.uguale);
-        maggiore=findViewById(R.id.maggiore);
-        seno=findViewById(R.id.seno);
-        coseno=findViewById(R.id.coseno);
-        tangente=findViewById(R.id.tangente);
-        arcseno=findViewById(R.id.arcseno);
-        arccoseno=findViewById(R.id.arccoseno);
-        arctangente=findViewById(R.id.arctangente);
+        risultato = findViewById(R.id.risultato);
+        schermo = findViewById(R.id.display);
+        title = findViewById(R.id.benvenuto);
+        uguale = findViewById(R.id.uguale);
+        maggiore = findViewById(R.id.maggiore);
+        seno = findViewById(R.id.seno);
+        coseno = findViewById(R.id.coseno);
+        tangente = findViewById(R.id.tangente);
+        arcseno = findViewById(R.id.arcseno);
+        arccoseno = findViewById(R.id.arccoseno);
+        arctangente = findViewById(R.id.arctangente);
         schermo.setShowSoftInputOnFocus(false); /*Imposta un valore che indica se il metodo di
                                                  input soft verrà reso visibile quando questo
                                                   TextView viene messo a punto. L'impostazione
@@ -57,8 +57,8 @@ public class Activity_calc extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 uguale(v);
-                DBHelper dbHelper= new DBHelper(Activity_calc.this);
-                dbHelper.insertData(risultato.getText().toString().trim(),schermo.getText().toString().trim());
+                DBHelper dbHelper = new DBHelper(Activity_calc.this);
+                dbHelper.insertData(risultato.getText().toString().trim(), schermo.getText().toString().trim());
             }
 
         });
@@ -70,75 +70,81 @@ public class Activity_calc extends AppCompatActivity {
                 return true;
             }
         });
-        buttonpunto=findViewById(R.id.punto);
-        cronologiaButton=findViewById(R.id.cronologia);
+        buttonpunto = findViewById(R.id.punto);
+        cronologiaButton = findViewById(R.id.cronologia);
         cronologiaButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(Activity_calc.this, CronologiaCalc.class);
+                Intent intent = new Intent(Activity_calc.this, CronologiaCalc.class);
                 startActivity(intent);
             }
 
         });
-        Intent i=getIntent();
-        String nickname=i.getStringExtra("nickname");
-        title.setText(String.format("%s %s","Ciao",nickname));
+
+
+        Intent i = getIntent();
+        String nickname = i.getStringExtra("nickname");
+        title.setText(String.format("%s %s", "Ciao", nickname));
+
+
         //assegnamento variabile
-        drawerLayout=findViewById(R.id.drawer_layout);
+        drawerLayout = findViewById(R.id.drawer_layout);
 
     }
 
     //creo una finestra di dialogo
-    public void createNewContactDialog(){
-        dialogBuilder=new AlertDialog.Builder(this);
-        final View contactPopupView=getLayoutInflater().inflate(R.layout.popup,null);
+    public void createNewContactDialog() {
+        dialogBuilder = new AlertDialog.Builder(this);
+        final View contactPopupView = getLayoutInflater().inflate(R.layout.popup, null);
     }
 
     //navigation drawer
-    public void ClickMenu (View view)
-    {
+    public void ClickMenu(View view) {
         //apro drawer
         openDrawer(drawerLayout);
     }
 
-    public static void openDrawer (DrawerLayout drawerLayout){
+    public static void openDrawer(DrawerLayout drawerLayout) {
         //apro drawer layout
         drawerLayout.openDrawer(GravityCompat.START);
+
     }
-    public void ClickLogo (View view)
-    {
+
+    public void ClickLogo(View view) {
         closeDrawer(drawerLayout);
     }
 
-    public static void closeDrawer (DrawerLayout drawerLayout){
+    public static void closeDrawer(DrawerLayout drawerLayout) {
         if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
             //quando il drawer è aperto lo chiudo
             drawerLayout.closeDrawer(GravityCompat.START);
 
         }
     }
-    public void clickHome(View view)
-    {
+
+    public void clickHome(View view) {
         recreate();
+
     }
 
-    public void clickConvertitore (View view){
+    public void clickConvertitore(View view) {
         redirectActivity(this, Convertitore.class);
     }
-    public void clickConvertitorebase (View view){
+
+    public void clickConvertitorebase(View view) {
         redirectActivity(this, ConvertitoreBase.class);
     }
 
-    public void clickGrafico(View view){
+    public void clickGrafico(View view) {
         redirectActivity(this, Grafico.class);
     }
 
 
-    public void clickLogout(View view){
+    public void clickLogout(View view) {
         logout(this);
     }
 
-    public static void logout (Activity activity_drawer){
+    public static void logout(Activity activity_drawer) {
         AlertDialog.Builder builder = new AlertDialog.Builder(activity_drawer);
         builder.setTitle("Logout");
         builder.setMessage("sei sicuro di voler fare il logout?");
@@ -150,12 +156,13 @@ public class Activity_calc extends AppCompatActivity {
         builder.setNegativeButton("N0", (dialog, which) -> dialog.dismiss());
         builder.show();
     }
-    protected void onPause () {
+
+    protected void onPause() {
         super.onPause();
         closeDrawer(drawerLayout);
     }
 
-    public static void redirectActivity (Activity activity, Class aClass){
+    public static void redirectActivity(Activity activity, Class aClass) {
         Intent intent = new Intent(activity, aClass);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         //start activity
@@ -165,99 +172,116 @@ public class Activity_calc extends AppCompatActivity {
 
 
     //calcolatrice
-    private void upText(String strToAdd){
-        String oldStr=schermo.getText().toString();
-        int cursore=schermo.getSelectionStart();
-        String leftStr= oldStr.substring(0,cursore);
-        String rightStr= oldStr.substring(cursore);
-        schermo.setText(String.format("%s%s%s",leftStr,strToAdd,rightStr));
-        schermo.setSelection(cursore+strToAdd.length());
+    private void upText(String strToAdd) {
+        String oldStr = schermo.getText().toString();
+        int cursore = schermo.getSelectionStart();
+        String leftStr = oldStr.substring(0, cursore);
+        String rightStr = oldStr.substring(cursore);
+        schermo.setText(String.format("%s%s%s", leftStr, strToAdd, rightStr));
+        schermo.setSelection(cursore + strToAdd.length());
     }
 
 
-    public void zero(View v){
+    public void zero(View v) {
         upText("0");
     }
-    public void uno(View v){
+
+    public void uno(View v) {
         upText("1");
     }
-    public void due(View v){
+
+    public void due(View v) {
         upText("2");
     }
-    public void tre(View v){
+
+    public void tre(View v) {
         upText("3");
     }
-    public void quattro(View v){
+
+    public void quattro(View v) {
         upText("4");
     }
-    public void cinque(View v){
+
+    public void cinque(View v) {
         upText("5");
     }
-    public void sei(View v){
+
+    public void sei(View v) {
         upText("6");
     }
-    public void sette(View v){
+
+    public void sette(View v) {
         upText("7");
     }
-    public void otto(View v){
+
+    public void otto(View v) {
         upText("8");
     }
-    public void nove(View v){
+
+    public void nove(View v) {
         upText("9");
     }
-    public void clear(View v){
+
+    public void clear(View v) {
         schermo.setText("");
         risultato.setText("");
     }
-    public void esponente(View v){
+
+    public void esponente(View v) {
         upText("^(");
     }
-    public void parentesi(View v){
-        int cursorePos=schermo.getSelectionStart();
-        int apertaPar= 0;
-        int chiusaPar=0;
-        int lunghezza=schermo.getText().length();
-        for(int i=0;i< cursorePos;i++)
-        {
-            if(schermo.getText().toString().substring(i,i+1).equals("(")){
-                apertaPar+=1;
+
+    public void parentesi(View v) {
+        int cursorePos = schermo.getSelectionStart();
+        int apertaPar = 0;
+        int chiusaPar = 0;
+        int lunghezza = schermo.getText().length();
+        for (int i = 0; i < cursorePos; i++) {
+            if (schermo.getText().toString().substring(i, i + 1).equals("(")) {
+                apertaPar += 1;
             }
-            if(schermo.getText().toString().substring(i,i+1).equals(")")){
-                chiusaPar+=1;
+            if (schermo.getText().toString().substring(i, i + 1).equals(")")) {
+                chiusaPar += 1;
             }
         }
-        if(apertaPar == chiusaPar || schermo.getText().toString().substring(lunghezza-1,lunghezza).equals("(")){
+        if (apertaPar == chiusaPar || schermo.getText().toString().substring(lunghezza - 1, lunghezza).equals("(")) {
             upText("(");
         }
-        if(chiusaPar < apertaPar && !schermo.getText().toString().substring(lunghezza-1,lunghezza).equals("(")){
+        if (chiusaPar < apertaPar && !schermo.getText().toString().substring(lunghezza - 1, lunghezza).equals("(")) {
             upText(")");
         }
-        schermo.setSelection(cursorePos+1);
+        schermo.setSelection(cursorePos + 1);
     }
-    public void divisione(View v){
+
+    public void divisione(View v) {
         upText("÷");
     }
-    public void moltiplicazione(View v){
+
+    public void moltiplicazione(View v) {
         upText("×");
     }
-    public void add(View v){
+
+    public void add(View v) {
         upText("+");
     }
-    public void sub(View v){
+
+    public void sub(View v) {
         upText("-");
     }
-    public void addsub(View v){
-        String user=schermo.getText().toString();
-        String a=user.substring(0,1);
-        if(a.equals("-")) {
+
+    public void addsub(View v) {
+        String user = schermo.getText().toString();
+        String a = user.substring(0, 1);
+        if (a.equals("-")) {
             clear(v);
             upText(user.substring(1));
-        }else{
+        } else {
             clear(v);
-            upText("-"+user);
+            upText("-" + user);
         }
     }
-    public void punto(View v){
+
+    public void punto(View v) {
         upText(".");
         buttonpunto.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
@@ -267,29 +291,30 @@ public class Activity_calc extends AppCompatActivity {
             }
         });
     }
-    public void uguale(View v){
 
-        String user=schermo.getText().toString();
+    public void uguale(View v) {
+
+        String user = schermo.getText().toString();
         risultato.setText(user);
 
         user = user.replaceAll("÷", "/");
         user = user.replaceAll("×", "*");
 
-        Expression exp=new Expression(user);
-        String result=String.valueOf(exp.calculate()); //usa la libreria mxparser
+        Expression exp = new Expression(user);
+        String result = String.valueOf(exp.calculate()); //usa la libreria mxparser
         schermo.setText(result);
         schermo.setSelection(result.length());
     }
-    public void spazio(View v){
-        int cursore= schermo.getSelectionStart();
-        int textLen=schermo.getText().length();
-        if(cursore != 0 && textLen != 0)
-        {
-            SpannableStringBuilder sel=(SpannableStringBuilder) schermo.getText();
+
+    public void spazio(View v) {
+        int cursore = schermo.getSelectionStart();
+        int textLen = schermo.getText().length();
+        if (cursore != 0 && textLen != 0) {
+            SpannableStringBuilder sel = (SpannableStringBuilder) schermo.getText();
             //replace sostituisce il testo compreso tra start e end con la stringa che vogliamo
-            sel.replace(cursore-1,cursore,"");
+            sel.replace(cursore - 1, cursore, "");
             schermo.setText(sel);
-            schermo.setSelection(cursore-1);
+            schermo.setSelection(cursore - 1);
         }
     }
 
@@ -403,12 +428,15 @@ public class Activity_calc extends AppCompatActivity {
     public void xQuadro(View view) {
         upText("^(2)");
     }
+
     public void scriviX(View view) {
         upText("x");
     }
+
     public void fattoriale(View view) {
         upText("!");
     }
+
     public void funzione(View view) {
         upText("f(x)=");
     }
@@ -416,9 +444,11 @@ public class Activity_calc extends AppCompatActivity {
     public void integrale(View view) {
         upText("int(");
     }
+
     public void derivata(View view) {
         upText("der(");
     }
+
     public void maggiore(View view) {
         upText(">");
         maggiore.setOnLongClickListener(new View.OnLongClickListener() {
@@ -430,15 +460,19 @@ public class Activity_calc extends AppCompatActivity {
             }
         });
     }
-    public void and(View view) {
-        upText("&");
+
+    public void coefficientebinomiale(View view) {
+        upText("C(");
     }
-    public void or(View view) {
-        upText("|");
+
+    public void Fibonacci(View view) {
+        upText("Fib(");
     }
 
 
-    public void andand(View view) {
-        upText("&&");
+    public void fratto(View view) {
+        double fratto= Double.parseDouble(schermo.getText().toString());
+        double ris=1/fratto;
+        upText(String.valueOf(ris));
     }
 }
