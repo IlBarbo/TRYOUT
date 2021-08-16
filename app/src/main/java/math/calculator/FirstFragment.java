@@ -78,7 +78,9 @@ Spinner spinnerLunFrom,spinnerLunTo;
                     double c = 0;
                     try{
                         double d = Double.parseDouble(number.getText().toString());
-                        messaggioerrore.setVisibility(View.INVISIBLE);
+
+                        number.setError("");
+                        number.setError(null);
 
                         String stringTo = spinnerLunTo.getSelectedItem().toString();
                         Log.d("stringTo",stringTo);
@@ -253,8 +255,9 @@ Spinner spinnerLunFrom,spinnerLunTo;
                         dbHelperConv.insertDataConv(number.getText().toString().trim(),risultato.getText().toString().trim(),stringFrom,stringTo);
 
                     }catch (NumberFormatException e){
+                        number.setError("Valore non valido");
+                        number.requestFocus();
 
-                        messaggioerrore.setVisibility(View.VISIBLE);
                     }
 
                 }

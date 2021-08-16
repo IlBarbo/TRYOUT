@@ -63,7 +63,8 @@ public class FourthFragment extends Fragment {
                 double c = 0;
                 try{
                     double d = Double.parseDouble(number.getText().toString());
-                    messaggioerrore.setVisibility(View.INVISIBLE);
+                    number.setError("");
+                    number.setError(null);
 
                     String stringTo = spinnerAngTo.getSelectedItem().toString();
                     Log.d("stringTo",stringTo);
@@ -204,7 +205,8 @@ public class FourthFragment extends Fragment {
 
                 }catch (NumberFormatException e){
 
-                    messaggioerrore.setVisibility(View.VISIBLE);
+                    number.setError("Valore non valido");
+                    number.requestFocus();
                 }
 
             }

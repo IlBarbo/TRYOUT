@@ -81,11 +81,6 @@ public class DBHelperBase extends SQLiteOpenHelper {
 
         db.execSQL(" delete from " + TABLE_NAME + " where  id = " + id);
 
-      /* long result = db.delete(TABLE_NAME, "id=?", new String[]{row_id});
-       if(result == -1){
-            Toast.makeText(context, "Failed to Delete.", Toast.LENGTH_SHORT).show();
-        }else{
-            Toast.makeText(context, "Successfully Deleted.", Toast.LENGTH_SHORT).show();
-        }*/
+
     }
 }

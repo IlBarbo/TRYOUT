@@ -114,11 +114,11 @@ public class CronologiaConv extends AppCompatActivity implements RowDeletionList
     @Override
     public void onRowDeleted(String deletedId) {
         int deletedIndex = id.indexOf(deletedId);
-        id.remove(deletedIndex);
         fromnum.remove(deletedIndex);
         tonum.remove(deletedIndex);
         spinnerfrom.remove(deletedIndex);
         spinnerto.remove(deletedIndex);
+        id.remove(deletedIndex);
         custom=new CustomAdapterConv(CronologiaConv.this,fromnum,tonum,spinnerfrom,spinnerto,id, CronologiaConv.this);
         recyclerView.setAdapter(custom);
         recyclerView.setLayoutManager(new LinearLayoutManager(CronologiaConv.this));

@@ -102,6 +102,9 @@ public class Activity_calc extends AppCompatActivity {
     public void ClickMenu(View view) {
         //apro drawer
         openDrawer(drawerLayout);
+
+
+
     }
 
     public static void openDrawer(DrawerLayout drawerLayout) {
@@ -128,6 +131,8 @@ public class Activity_calc extends AppCompatActivity {
     }
 
     public void clickConvertitore(View view) {
+        Intent apriconv= new Intent(Activity_calc.this,Convertitore.class);
+        apriconv.putExtra("title", title.getText().toString());
         redirectActivity(this, Convertitore.class);
     }
 
@@ -472,7 +477,7 @@ public class Activity_calc extends AppCompatActivity {
 
     public void fratto(View view) {
         double fratto= Double.parseDouble(schermo.getText().toString());
-        double ris=1/fratto;
-        upText(String.valueOf(ris));
+        String ris= String.valueOf(1/fratto);
+        schermo.setText(ris);
     }
 }

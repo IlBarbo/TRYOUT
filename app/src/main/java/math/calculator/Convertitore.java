@@ -37,7 +37,7 @@ public class Convertitore extends AppCompatActivity {
 
         title=findViewById(R.id.benvenuto);
         //BottomNavigationView
-       BottomNavigationView bottomNavigationView= findViewById(R.id.bottomNavigationView);
+        BottomNavigationView bottomNavigationView= findViewById(R.id.bottomNavigationView);
         NavController navController= Navigation.findNavController(this,R.id.fragment);
         NavigationUI.setupWithNavController(bottomNavigationView,navController);
         //cronologia
@@ -118,6 +118,7 @@ public class Convertitore extends AppCompatActivity {
     public static void redirectActivity (Activity activity, Class aClass){
         Intent intent = new Intent(activity, aClass);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+
         //start activity
         activity.startActivity(intent);
 

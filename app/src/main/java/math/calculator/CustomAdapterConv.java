@@ -16,7 +16,7 @@ public class CustomAdapterConv extends RecyclerView.Adapter<CustomAdapterConv.My
 
         private Context context;
         private ArrayList fromnum, tonum,spinnerfrom,spinnerto,id;
-    RowDeletionListener listener;
+      RowDeletionListener listener;
     CustomAdapterConv(Context context, ArrayList fromnum, ArrayList tonum,ArrayList spinnerfrom,ArrayList spinnerto,ArrayList id, RowDeletionListener deletionListener) {
             this.context = context;
             this.fromnum = fromnum;
@@ -41,7 +41,7 @@ public class CustomAdapterConv extends RecyclerView.Adapter<CustomAdapterConv.My
         holder.to_txt.setText(String.valueOf(tonum.get(i)));
         holder.spinnerfrom_txt.setText(String.valueOf(spinnerfrom.get(i)));
         holder.spinnerto_txt.setText(String.valueOf(spinnerto.get(i)));
-        holder.idtext_txt.setText(String.valueOf(id.get(i)));
+        holder.id_txt.setText(String.valueOf(id.get(i)));
     }
 
 
@@ -53,7 +53,7 @@ public class CustomAdapterConv extends RecyclerView.Adapter<CustomAdapterConv.My
 
 
         public class MyViewHolder extends RecyclerView.ViewHolder {
-            TextView from_txt, to_txt,spinnerfrom_txt,spinnerto_txt,idtext_txt;
+            TextView from_txt, to_txt,spinnerfrom_txt,spinnerto_txt,id_txt;
             ImageButton deleteSingleData;
             DBHelper dbHelper;
             public MyViewHolder(@NonNull View itemView, RowDeletionListener listener) {
@@ -63,13 +63,13 @@ public class CustomAdapterConv extends RecyclerView.Adapter<CustomAdapterConv.My
                 to_txt = itemView.findViewById(R.id.to_txt);
                 spinnerfrom_txt = itemView.findViewById(R.id.spinnerfrom_txt);
                 spinnerto_txt = itemView.findViewById(R.id.spinnerto_txt);
-                idtext_txt=itemView.findViewById(R.id.idtext_txt);
+                id_txt=itemView.findViewById(R.id.id_txt);
                 deleteSingleData=itemView.findViewById(R.id.deletesingledata);
                 deleteSingleData.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        dbHelper.deleteSingleData(Integer.parseInt(idtext_txt.getText().toString()));
-                        listener.onRowDeleted(idtext_txt.getText().toString());
+                        dbHelper.deleteSingleData(Integer.parseInt(id_txt.getText().toString()));
+                        listener.onRowDeleted(id_txt.getText().toString());
                     }
                 });
             }
