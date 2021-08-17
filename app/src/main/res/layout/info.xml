@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="350dp"
+    android:layout_height="300dp"
+    android:background="@color/white"
+    android:padding="5dp"
+    android:layout_gravity="center">
+    <ScrollView
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:fillViewport="true">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Guida all'uso"
+                android:textSize="24dp"
+                android:textColor="@color/tanAccent"
+                android:layout_marginStart="100dp"/>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+               <TextView
+                   android:layout_width="70dp"
+                   android:layout_height="wrap_content"
+                   android:text="sin(x)"
+                   android:textColor="@color/tanAccent"
+                   android:padding="12dp"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_weight="1"
+                    android:padding="12dp"
+                    android:text="se si applica una pressione sul pulsante verrà calcolato il seno iperbolico"
+                    android:textSize="16dp"
+                    android:textColor="@color/tanAccent"/>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:text="cos(x)"
+                    android:textColor="@color/tanAccent"
+                    android:padding="12dp"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_weight="1"
+                    android:padding="12dp"
+                    android:text="se si applica una pressione sul pulsante verrà calcolato il coseno iperbolico"
+                    android:textSize="16dp"
+                    android:textColor="@color/tanAccent"/>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:text="tan(x)"
+                    android:textColor="@color/tanAccent"
+                    android:padding="12dp"/>
+
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_weight="1"
+                    android:padding="12dp"
+                    android:text="se si applica una pressione sul pulsante verrà calcolato la tangente iperbolica"
+                    android:textSize="16dp"
+                    android:textColor="@color/tanAccent"/>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/arcseno"
+                    android:textColor="@color/tanAccent"
+                    android:padding="12dp"/>
+
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_weight="1"
+                    android:padding="12dp"
+                    android:text="se si applica una pressione sul pulsante verrà calcolato l'arcseno iperbolico"
+                    android:textSize="16dp"
+                    android:textColor="@color/tanAccent"/>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/arccoseno"
+                    android:textColor="@color/tanAccent"
+                    android:padding="12dp"/>
+
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_weight="1"
+                    android:padding="10dp"
+                    android:text="se si applica una pressione sul pulsante verrà calcolato l'arccos iperbolico"
+                    android:textSize="16dp"
+                    android:textColor="@color/tanAccent"/>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/arctangente"
+                    android:textColor="@color/tanAccent"
+                    android:padding="12dp"/>
+
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_weight="1"
+                    android:padding="12dp"
+                    android:text="se si applica una pressione sul pulsante verrà calcolato l'arctan iperbolico"
+                    android:textSize="16dp"
+                    android:textColor="@color/tanAccent"/>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:text="punto"
+                    android:textColor="@color/tanAccent"
+                    android:padding="12dp"/>
+
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_weight="1"
+                    android:padding="12dp"
+                    android:text="se si applica una pressione sul pulsante verrà impostata la virgola"
+                    android:textSize="16dp"
+                    android:textColor="@color/tanAccent"/>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:text="log()"
+                    android:textColor="@color/tanAccent"
+                    android:padding="12dp"/>
+
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_weight="1"
+                    android:padding="12dp"
+                    android:text="es. log(base,x)"
+                    android:textSize="16dp"
+                    android:textColor="@color/tanAccent"/>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/derivata"
+                    android:textColor="@color/tanAccent"
+                    android:padding="12dp"/>
+
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_weight="1"
+                    android:padding="12dp"
+                    android:text="es. der(sin(x),x,4)"
+                    android:textSize="16dp"
+                    android:textColor="@color/tanAccent"/>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/integrale"
+                    android:textColor="@color/tanAccent"
+                    android:padding="12dp"/>
+
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_weight="1"
+                    android:padding="12dp"
+                    android:text="es. int(sin(x),x,4)"
+                    android:textSize="16dp"
+                    android:textColor="@color/tanAccent"/>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+
+
+    </ScrollView>
+
+
+
+</LinearLayout>
