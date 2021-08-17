@@ -20,7 +20,6 @@ public class FourthFragment extends Fragment {
     Spinner spinnerAngFrom, spinnerAngTo;
     protected EditText number;
     protected TextView risultato;
-    TextView messaggioerrore;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -30,7 +29,7 @@ public class FourthFragment extends Fragment {
         final Button convertiAngolo= v.findViewById(R.id.converti4);
 
         number=v.findViewById(R.id.TextNumber4);
-        messaggioerrore= v.findViewById(R.id.messaggioerrore4);
+
         risultato=v.findViewById(R.id.risultatoconv4);
 
         //creo il primo spinner

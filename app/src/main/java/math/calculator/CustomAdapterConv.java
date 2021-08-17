@@ -51,14 +51,13 @@ public class CustomAdapterConv extends RecyclerView.Adapter<CustomAdapterConv.My
             return fromnum.size();
         }
 
-
         public class MyViewHolder extends RecyclerView.ViewHolder {
             TextView from_txt, to_txt,spinnerfrom_txt,spinnerto_txt,id_txt;
             ImageButton deleteSingleData;
-            DBHelper dbHelper;
+            DBHelperConv dbHelper;
             public MyViewHolder(@NonNull View itemView, RowDeletionListener listener) {
                 super(itemView);
-                dbHelper= new DBHelper(itemView.getContext());
+                dbHelper= new DBHelperConv(itemView.getContext());
                 from_txt = itemView.findViewById(R.id.from_txt);
                 to_txt = itemView.findViewById(R.id.to_txt);
                 spinnerfrom_txt = itemView.findViewById(R.id.spinnerfrom_txt);

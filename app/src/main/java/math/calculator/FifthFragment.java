@@ -21,7 +21,7 @@ public class FifthFragment extends Fragment {
     protected EditText number;
     protected TextView risultato;
 
-    TextView messaggioerrore;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -32,7 +32,7 @@ public class FifthFragment extends Fragment {
         final Button convertiTempe= v.findViewById(R.id.converti5);
 
         number=v.findViewById(R.id.TextNumber5);
-        messaggioerrore= v.findViewById(R.id.messaggioerrore5);
+
         risultato=v.findViewById(R.id.risultatoconv5);
 
         //creo il primo spinner

@@ -27,7 +27,7 @@ Spinner spinnerLunFrom,spinnerLunTo;
 
     protected EditText number;
     protected TextView risultato;
-    TextView messaggioerrore;
+
 
 
         @Override
@@ -39,7 +39,7 @@ Spinner spinnerLunFrom,spinnerLunTo;
             final Button convertiLun= v.findViewById(R.id.converti);
 
             number=v.findViewById(R.id.TextNumber1);
-            messaggioerrore= v.findViewById(R.id.messaggioerrore);
+
             risultato=v.findViewById(R.id.risultatoconv);
 
             ImageView cronologia;

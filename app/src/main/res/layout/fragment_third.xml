@@ -75,25 +75,20 @@
         <EditText
             android:id="@+id/TextNumber3"
             android:layout_width="190dp"
-            android:layout_height="wrap_content"
+            android:layout_height="35dp"
             android:ems="10"
+            android:background="@drawable/custom_input"
+            android:paddingStart="5dp"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp"
+            android:paddingEnd="10dp"
             android:layout_gravity="center"
-            android:layout_marginBottom="10dp"
+            android:layout_marginBottom="30dp"
             android:inputType="numberDecimal"
             android:layout_marginStart="130dp"
             android:layout_marginEnd="130dp"
            />
-        <TextView
-            android:id="@+id/messaggioerrore3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="valore non valido"
-            android:layout_gravity="center"
-            android:layout_marginBottom="20dp"
-            android:textColor="@color/red"
-            android:visibility="invisible"
 
-            />
 
 
         <Button
@@ -112,10 +107,14 @@
         <TextView
             android:id="@+id/risultatoconv3"
             android:layout_width="190dp"
-            android:layout_height="wrap_content"
+            android:layout_height="35dp"
             android:ems="10"
             android:textSize="18sp"
             android:textColor="@color/black"
+            android:background="@drawable/custom_input"
+            android:paddingStart="5dp"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp"
             android:layout_gravity="center"
             android:layout_marginStart="130dp"
             android:layout_marginEnd="130dp"

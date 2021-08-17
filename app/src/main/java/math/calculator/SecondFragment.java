@@ -21,7 +21,6 @@ public class SecondFragment extends Fragment {
 
     protected EditText number;
     protected TextView risultato;
-    TextView messaggioerrore;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -31,7 +30,6 @@ public class SecondFragment extends Fragment {
         final Button convertiMass= v.findViewById(R.id.converti1);
 
         number=v.findViewById(R.id.TextNumber2);
-        messaggioerrore= v.findViewById(R.id.messaggioerrore1);
         risultato=v.findViewById(R.id.risultatoconv1);
 
 

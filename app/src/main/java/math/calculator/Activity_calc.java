@@ -2,7 +2,10 @@ package math.calculator;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -10,6 +13,7 @@ import android.os.Bundle;
 import android.text.SpannableStringBuilder;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.view.View;
@@ -30,18 +34,20 @@ public class Activity_calc extends AppCompatActivity {
     //creare la finestra della cronologia
     private AlertDialog.Builder dialogBuilder;
     private AlertDialog dialog;
-    ImageView cronologiaButton;
+    ImageView cronologiaButton,info;
     Button buttonpunto, maggiore, seno, coseno, tangente, arcseno, arccoseno, arctangente;
+    Dialog dialogpopup;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_drawer);
-
+        dialogpopup = new Dialog(this);
         risultato = findViewById(R.id.risultato);
         schermo = findViewById(R.id.display);
         title = findViewById(R.id.benvenuto);
         uguale = findViewById(R.id.uguale);
+        info=findViewById(R.id.info);
         maggiore = findViewById(R.id.maggiore);
         seno = findViewById(R.id.seno);
         coseno = findViewById(R.id.coseno);
@@ -70,6 +76,7 @@ public class Activity_calc extends AppCompatActivity {
                 return true;
             }
         });
+
         buttonpunto = findViewById(R.id.punto);
         cronologiaButton = findViewById(R.id.cronologia);
         cronologiaButton.setOnClickListener(new View.OnClickListener() {
@@ -89,7 +96,26 @@ public class Activity_calc extends AppCompatActivity {
 
         //assegnamento variabile
         drawerLayout = findViewById(R.id.drawer_layout);
+        info.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ShowPopup();
+            }
+        });
+    }
+    public void ShowPopup() {
+        TextView txtclose;
+        Button btnFollow;
+        dialogpopup.setContentView(R.layout.info);
 
+        /*info.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialogpopup.dismiss();
+            }
+        });*/
+        dialogpopup.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        dialogpopup.show();
     }
 
     //creo una finestra di dialogo
@@ -359,7 +385,7 @@ public class Activity_calc extends AppCompatActivity {
         tangente.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
-                upText("<");
+                upText("tanh(");
 
                 return true;
             }
