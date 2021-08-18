@@ -4,7 +4,7 @@
     android:orientation="vertical"
     android:layout_width="350dp"
     android:layout_height="300dp"
-    android:background="@color/white"
+    android:background="@drawable/custom_info"
     android:padding="5dp"
     android:layout_gravity="center">
     <ScrollView
