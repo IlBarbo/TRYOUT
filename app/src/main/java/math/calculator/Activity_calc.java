@@ -502,8 +502,15 @@ public class Activity_calc extends AppCompatActivity {
 
 
     public void fratto(View view) {
-        double fratto= Double.parseDouble(schermo.getText().toString());
-        String ris= String.valueOf(1/fratto);
-        schermo.setText(ris);
+
+        try {
+            double fratto = Double.parseDouble(schermo.getText().toString());
+            String ris = String.valueOf(1 / fratto);
+            schermo.setText(ris);
+            schermo.setSelection(ris.length());
+        }catch (NumberFormatException e){
+            return;
+        }
+
     }
 }

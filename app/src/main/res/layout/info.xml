@@ -224,6 +224,33 @@
 
 
             </LinearLayout>
+             <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/maggiore"
+                    android:textColor="@color/tanAccent"
+                    android:padding="12dp"/>
+
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_weight="1"
+                    android:padding="12dp"
+                    android:text="se si applica una pressione sul pulsante verrà impostata il minore"
+                    android:textSize="16dp"
+                    android:textColor="@color/tanAccent"/>
+
+
+            </LinearLayout>
+
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
