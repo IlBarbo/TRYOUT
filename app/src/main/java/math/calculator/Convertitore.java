@@ -2,7 +2,9 @@ package math.calculator;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -22,7 +24,9 @@ import static androidx.navigation.fragment.NavHostFragment.findNavController;
 
 public class Convertitore extends AppCompatActivity {
 
-
+    SharedPreferences sharedPreferences;
+    private static final String SHARED_PREF_NAME="save nickname";
+    private static final String KEY_NICKNAME="nickname";
     DrawerLayout drawerLayout;
     ImageView cronologiaButton;
     private TextView title;
@@ -50,7 +54,9 @@ public class Convertitore extends AppCompatActivity {
             }
 
         });
-
+        sharedPreferences= getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
+        String name = sharedPreferences.getString(KEY_NICKNAME, null);
+        title.setText("Ciao " + name);
 
     }
 

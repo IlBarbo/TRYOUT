@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -37,6 +38,9 @@ public class ConvertitoreBase extends AppCompatActivity {
     private int maxcifre,MAXNUMERO;
     private TextView title;
     final Context context = this;
+    SharedPreferences sharedPreferences;
+    private static final String SHARED_PREF_NAME="save nickname";
+    private static final String KEY_NICKNAME="nickname";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -84,7 +88,9 @@ public class ConvertitoreBase extends AppCompatActivity {
         radio16 = (RadioButton) findViewById(R.id.radio16);
         conta.setText("0/10");
 
-
+        sharedPreferences= getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
+        String name = sharedPreferences.getString(KEY_NICKNAME, null);
+        title.setText("Ciao " + name);
 
         radio2.setOnClickListener(new View.OnClickListener() {
             @Override

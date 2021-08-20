@@ -3,7 +3,9 @@ package math.calculator;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.support.v4.view.GravityCompat;
@@ -37,6 +39,9 @@ public class Activity_calc extends AppCompatActivity {
     ImageView cronologiaButton,info;
     Button buttonpunto, maggiore, seno, coseno, tangente, arcseno, arccoseno, arctangente;
     Dialog dialogpopup;
+    SharedPreferences sharedPreferences;
+    private static final String SHARED_PREF_NAME="save nickname";
+    private static final String KEY_NICKNAME="nickname";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +64,12 @@ public class Activity_calc extends AppCompatActivity {
                                                  input soft verrà reso visibile quando questo
                                                   TextView viene messo a punto. L'impostazione
                                                   predefinita è true */
+
+
+       sharedPreferences= getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
+        String name = sharedPreferences.getString(KEY_NICKNAME, null);
+        title.setText("Ciao " + name);
+
         uguale.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -87,11 +98,6 @@ public class Activity_calc extends AppCompatActivity {
             }
 
         });
-
-
-        Intent i = getIntent();
-        String nickname = i.getStringExtra("nickname");
-        title.setText(String.format("%s %s", "Ciao", nickname));
 
 
         //assegnamento variabile
@@ -157,12 +163,12 @@ public class Activity_calc extends AppCompatActivity {
     }
 
     public void clickConvertitore(View view) {
-        Intent apriconv= new Intent(Activity_calc.this,Convertitore.class);
-        apriconv.putExtra("title", title.getText().toString());
+
         redirectActivity(this, Convertitore.class);
     }
 
     public void clickConvertitorebase(View view) {
+
         redirectActivity(this, ConvertitoreBase.class);
     }
 
@@ -210,6 +216,7 @@ public class Activity_calc extends AppCompatActivity {
         String rightStr = oldStr.substring(cursore);
         schermo.setText(String.format("%s%s%s", leftStr, strToAdd, rightStr));
         schermo.setSelection(cursore + strToAdd.length());
+
     }
 
 
@@ -504,6 +511,7 @@ public class Activity_calc extends AppCompatActivity {
     public void fratto(View view) {
 
         try {
+            uguale(view);
             double fratto = Double.parseDouble(schermo.getText().toString());
             String ris = String.valueOf(1 / fratto);
             schermo.setText(ris);
