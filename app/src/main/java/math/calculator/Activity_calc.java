@@ -37,7 +37,7 @@ public class Activity_calc extends AppCompatActivity {
     private AlertDialog.Builder dialogBuilder;
     private AlertDialog dialog;
     ImageView cronologiaButton,info;
-    Button buttonpunto, maggiore, seno, coseno, tangente, arcseno, arccoseno, arctangente;
+    Button buttonpunto, maggiore, seno, coseno, tangente, arcseno, arccoseno, arctangente,and;
     Dialog dialogpopup;
     SharedPreferences sharedPreferences;
     private static final String SHARED_PREF_NAME="save nickname";
@@ -60,6 +60,7 @@ public class Activity_calc extends AppCompatActivity {
         arcseno = findViewById(R.id.arcseno);
         arccoseno = findViewById(R.id.arccoseno);
         arctangente = findViewById(R.id.arctangente);
+        and=findViewById(R.id.and);
         schermo.setShowSoftInputOnFocus(false); /*Imposta un valore che indica se il metodo di
                                                  input soft verrà reso visibile quando questo
                                                   TextView viene messo a punto. L'impostazione
@@ -79,14 +80,7 @@ public class Activity_calc extends AppCompatActivity {
             }
 
         });
-        uguale.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                upText("=");
 
-                return true;
-            }
-        });
 
         buttonpunto = findViewById(R.id.punto);
         cronologiaButton = findViewById(R.id.cronologia);
@@ -172,9 +166,7 @@ public class Activity_calc extends AppCompatActivity {
         redirectActivity(this, ConvertitoreBase.class);
     }
 
-    public void clickGrafico(View view) {
-        redirectActivity(this, Grafico.class);
-    }
+
 
 
     public void clickLogout(View view) {
@@ -475,8 +467,16 @@ public class Activity_calc extends AppCompatActivity {
         upText("!");
     }
 
-    public void funzione(View view) {
-        upText("f(x)=");
+    public void and(View view) {
+        upText("&");
+        and.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                upText("|");
+
+                return true;
+            }
+        });
     }
 
     public void integrale(View view) {
@@ -517,6 +517,8 @@ public class Activity_calc extends AppCompatActivity {
             schermo.setText(ris);
             schermo.setSelection(ris.length());
         }catch (NumberFormatException e){
+            return;
+        }catch(NullPointerException  e){
             return;
         }
 

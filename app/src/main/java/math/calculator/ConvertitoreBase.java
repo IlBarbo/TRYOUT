@@ -211,9 +211,7 @@ public class ConvertitoreBase extends AppCompatActivity {
         redirectActivity(this,Convertitore.class);
     }
 
-    public void clickGrafico (View view){
-        redirectActivity(this, Grafico.class);
-    }
+
     public void clickConvertitorebase (View view){
        recreate();
     }

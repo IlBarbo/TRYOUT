@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -42,8 +43,10 @@ public class Main_Activity extends AppCompatActivity {
                     //applicazione (salvataggio) delle modifiche
                     editor.apply();
                     Intent apricalc= new Intent(Main_Activity.this,Activity_calc.class);
-
                     startActivity(apricalc);
+                    Toast toast=Toast.makeText(getBaseContext(),"Ciao " + nickname.getText().toString(),Toast.LENGTH_SHORT);
+                    toast.setGravity(Gravity.TOP|Gravity.CENTER_HORIZONTAL, 0, 200);
+                    toast.show();
                 }
                 else{ //to do pop up per avvisare l'utente che la lunghezza minima è 4
                     nickname.setError("inserire minimo 4 caratteri");

@@ -1,16 +1,19 @@
 package math.calculator;
 
+import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -27,6 +30,7 @@ Spinner spinnerLunFrom,spinnerLunTo;
 
     protected EditText number;
     protected TextView risultato;
+    protected ImageButton clear;
 
 
 
@@ -39,9 +43,8 @@ Spinner spinnerLunFrom,spinnerLunTo;
             final Button convertiLun= v.findViewById(R.id.converti);
 
             number=v.findViewById(R.id.TextNumber1);
-
             risultato=v.findViewById(R.id.risultatoconv);
-
+            clear=v.findViewById(R.id.deletesingle);
             ImageView cronologia;
 
             //creo il primo spinner
@@ -65,8 +68,23 @@ Spinner spinnerLunFrom,spinnerLunTo;
             // Apply the adapter to the spinner
             spinnerLunTo.setAdapter(spinnerAdapter1);
 
+            clear.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    number.setText("");
+                    risultato.setText("");
+                    number.setError("");
+                    number.setError(null);
+                }
+            });
+            convertiLun.setOnTouchListener(new View.OnTouchListener() {
 
-
+                @Override
+                public boolean onTouch(View v, MotionEvent event) {
+                    hideSoftKeyboard((Activity) getContext());
+                    return false;
+                }
+            });
             convertiLun.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View v) {
@@ -262,18 +280,21 @@ Spinner spinnerLunFrom,spinnerLunTo;
 
                 }
             });
-            //closekb();
+
             return v;
 
         }
-
-   /* private void closekb()
+    public static void hideSoftKeyboard(Activity activity)
     {
-        View view=this.getCurrentFocus();
-        InputMethodManager inputMethodManager=(InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
-        inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(),0);
+
+        if(activity!= null && activity.getCurrentFocus() != null && activity.getCurrentFocus().getWindowToken() != null)
+        {
+            InputMethodManager imm = (InputMethodManager) activity.getSystemService(Activity.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(activity.getCurrentFocus().getWindowToken(), 0);
+        }
     }
-*/
 
 
-}
+    }
+
+

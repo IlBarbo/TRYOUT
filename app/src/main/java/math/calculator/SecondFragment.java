@@ -1,18 +1,24 @@
 package math.calculator;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.digidemic.unitof.UnitOf;
+
+import static math.calculator.FirstFragment.hideSoftKeyboard;
 
 public class SecondFragment extends Fragment {
 
@@ -21,6 +27,7 @@ public class SecondFragment extends Fragment {
 
     protected EditText number;
     protected TextView risultato;
+    protected ImageButton clear;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -32,7 +39,7 @@ public class SecondFragment extends Fragment {
         number=v.findViewById(R.id.TextNumber2);
         risultato=v.findViewById(R.id.risultatoconv1);
 
-
+        clear=v.findViewById(R.id.deletesingle);
         //creo il primo spinner
         spinnerMassFrom = (Spinner) v.findViewById(R.id.spinner3);
 
@@ -54,7 +61,23 @@ public class SecondFragment extends Fragment {
         // Apply the adapter to the spinner
         spinnerMassTo.setAdapter(spinnerAdapter4);
 
+        clear.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                number.setError("");
+                number.setError(null);
+                number.setText("");
+                risultato.setText("");
+            }
+        });
+        convertiMass.setOnTouchListener(new View.OnTouchListener() {
 
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                hideSoftKeyboard((Activity) getContext());
+                return false;
+            }
+        });
         convertiMass.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
@@ -615,6 +638,15 @@ public class SecondFragment extends Fragment {
 
         return v;
 
+    }
+    public static void hideSoftKeyboard(Activity activity)
+    {
+
+        if(activity!= null && activity.getCurrentFocus() != null && activity.getCurrentFocus().getWindowToken() != null)
+        {
+            InputMethodManager imm = (InputMethodManager) activity.getSystemService(Activity.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(activity.getCurrentFocus().getWindowToken(), 0);
+        }
     }
 
 }

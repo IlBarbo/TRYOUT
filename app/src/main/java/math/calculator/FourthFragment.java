@@ -1,14 +1,18 @@
 package math.calculator;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -20,6 +24,7 @@ public class FourthFragment extends Fragment {
     Spinner spinnerAngFrom, spinnerAngTo;
     protected EditText number;
     protected TextView risultato;
+    protected ImageButton clear;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -29,9 +34,8 @@ public class FourthFragment extends Fragment {
         final Button convertiAngolo= v.findViewById(R.id.converti4);
 
         number=v.findViewById(R.id.TextNumber4);
-
         risultato=v.findViewById(R.id.risultatoconv4);
-
+        clear=v.findViewById(R.id.deletesingle);
         //creo il primo spinner
         spinnerAngFrom = (Spinner) v.findViewById(R.id.spinner7);
 
@@ -52,8 +56,23 @@ public class FourthFragment extends Fragment {
         spinnerAdapter4.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         // Apply the adapter to the spinner
         spinnerAngTo.setAdapter(spinnerAdapter4);
+        clear.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                number.setError("");
+                number.setError(null);
+                number.setText("");
+                risultato.setText("");
+            }
+        });
+        convertiAngolo.setOnTouchListener(new View.OnTouchListener() {
 
-
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                hideSoftKeyboard((Activity) getContext());
+                return false;
+            }
+        });
         convertiAngolo.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
@@ -213,5 +232,14 @@ public class FourthFragment extends Fragment {
 
         return v;
 
+    }
+    public static void hideSoftKeyboard(Activity activity)
+    {
+
+        if(activity!= null && activity.getCurrentFocus() != null && activity.getCurrentFocus().getWindowToken() != null)
+        {
+            InputMethodManager imm = (InputMethodManager) activity.getSystemService(Activity.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(activity.getCurrentFocus().getWindowToken(), 0);
+        }
     }
 }

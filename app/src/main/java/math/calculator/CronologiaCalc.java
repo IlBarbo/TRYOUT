@@ -59,7 +59,7 @@ public class CronologiaCalc extends AppCompatActivity implements RowDeletionList
     void displayData(){
         Cursor cursor=dbHelper.readData();
         if(cursor.getCount() == 0){
-            Toast.makeText(this,"NO DATA",Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,"CRONOLOGIA VUOTA",Toast.LENGTH_SHORT).show();
         }else{
             while(cursor.moveToNext()){
                 espressione.add(cursor.getString(0));

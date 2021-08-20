@@ -1,14 +1,19 @@
 package math.calculator;
 
+import android.app.Activity;
+import android.media.Image;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -22,6 +27,7 @@ public class ThirdFragment extends Fragment {
 
     protected EditText number;
     protected TextView risultato;
+    protected ImageButton clear;
 
 
     @Override
@@ -32,7 +38,7 @@ public class ThirdFragment extends Fragment {
 
         number=v.findViewById(R.id.TextNumber3);
         risultato=v.findViewById(R.id.risultatoconv3);
-
+        clear=v.findViewById(R.id.deletesingle);
         //creo il primo spinner
         spinnerTempFrom = (Spinner) v.findViewById(R.id.spinner5);
 
@@ -53,7 +59,23 @@ public class ThirdFragment extends Fragment {
         spinnerAdapter4.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         // Apply the adapter to the spinner
         spinnerTempTo.setAdapter(spinnerAdapter4);
+        clear.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                number.setError("");
+                number.setError(null);
+                number.setText("");
+                risultato.setText("");
+            }
+        });
+        convertiTemp.setOnTouchListener(new View.OnTouchListener() {
 
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                hideSoftKeyboard((Activity) getContext());
+                return false;
+            }
+        });
         convertiTemp.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
@@ -248,5 +270,14 @@ public class ThirdFragment extends Fragment {
 
         return v;
 
+    }
+    public static void hideSoftKeyboard(Activity activity)
+    {
+
+        if(activity!= null && activity.getCurrentFocus() != null && activity.getCurrentFocus().getWindowToken() != null)
+        {
+            InputMethodManager imm = (InputMethodManager) activity.getSystemService(Activity.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(activity.getCurrentFocus().getWindowToken(), 0);
+        }
     }
 }

@@ -95,9 +95,7 @@ public class Convertitore extends AppCompatActivity {
         redirectActivity(this, ConvertitoreBase.class);
     }
 
-    public void clickGrafico (View view){
-        redirectActivity(this, Grafico.class);
-    }
+
 
 
     public void clickLogout (View view){

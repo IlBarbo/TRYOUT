@@ -615,14 +615,14 @@
                             app:layout_constraintTop_toBottomOf="@+id/xQuadrato" />
 
                         <Button
-                            android:id="@+id/funzione"
+                            android:id="@+id/and"
                             android:layout_width="0dp"
                             android:layout_height="40dp"
                             android:layout_marginStart="10dp"
                             android:layout_marginTop="10dp"
                             android:background="@drawable/botton_circle"
-                            android:onClick="funzione"
-                            android:text="@string/funzione"
+                            android:onClick="and"
+                            android:text="@string/and"
                             android:textAllCaps="false"
                             android:textColor="@color/white"
                             android:textSize="15sp"
@@ -642,7 +642,7 @@
                             android:textColor="@color/white"
                             android:textSize="15sp"
                             app:layout_constraintStart_toEndOf="@+id/derivata"
-                            app:layout_constraintTop_toBottomOf="@+id/funzione" />
+                            app:layout_constraintTop_toBottomOf="@+id/and" />
 
                         <Button
                             android:id="@+id/derivata"

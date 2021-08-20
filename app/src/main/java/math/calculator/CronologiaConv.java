@@ -51,7 +51,7 @@ public class CronologiaConv extends AppCompatActivity implements RowDeletionList
     void displayDataConve(){
         Cursor cursor=dbHelperConv.readData();
         if(cursor.getCount() == 0){
-            Toast.makeText(this,"NO DATA",Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,"CRONOLOGIA VUOTA",Toast.LENGTH_SHORT).show();
         }else{
             while(cursor.moveToNext()){
                 fromnum.add(cursor.getString(0));
