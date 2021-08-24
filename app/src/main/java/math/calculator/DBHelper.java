@@ -27,7 +27,6 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-
         db.execSQL(CREATE_TABLE);
 
     }
@@ -72,9 +71,7 @@ public class DBHelper extends SQLiteOpenHelper {
     }
     public void deleteSingleData(int id){
         SQLiteDatabase db = this.getWritableDatabase();
-
         db.execSQL(" delete from " + TABLE_NAME + " where  id = " + id);
-
 
     }
 }

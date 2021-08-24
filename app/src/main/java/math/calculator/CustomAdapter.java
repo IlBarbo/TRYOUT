@@ -1,6 +1,8 @@
 package math.calculator;
 
 import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.wifi.aware.IdentityChangedListener;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -13,13 +15,19 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.digidemic.unitof.T;
+
 import java.util.ArrayList;
+
+import static android.content.Context.MODE_PRIVATE;
 
 public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHolder>{
     private Context context;
     private ArrayList espressione,risultato,id;
     RowDeletionListener listener;
     String row_id;
+
+
 
     CustomAdapter(Context context,ArrayList espressione,ArrayList risultato,ArrayList id, RowDeletionListener deletionListener){
         this.context=context;
@@ -43,6 +51,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
         holder.espressione_txt.setText(String.valueOf(espressione.get(i)));
         holder.risultato_txt.setText(String.valueOf(risultato.get(i)));
         holder.id_txt.setText(String.valueOf(id.get(i)));
+
 
     }
 
@@ -69,6 +78,25 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
                 public void onClick(View v) {
                     dbHelper.deleteSingleData(Integer.parseInt(id_txt.getText().toString()));
                     listener.onRowDeleted(id_txt.getText().toString());
+
+                }
+            });
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    Intent intent=new Intent(itemView.getContext(),Activity_calc.class);
+                    int index=Integer.parseInt(id_txt.getText().toString());
+                    try {
+                       intent.putExtra("espressione",espressione.get(id.indexOf(id_txt.getText().toString())).toString());
+
+                    } catch (NumberFormatException e){
+                    return;
+                }catch (IndexOutOfBoundsException e) {
+                        return;
+                    }
+
+                    context.startActivity(intent);
                 }
             });
         }

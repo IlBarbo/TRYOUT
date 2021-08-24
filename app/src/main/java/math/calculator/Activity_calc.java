@@ -94,6 +94,9 @@ public class Activity_calc extends AppCompatActivity {
         });
 
 
+        String datopassato = getIntent().getStringExtra("espressione");
+        schermo.setText(datopassato);
+
         //assegnamento variabile
         drawerLayout = findViewById(R.id.drawer_layout);
         info.setOnClickListener(new View.OnClickListener() {
