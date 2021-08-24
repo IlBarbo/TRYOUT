@@ -86,13 +86,12 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
                 public void onClick(View v) {
 
                     Intent intent=new Intent(itemView.getContext(),Activity_calc.class);
-                    int index=Integer.parseInt(id_txt.getText().toString());
                     try {
                        intent.putExtra("espressione",espressione.get(id.indexOf(id_txt.getText().toString())).toString());
 
                     } catch (NumberFormatException e){
                     return;
-                }catch (IndexOutOfBoundsException e) {
+                    }catch (IndexOutOfBoundsException e) {
                         return;
                     }
 
